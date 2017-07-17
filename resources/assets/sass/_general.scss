@@ -1,0 +1,119 @@
+body{
+  font-family: 'Ubuntu', sans-serif;
+}
+.box{
+  width: 100%;
+  height: 100vh;
+}
+
+.green{
+  background: green;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
+.no-gutters{
+  margin-right:0;
+  margin-left: 0;
+}
+
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"]{
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+
+/*Scrollbar*/
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+::-webkit-scrollbar{
+  background: #333;
+  width: 10px;
+}
+
+.disable-scrollbar::-webkit-scrollbar{
+  display: none;
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #333;
+}
+
+.left-size-bar{
+  position: relative;
+}
+
+#wechat {
+  width: 100%;
+  height:100%;
+
+}
+
+[data-canvas-image] {
+    display: none;
+}
+/*stop*/
+
+
+#left-side-bar{
+  float: left;
+  width: 36px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+#content-center{
+  float: left;
+  width: calc(100% - 36px);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.content-wrapper.collapse-left-bar #left-side-bar{
+  width: 20%;
+}
+
+.content-wrapper nav{
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  width:100%;
+  height:0;
+}
+
+.content-wrapper.collapse-left-bar nav{
+    height: 50px;
+}
+
+.content-wrapper.collapse-left-bar #content-center{
+  width: 80%;
+}
+
+
+#content-right{
+  border-left: 1px solid rgba(255,255,255,0.08);
+}
