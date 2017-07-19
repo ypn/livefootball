@@ -24,6 +24,9 @@ What are you looking for? Feel free to contact me directly.
     <link rel="stylesheet" href="css/master.css">
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script src="js/app.js"></script>
+    <script type="text/javascript">
+    var FB_URL ='<?php echo $fb_url; ?>';
+    </script>
     <img  data-canvas-image src="{{File::get('background.txt')}}">
   </head>
   <body>

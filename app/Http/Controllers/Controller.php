@@ -41,10 +41,9 @@ class Controller extends BaseController
       //     exit;
       //   }
       //
-      //   $user = $response->getGraphUser();
+      // $user = $response->getGraphUser();
 
-        // OR
-        // echo 'Name: ' . $user->getName();
+
 
       $helper = $fb->getRedirectLoginHelper();
 
@@ -52,6 +51,10 @@ class Controller extends BaseController
       $loginUrl = $helper->getLoginUrl(url('/') . '/fb-callback', $permissions);
 
       return view ('home',array('fb_url'=>$loginUrl));
+    }
+
+    public function checkAuth(){
+      return 1;
     }
 
     public function fbCallback(){

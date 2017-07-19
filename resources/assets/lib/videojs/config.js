@@ -32,37 +32,12 @@ $(document).ready(function(){
        this.controlText('FullScreen');
      },
      handleClick: function() {
-
-      if(!$('.content-wrapper').find('.popup').length){
-
-
-        var popup_content = $('<div>')
-        .append($('<p>').text('Tính năng này chỉ dành cho thành viên, hãy đăng nhập để có trải nghiệm tốt nhất về dịch vụ của chúng tôi!'))
-        .append(
-          $('<a>')
-          .addClass('loginBtn loginBtn--facebook').text('Login with facebook')
-          .attr('href','<?php echo $fb_url; ?>')
-          .css('display','inline-block')
-        );
-
-        var popup = $('<div>').addClass('popup').attr('data-popup','popup-1').html(
-          $('<div>').addClass('popup-inner').append(
-            $('<a>').addClass('popup-close').attr('data-popup-close','popup-1').attr('href','javascript:void(0);').text('x')
-          ).append(popup_content)
-        );
-
-        $('.content-wrapper').append(popup);
-
-        $('.popup').fadeIn(200);
-
-        $('[data-popup-close]').on('click', function(e)  {
-            var targeted_popup_class = jQuery(this).attr('data-popup-close');
-            $('[data-popup="' + targeted_popup_class + '"]').fadeOut(200);
-            $('.popup').remove();
-            e.preventDefault();
-        });
-      }
-
+      $('.popup').fadeIn(200);//this pop up is render in footer component of chat div.
+      $('[data-popup-close]').on('click', function(e)  {
+          var targeted_popup_class = jQuery(this).attr('data-popup-close');
+          $('[data-popup="' + targeted_popup_class + '"]').fadeOut(200);
+          e.preventDefault();
+      });
      }
   });
   videojs.registerComponent('toggleFullScreen', toggleFullScreen);

@@ -2,16 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as ActionsChat from '../actions/actions-chat';
 import Emojify from 'react-emojione';
+// import $ from 'jquery';
 
 export default class ChatFooter extends React.Component{
 
   constructor(props){
     super(props);
     this.state = {
-      emojiToggle:false
+      emojiToggle:false,
+      auth:false
     }
   }
-
 
   autoExpandInput(e){
     var el = this.refs.entry_text;
@@ -36,7 +37,16 @@ export default class ChatFooter extends React.Component{
 
   addEmoji(e){
       var el = this.refs.entry_text;
-      el.value +=e.target.title;    
+      el.value +=e.target.title;
+  }
+
+  forcusType(){
+    $('.popup').fadeIn(200);//this pop up is render in footer component of chat div.
+    $('[data-popup-close]').on('click', function(e)  {
+        var targeted_popup_class = jQuery(this).attr('data-popup-close');
+        $('[data-popup="' + targeted_popup_class + '"]').fadeOut(200);
+        e.preventDefault();
+    });
   }
 
   render(){
@@ -54,7 +64,23 @@ export default class ChatFooter extends React.Component{
     return(
       <div className="live-chat-footer">
         <div className="wrap-entry-text">
-          <textarea ref="entry_text" onKeyDown={this.autoExpandInput.bind(this)} type="text" className="form-control entry-message" rows="1" placeholder="Gửi chiến thuật"/>
+          <textarea ref="entry_text" onFocus={this.forcusType.bind(this)} onKeyDown={this.autoExpandInput.bind(this)} type="text" className="form-control entry-message" rows="1" placeholder="Gửi chiến thuật"/>
+          <div className="popup" data-popup="popup-1">
+            <div className="popup-inner">
+              <a className="popup-close" data-popup-close="popup-1" href="javascript:void(0);">x</a>
+              <div>
+                  <p>
+                  Tính năng này chỉ dành cho thành viên, hãy đăng nhập để có trải nghiệm tốt nhất về dịch vụ của chúng tôi.
+                  </p>
+                  <a
+                    className="loginBtn loginBtn--facebook"
+                    href="https://www.facebook.com/v2.8/dialog/oauth?client_id=1812749958752149&amp;state=2d69d288a8a09e33ecdd1bdc3a2ff4dc&amp;response_type=code&amp;sdk=php-sdk-5.5.0&amp;redirect_uri=http%3A%2F%2Fbongdahd.tv%2Ffb-callback&amp;scope=email"
+                  >
+                      Login with facebook
+                  </a>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="emoji">
           <a href="javascript:void(0);" className="toggle-emoji" onClick={this.toggleEmoji.bind(this)}>
