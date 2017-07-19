@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'Controller@home');
-Route::get('/event','Controller@event');
 Route::post('/add-chat','Controller@newChat');
 Route::get('/list-chat','Controller@listChat');
 Route::get('/login','Controller@login');

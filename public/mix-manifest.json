@@ -5,5 +5,11 @@
   "/js/plugins/chat.js": "/js/plugins/chat.js",
   "/js/plugins/chat-master.js": "/js/plugins/chat-master.js",
   "/js/app.js": "/js/app.js",
-  "/css/app.css": "/css/app.css"
+  "/css/app.css": "/css/app.css",
+  "/js/lib/ainokishi.css": "/js/lib/ainokishi.css",
+  "/js/lib/ainokishi.js": "/js/lib/ainokishi.js",
+  "/js/lib/ypn.js": "/js/lib/ypn.js",
+  "/js/lib/kaka.js": "/js/lib/kaka.js",
+  "/js/lib/kakasdfsdf.js": "/js/lib/kakasdfsdf.js",
+  "/js/lib/sdfsdf.js": "/js/lib/sdfsdf.js"
 }

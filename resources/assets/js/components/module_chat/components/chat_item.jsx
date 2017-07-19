@@ -1,4 +1,5 @@
 import React from 'react';
+import Emojify from 'react-emojione';
 
 export default class ChatItem extends React.Component{
   render(){
@@ -9,9 +10,11 @@ export default class ChatItem extends React.Component{
           <div className="live-chat-content">
             <label>Pham Nhu Y</label>
             <span className="text-content">
-              {this.props.chatText}
+              <Emojify style={{height: 27, width: 27}}>
+                {this.props.chatText}
+              </Emojify>
             </span>
-          </div>        
+          </div>
         </div>
 
     )

@@ -5,7 +5,7 @@
 }
 
 .live-chat-header{
-  height:10%;
+  height:12%;
 }
 
 .live-chat-body{
@@ -16,7 +16,7 @@
 .live-chat-footer{
   margin: 0 15px;
   padding-top: 10px;
-  height:20%;
+  height:18%;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
   .live-chat-footer .wrap-entry-text{
@@ -28,6 +28,23 @@
     height:40%;
     display: block;
     text-align: right;
+  }
+
+  .emoji .toggle-emoji{
+    position: relative;
+  }
+
+  .emoji .toggle-emoji .list-emojione{
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow-y:auto;
+    transform: translate(-10px , -100%);
+    width: 274px;
+    height: 350px;
+    background: #fff;
+    text-align: left;
+    padding: 15px 15px 0 15px;
   }
 
   .live-chat-footer .emoji .__act{

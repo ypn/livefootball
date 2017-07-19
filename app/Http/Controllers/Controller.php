@@ -127,9 +127,8 @@ class Controller extends BaseController
 
     }
 
-    public function event(Request $request){
-      $value = Crypt::decrypt('eyJpdiI6ImhYZlBidVArNXZZRHZEb1VpVTYyNVE9PSIsInZhbHVlIjoiTnBoWG91YzNEZFYyV2p5NGZXWWFJUT09IiwibWFjIjoiMjhmY2JiMjM4NDdhODBlYjY0M2Y0NjAzYzQ4NWFmMjg5NjYzYWE1ZDE2ODY2ZTQ2NDk1ZjhiZTMzNTkwNDgwZSJ9');
-      echo $value;
+    public function newChat(Request $request){
+      event(new Event($request->text));
     }
 
     public function listChat(){

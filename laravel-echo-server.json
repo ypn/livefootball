@@ -3,8 +3,8 @@
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [
 		{
-			"appId": "93bffaa41cfc5023",
-			"key": "6eeb7e0f2b320dc62f1578362b41315e"
+			"appId": "1967937859eee07e",
+			"key": "0c0224d1fc9986cf12e4303c48cf6e57"
 		}
 	],
 	"database": "redis",
@@ -18,7 +18,9 @@
 	"host": null,
 	"port": "6001",
 	"protocol": "http",
-	"socketio": {},
+	"socketio": {
+		"wsEngine": "uws"
+	},
 	"sslCertPath": "",
 	"sslKeyPath": ""
 }
