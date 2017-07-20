@@ -5,7 +5,7 @@ $(document).ready(function(){
     }
   });
   player.src({
-    src:"http://localhost:8092/hls/stream.m3u8",
+    src:"http://bongdatv.online:8092/hls/ypn-bongdatv.m3u8",
     type:'application/x-mpegURL'
   });
 
