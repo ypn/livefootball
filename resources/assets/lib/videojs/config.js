@@ -1,11 +1,14 @@
 $(document).ready(function(){
-  var player = videojs('livehd-video-player',{
-    controlBar:{
-      fullscreenToggle  :false
-    }
-  });
+  // var player = videojs('livehd-video-player',{
+  //   controlBar:{
+  //     fullscreenToggle  :false
+  //   }
+  // });
+
+  var player = videojs('livehd-video-player');
+
   player.src({
-    src:"http://bongdatv.online:8095/hls/strean.m3u8",
+    src:"http://bongdatv.online:8095/hls/stream.m3u8",
     //src:'http://localhost:8092/hls/stream.m3u8',
     type:'application/x-mpegURL'
   });
@@ -24,26 +27,26 @@ $(document).ready(function(){
 
 
 
-  var Button = videojs.getComponent('Button');
-  var toggleFullScreen = videojs.extend(Button, {
-     constructor: function() {
-       Button.apply(this, arguments);
-       this.addClass('vjs-icon-fullscreen-enter');
-       this.addClass('custom-alert-fullscreen');
-       this.controlText('FullScreen');
-     },
-     handleClick: function() {
-      $('.popup').fadeIn(200);//this pop up is render in footer component of chat div.
-      $('[data-popup-close]').on('click', function(e)  {
-          var targeted_popup_class = jQuery(this).attr('data-popup-close');
-          $('[data-popup="' + targeted_popup_class + '"]').fadeOut(200);
-          e.preventDefault();
-      });
-     }
-  });
-  videojs.registerComponent('toggleFullScreen', toggleFullScreen);
-
- player.getChild('controlBar').addChild('toggleFullScreen', {});
+ //  var Button = videojs.getComponent('Button');
+ //  var toggleFullScreen = videojs.extend(Button, {
+ //     constructor: function() {
+ //       Button.apply(this, arguments);
+ //       this.addClass('vjs-icon-fullscreen-enter');
+ //       this.addClass('custom-alert-fullscreen');
+ //       this.controlText('FullScreen');
+ //     },
+ //     handleClick: function() {
+ //      $('.popup').fadeIn(200);//this pop up is render in footer component of chat div.
+ //      $('[data-popup-close]').on('click', function(e)  {
+ //          var targeted_popup_class = jQuery(this).attr('data-popup-close');
+ //          $('[data-popup="' + targeted_popup_class + '"]').fadeOut(200);
+ //          e.preventDefault();
+ //      });
+ //     }
+ //  });
+ //  videojs.registerComponent('toggleFullScreen', toggleFullScreen);
+ //
+ // player.getChild('controlBar').addChild('toggleFullScreen', {});
 
   //Collapse left side bar
   (function($){
