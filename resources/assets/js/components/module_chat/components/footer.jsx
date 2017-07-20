@@ -64,7 +64,7 @@ export default class ChatFooter extends React.Component{
     return(
       <div className="live-chat-footer">
         <div className="wrap-entry-text">
-          <textarea ref="entry_text" onFocus={this.forcusType.bind(this)} onKeyDown={this.autoExpandInput.bind(this)} type="text" className="form-control entry-message" rows="1" placeholder="Gửi chiến thuật"/>
+          <textarea ref="entry_text" onKeyDown={this.autoExpandInput.bind(this)} type="text" className="form-control entry-message" rows="1" placeholder="Gửi chiến thuật"/>
           <div className="popup" data-popup="popup-1">
             <div className="popup-inner">
               <a className="popup-close" data-popup-close="popup-1" href="javascript:void(0);">x</a>
