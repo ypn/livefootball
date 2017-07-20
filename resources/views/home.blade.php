@@ -45,16 +45,29 @@ What are you looking for? Feel free to contact me directly.
 
           <div id="content-center" class="content-center">
             <div class="box disable-scrollbar" style="overflow-y:auto; color:#fff;">
-              <nav>
-
-              </nav>
+              <nav></nav>
               <video
               style="border:1px solid #000;"
               id="livehd-video-player"
               class="video-js vjs-big-play-centered vjs-16-9 custom-player"
-              poster="https://i.ytimg.com/vi/rVj5xe-Kxrc/maxresdefault.jpg"
-              src=""
-              controls preload="auto"/>
+              poster="{{URL::to('/images/vs')}}"
+              controls preload="auto"></video>
+
+              <div style="padding:15px;">
+                ✌  Cảm ơn các bạn đã sử dụng dịch vụ của bongdatv.online ✌ 
+                <br/>
+                ♥ Hãy like fanpage Bongdatv Online để nhật lịch phát trực tiếp các trận cầu đỉnh cao tại bongdatv.online.
+                <br/>
+                ♥ Website vấn đang trong quá trình xây dựng và thử nghiệm nên khi sử dụng sẽ có lỗi phát sinh.
+                <br/>
+                ♥ Để có được trải nghiệm tốt nhất vui lòng sử dụng google chrome trên máy tính.
+                <br/>
+                ♥ Đội ngũ kĩ sư của chúng tôi đang cố gắng để hoàn thành sớm bản beta chính thức.
+                <br/>
+
+                ♥ Chúc các anh em túc cầu giáo có những giây phút trải nghiệm trận đấu đỉnh cao tại bongdatv.online
+
+              </div>
 
             </div>
           </div>
@@ -75,6 +88,14 @@ What are you looking for? Feel free to contact me directly.
       js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=1812749958752149";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-102881492-1', 'auto');
+    ga('send', 'pageview');
     </script>
     <script src="js/lib/ainokishi.js"></script>
     <script src="js/plugins/chat-master.js"></script>

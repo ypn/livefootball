@@ -16,7 +16,7 @@ export default class ChatFooter extends React.Component{
 
   autoExpandInput(e){
     var el = this.refs.entry_text;
-    if(e.keyCode==13 && !e.shiftKey){
+    if(e.keyCode==13 && !e.shiftKey && el.value.trim()!=''){
         e.preventDefault();
         ActionsChat.createNewItem(el.value);
         el.value ='';
