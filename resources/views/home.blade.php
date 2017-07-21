@@ -17,6 +17,7 @@ What are you looking for? Feel free to contact me directly.
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Trực tiếp bóng đá HD</title>
     <link rel="stylesheet" href="css/app.css">
@@ -32,7 +33,7 @@ What are you looking for? Feel free to contact me directly.
   <body>
     <canvas class="hero__background" data-canvas id="heroCanvas" style="width:100%;height:100vh;"></canvas>
     <div class="row no-gutters content-wrapper" style="position:relative;z-index:2">
-      <div class="row col-lg-9 col-md-9  col-sm-12 col-xs-9 no-gutters jj">
+      <div class="row col-lg-9 col-md-9  col-sm-12 col-xs-12 no-gutters jj">
           <div id="left-side-bar" class="content-left">
             <div class="box">
               <div id="nav-icon4" class="humburger-button">
@@ -52,29 +53,12 @@ What are you looking for? Feel free to contact me directly.
               class="video-js vjs-big-play-centered vjs-16-9 custom-player"
               poster="{{URL::to('/images/vs')}}"
               controls preload="auto"></video>
-
-              <div style="padding:15px;">
-                ✌  Cảm ơn các bạn đã sử dụng dịch vụ của bongdatv.online ✌ 
-                <br/>
-                ♥ Hãy like fanpage Bongdatv Online để nhật lịch phát trực tiếp các trận cầu đỉnh cao tại bongdatv.online.
-                <br/>
-                ♥ Website vấn đang trong quá trình xây dựng và thử nghiệm nên khi sử dụng sẽ có lỗi phát sinh.
-                <br/>
-                ♥ Để có được trải nghiệm tốt nhất vui lòng sử dụng google chrome trên máy tính.
-                <br/>
-                ♥ Đội ngũ kĩ sư của chúng tôi đang cố gắng để hoàn thành sớm bản beta chính thức.
-                <br/>
-
-                ♥ Chúc các anh em túc cầu giáo có những giây phút trải nghiệm trận đấu đỉnh cao tại bongdatv.online
-
-              </div>
-
             </div>
           </div>
 
       </div>
 
-      <div class="col-lg 3 col-md-3 col-sm-3 col-xs-3" id="content-right">
+      <div class="col-lg 3 col-md-3 hidden-sm hidden-xs" id="content-right">
         <div class="box red"  style="color:#fff;">
           <div id="wechat"/>
         </div>
