@@ -8,7 +8,8 @@ $(document).ready(function(){
   var player = videojs('livehd-video-player');
 
   player.src({
-    src:"http://bongdatv.online:8095/hls/stream.m3u8",
+    src:"http://45.76.215.91:4000/live/09691a48a044312108120fcb55d0b321/index.m3u8",
+    //src:"http://bongdatv.online:8095/hls/stream.m3u8",
     //src:'http://localhost:8092/hls/stream.m3u8',
     type:'application/x-mpegURL'
   });
