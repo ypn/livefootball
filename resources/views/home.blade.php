@@ -24,7 +24,7 @@ What are you looking for? Feel free to contact me directly.
     <meta property="og:title"              content="Trực tiếp Barca - Real ICC cup 2017" />
     <meta property="og:description"        content="Trực tiếp bóng đá HD, K+ online. Thưởng thức các trận cậu đỉnh cao dễ dàng với chất lượng hình ảnh tốt nhất." />
     <meta property="og:video" content="http://bongdatv.online:8095/hls/stream.m3u8" />
-    <meta property="og:video:type" content="application/x-mpegURL" />
+    <meta property="og:video:type" content="video/mp4" />
     <meta property="og:video:width" content="300" />
     <meta property="og:video:height" content="200" />
     <meta property="og:image" content="{{URL::to('/images/real-barca.jpg')}}">
