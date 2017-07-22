@@ -24,7 +24,6 @@ What are you looking for? Feel free to contact me directly.
     <meta property="og:title"              content="Xem truc tiep Mu - Real Marid binh luan vien G-Bom" />
     <meta property="og:description"        content="How much does culture influence creative thinking?" />
     <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
-    <meta property ="fb:app_id" content="1812749958752149"/>
     <title>Trực tiếp bóng đá HD</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="js/lib/ainokishi.css">
