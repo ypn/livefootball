@@ -25,8 +25,8 @@ What are you looking for? Feel free to contact me directly.
     <meta property="og:description"        content="Trực tiếp bóng đá HD, K+ online. Thưởng thức các trận cậu đỉnh cao dễ dàng với chất lượng hình ảnh tốt nhất." />
     <meta property="og:video" content="http://bongdatv.online:8095/hls/stream.m3u8" />
     <meta property="og:video:type" content="application/x-mpegURL" />
-    <meta property="width" content="300" />
-    <meta property="height" content="200" />
+    <meta property="og:video:width" content="300" />
+    <meta property="og:video:height" content="200" />
     <meta property="og:image" content="{{URL::to('/images/real-barca.jpg')}}">
     <meta property ="fb:app_id" content="1812749958752149"/>
     <title>Trực tiếp bóng đá HD</title>
