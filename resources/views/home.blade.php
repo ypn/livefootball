@@ -21,9 +21,10 @@ What are you looking for? Feel free to contact me directly.
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:url"                content="http://bongdatv.online/" />
     <meta property="og:type"               content="website" />
-    <meta property="og:title"              content="Xem truc tiep Mu - Real Marid binh luan vien G-Bom" />
-    <meta property="og:description"        content="How much does culture influence creative thinking?" />
-    <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+    <meta property="og:title"              content="Trực tiếp Barca - Real ICC cup 2017" />
+    <meta property="og:description"        content="Trực tiếp bóng đá HD, K+ online. Thưởng thức các trận cậu đỉnh cao dễ dàng với chất lượng hình ảnh tốt nhất." />
+    <meta property="og:image"              content="https://9jaspot.com/uploadfiles/maxresdefault_5244927685.jpg" />
+    <meta property ="fb:app_id" content="1812749958752149"/>
     <title>Trực tiếp bóng đá HD</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="js/lib/ainokishi.css">
