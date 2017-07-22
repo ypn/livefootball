@@ -20,7 +20,7 @@ What are you looking for? Feel free to contact me directly.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:url"                content="http://bongdatv.online/" />
-    <meta property="og:type"               content="Truc tiep Mu - Real Marid" />
+    <meta property="og:type"               content="website" />
     <meta property="og:title"              content="Xem truc tiep Mu - Real Marid binh luan vien G-Bom" />
     <meta property="og:description"        content="How much does culture influence creative thinking?" />
     <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
