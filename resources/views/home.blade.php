@@ -27,7 +27,7 @@ What are you looking for? Feel free to contact me directly.
     <meta property="og:video:type" content="video/mp4" />
     <meta property="og:video:width" content="300" />
     <meta property="og:video:height" content="200" />
-    <meta property="og:image" content="{{URL::to('/images/real-barca.jpg')}}">
+    <meta property="og:image" content="{{URL::to('/images/real-barca.jpg')}}" />
     <meta property ="fb:app_id" content="1812749958752149"/>
     <title>Trực tiếp bóng đá HD</title>
     <link rel="stylesheet" href="css/app.css">
