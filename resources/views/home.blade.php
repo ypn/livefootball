@@ -23,7 +23,7 @@ What are you looking for? Feel free to contact me directly.
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="Trực tiếp Barca - Real ICC cup 2017" />
     <meta property="og:description"        content="Trực tiếp bóng đá HD, K+ online. Thưởng thức các trận cậu đỉnh cao dễ dàng với chất lượng hình ảnh tốt nhất." />
-    <meta property="og:image"              content="https://9jaspot.com/uploadfiles/maxresdefault_5244927685.jpg" />
+    <meta property="og:image"              content="http://img.f51.bdpcdn.net/Assets/Media/2017/04/23/50/real-barca.jpg" />
     <meta property ="fb:app_id" content="1812749958752149"/>
     <title>Trực tiếp bóng đá HD</title>
     <link rel="stylesheet" href="css/app.css">
