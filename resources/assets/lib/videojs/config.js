@@ -9,20 +9,15 @@ $(document).ready(function(){
 
   player.src({
     //src:"http://45.76.215.91:4000/live/09691a48a044312108120fcb55d0b321/index.m3u8",
-    src:"http://bongdatv.online:8095/hls/stream.m3u8",
-    //src:'http://localhost:8092/hls/stream.m3u8',
+    //src:"http://bongdatv.online:8095/hls/stream.m3u8",
+    src:'http://localhost:8092/hls/stream.m3u8',
     type:'application/x-mpegURL'
   });
 
   player.on('error', function(e) {
     e.stopImmediatePropagation();
     var error = this.player().error();
-    console.log('hahah error!', error.code, error.type , error.message);
   });
-
-  player.errors();
-
-
   player.play();
   player.dvrseekbar();
 

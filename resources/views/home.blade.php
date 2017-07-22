@@ -19,6 +19,12 @@ What are you looking for? Feel free to contact me directly.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta property="og:url"                content="http://bongdatv.online/" />
+    <meta property="og:type"               content="Truc tiep Mu - Real Marid" />
+    <meta property="og:title"              content="Xem truc tiep Mu - Real Marid binh luan vien G-Bom" />
+    <meta property="og:description"        content="How much does culture influence creative thinking?" />
+    <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+    <meta property ="fb:app_id" content="1812749958752149"/>
     <title>Trực tiếp bóng đá HD</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="js/lib/ainokishi.css">
@@ -63,7 +69,7 @@ What are you looking for? Feel free to contact me directly.
           <div id="wechat"/>
         </div>
       </div>
-
+      <div id="desktopTest" class="hiden-sm hidden-xs"></div>
     </div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -83,6 +89,11 @@ What are you looking for? Feel free to contact me directly.
     </script>
     <script src="js/lib/ainokishi.js"></script>
     <script src="js/plugins/chat-master.js"></script>
-    <script src='js/plugins/videojs.thumbnails.js'></script>
+    <script type="text/javascript">
+      if($('#desktopTest').is(':hidden')){
+        $('#content-right').remove();
+        $('#content-center .box').append($('<div>').attr('id','wechat'));
+      }
+    </script>
   </body>
 </html>
