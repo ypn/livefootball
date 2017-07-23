@@ -1,12 +1,16 @@
 <!--
-$$$$$$$\  $$\                                           $$\   $$\ $$\                             $$\     $$\
-$$  __$$\ $$ |                                          $$$\  $$ |$$ |                            \$$\   $$  |
-$$ |  $$ |$$$$$$$\   $$$$$$\  $$$$$$\$$$$\              $$$$\ $$ |$$$$$$$\  $$\   $$\              \$$\ $$  /
-$$$$$$$  |$$  __$$\  \____$$\ $$  _$$  _$$\             $$ $$\$$ |$$  __$$\ $$ |  $$ |              \$$$$  /
-$$  ____/ $$ |  $$ | $$$$$$$ |$$ / $$ / $$ |            $$ \$$$$ |$$ |  $$ |$$ |  $$ |               \$$  /
-$$ |      $$ |  $$ |$$  __$$ |$$ | $$ | $$ |            $$ |\$$$ |$$ |  $$ |$$ |  $$ |                $$ |
-$$ |      $$ |  $$ |\$$$$$$$ |$$ | $$ | $$ |            $$ | \$$ |$$ |  $$ |\$$$$$$  |                $$ |
-\__|      \__|  \__| \_______|\__| \__| \__|            \__|  \__|\__|  \__| \______/                 \__|
+
+$$$$$$$\                                      $$\        $$$$$$$$\ $$\    $$\        $$$$$$\            $$\ $$\
+$$  __$$\                                     $$ |       \__$$  __|$$ |   $$ |      $$  __$$\           $$ |\__|
+$$ |  $$ | $$$$$$\  $$$$$$$\   $$$$$$\   $$$$$$$ | $$$$$$\  $$ |   $$ |   $$ |      $$ /  $$ |$$$$$$$\  $$ |$$\ $$$$$$$\   $$$$$$\
+$$$$$$$\ |$$  __$$\ $$  __$$\ $$  __$$\ $$  __$$ | \____$$\ $$ |   \$$\  $$  |      $$ |  $$ |$$  __$$\ $$ |$$ |$$  __$$\ $$  __$$\
+$$  __$$\ $$ /  $$ |$$ |  $$ |$$ /  $$ |$$ /  $$ | $$$$$$$ |$$ |    \$$\$$  /       $$ |  $$ |$$ |  $$ |$$ |$$ |$$ |  $$ |$$$$$$$$ |
+$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$  __$$ |$$ |     \$$$  /        $$ |  $$ |$$ |  $$ |$$ |$$ |$$ |  $$ |$$   ____|
+$$$$$$$  |\$$$$$$  |$$ |  $$ |\$$$$$$$ |\$$$$$$$ |\$$$$$$$ |$$ |      \$  /          $$$$$$  |$$ |  $$ |$$ |$$ |$$ |  $$ |\$$$$$$$\
+\_______/  \______/ \__|  \__| \____$$ | \_______| \_______|\__|       \_/           \______/ \__|  \__|\__|\__|\__|  \__| \_______|
+                              $$\   $$ |
+                              \$$$$$$  |
+                               \______/
 
 What are you looking for? Feel free to contact me directly.
 ❤ email: nhuyphambkhn@gmail.com
@@ -22,9 +26,9 @@ What are you looking for? Feel free to contact me directly.
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:url"                content="http://bongdatv.online/" />
     <meta property="og:type"               content="website" />
-    <meta property="og:title"              content="Trực tiếp Barca - Real ICC cup 2017" />
+    <meta property="og:title"              content="Trực tiếp  U23 Việt Nam - U23 Hàn Quốc - VCK U23 châu Á 2017" />
     <meta property="og:description"        content="Trực tiếp bóng đá HD, K+ online. Thưởng thức các trận cậu đỉnh cao dễ dàng với chất lượng hình ảnh tốt nhất." />
-    <meta property="og:image" content="{{URL::to('/images/real-barca.jpg')}}" />
+    <meta property="og:image" content="{{URL::to('/images/fb_share.jpg')}}" />
     <meta property ="fb:app_id" content="1812749958752149"/>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="js/lib/ainokishi.css">
@@ -57,8 +61,16 @@ What are you looking for? Feel free to contact me directly.
               style="border:1px solid #000;"
               id="livehd-video-player"
               class="video-js vjs-big-play-centered vjs-16-9 custom-player"
-              poster="{{URL::to('/images/vs')}}"
+              poster="{{URL::to('/images/poster.jpg')}}"
               controls preload="auto"></video>
+              <div style="padding:5px;text-align:right;">
+                <div class="fb-like" data-href="http://bongdatv.online/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+                <div class="fb-share-button" data-href="http://bongdatv.online/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbongdatv.online%2F&amp;src=sdkpreparse">Chia sẻ</a></div>
+              </div>
+              <div>
+                <h4>✔ Like fanpage để cập nhật lịch tường thuật trực tiếp các trận cầu đỉnh cao tại bongdatv.online</h4>
+                <h6>✔ Cảm ơn các bạn đã theo đã sử dụng dịch vụ phiên bản thử nghiệm của bongdatv.online. Bản chính thức sẽ có trong tuần tới.</h6>
+              </div>
             </div>
           </div>
 

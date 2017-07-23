@@ -5,7 +5,19 @@ $(document).ready(function(){
   //   }
   // });
 
-  var player = videojs('livehd-video-player');
+  var player = videojs('livehd-video-player',{
+    hlsjs: {
+        /**
+         * Will be called on Hls.Events.MEDIA_ATTACHED.
+         *
+         * @param {Hls} hls      The hls instance from hls.js
+         * @param {Object} data  The data from this HLS runtime event
+         */
+        onMediaAttached: function(hls, data) {
+            alert('cccc');
+        }
+    }
+  });
 
   player.src({
     //src:"http://45.76.215.91:4000/live/09691a48a044312108120fcb55d0b321/index.m3u8",
