@@ -78,7 +78,7 @@ What are you looking for? Feel free to contact me directly.
 
       <div class="col-lg 3 col-md-3 hidden-sm hidden-xs" id="content-right">
         <div class="box red"  style="color:#fff;">
-          <div id="wechat"/>
+          <div id="wechat" data-authentication = {{Sentinel::check()?"true":"false"}} ></div>
         </div>
       </div>
       <div id="desktopTest" class="hiden-sm hidden-xs"></div>

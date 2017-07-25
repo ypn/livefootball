@@ -27,7 +27,7 @@ class EventListener
      */
     public function handle(Event $event)
     {
-      echo 'phamnhuy';
-      Cache::put(time(),$event->message,10);
+      // echo 'phamnhuy';
+      // Cache::put(time(),$event->message,10);
     }
 }

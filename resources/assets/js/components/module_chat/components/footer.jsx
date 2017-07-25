@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as ActionsChat from '../actions/actions-chat';
 import Emojify from 'react-emojione';
-// import $ from 'jquery';
 
 export default class ChatFooter extends React.Component{
 
@@ -10,23 +9,26 @@ export default class ChatFooter extends React.Component{
     super(props);
     this.state = {
       emojiToggle:false,
-      auth:false
+      auth:$('#wechat').attr('data-authentication')
     }
   }
 
   autoExpandInput(e){
-    var el = this.refs.entry_text;
-    if(e.keyCode==13 && !e.shiftKey && el.value.trim()!=''){
-        e.preventDefault();
-        ActionsChat.createNewItem(el.value);
-        el.value ='';
+    if(this.state.auth==='true')
+    {
+      var el = this.refs.entry_text;
+      if(e.keyCode==13 && !e.shiftKey && el.value.trim()!=''){
+          e.preventDefault();
+          ActionsChat.createNewItem(el.value);
+          el.value ='';
 
+      }
+
+      el.style.cssText = 'height:auto; padding:0';
+      el.style.cssText = 'height:' + el.scrollHeight + 'px';
+
+      el.scrollTop = el.scrollHeight;
     }
-
-    el.style.cssText = 'height:auto; padding:0';
-    el.style.cssText = 'height:' + el.scrollHeight + 'px';
-
-    el.scrollTop = el.scrollHeight;
   }
 
   toggleEmoji(){
@@ -41,12 +43,14 @@ export default class ChatFooter extends React.Component{
   }
 
   forcusType(){
-    $('.popup').fadeIn(200);//this pop up is render in footer component of chat div.
-    $('[data-popup-close]').on('click', function(e)  {
-        var targeted_popup_class = jQuery(this).attr('data-popup-close');
-        $('[data-popup="' + targeted_popup_class + '"]').fadeOut(200);
-        e.preventDefault();
-    });
+    if(this.state.auth==='false'){
+      $('.popup').fadeIn(200);//this pop up is render in footer component of chat div.
+      $('[data-popup-close]').on('click', function(e)  {
+          var targeted_popup_class = jQuery(this).attr('data-popup-close');
+          $('[data-popup="' + targeted_popup_class + '"]').fadeOut(200);
+          e.preventDefault();
+      });
+    }
   }
 
   render(){
@@ -64,12 +68,12 @@ export default class ChatFooter extends React.Component{
     return(
       <div className="live-chat-footer">
         <div className="wrap-entry-text">
-          <textarea ref="entry_text" onKeyDown={this.autoExpandInput.bind(this)} type="text" className="form-control entry-message" rows="1" placeholder="Gửi chiến thuật"/>
+          <textarea ref="entry_text" onFocus = {this.forcusType.bind(this)} onKeyDown={this.autoExpandInput.bind(this)} type="text" className="form-control entry-message" rows="1" placeholder="Gửi chiến thuật"/>
           <div className="popup" data-popup="popup-1">
             <div className="popup-inner">
               <a className="popup-close" data-popup-close="popup-1" href="javascript:void(0);">x</a>
               <div>
-                  <p>
+                  <p className="pop-up-content">
                   Tính năng này chỉ dành cho thành viên, hãy đăng nhập để có trải nghiệm tốt nhất về dịch vụ của chúng tôi.
                   </p>
                   <a

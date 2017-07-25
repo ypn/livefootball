@@ -11,14 +11,15 @@ use Illuminate\Support\Facades\Crypt;
 use App\Events\Event;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
+use Sentinel;
+use Users;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function home(){
 
-
+    public function home(){   
 
       if (!session_id()) {
           session_start();
@@ -29,22 +30,6 @@ class Controller extends BaseController
         'app_secret' => '32a370b14d3b6140736ce7eaa13c962c',
         'default_graph_version' => 'v2.8',
       ]);
-
-      // try {
-      //     // Returns a `Facebook\FacebookResponse` object
-      //     $response = $fb->get('/me?fields=id,name',$_SESSION['fb_access_token']);
-      //   } catch(Facebook\Exceptions\FacebookResponseException $e) {
-      //     echo 'Graph returned an error: ' . $e->getMessage();
-      //     exit;
-      //   } catch(Facebook\Exceptions\FacebookSDKException $e) {
-      //     echo 'Facebook SDK returned an error: ' . $e->getMessage();
-      //     exit;
-      //   }
-      //
-      // $user = $response->getGraphUser();
-
-
-
       $helper = $fb->getRedirectLoginHelper();
 
       $permissions = ['email']; // Optional permissions
@@ -53,14 +38,11 @@ class Controller extends BaseController
       return view ('home',array('fb_url'=>$loginUrl));
     }
 
-    public function checkAuth(){
-      return 1;
-    }
-
     public function fbCallback(){
       if (!session_id()) {
           session_start();
       }
+
       $fb = new \Facebook\Facebook([
         'app_id' => '1812749958752149',
         'app_secret' => '32a370b14d3b6140736ce7eaa13c962c',
@@ -68,14 +50,15 @@ class Controller extends BaseController
       ]);
 
       $helper = $fb->getRedirectLoginHelper();
+      $_SESSION['FBRLH_state']=$_GET['state'];
 
       try {
         $accessToken = $helper->getAccessToken();
-      } catch(Facebook\Exceptions\FacebookResponseException $e) {
+      } catch(\Facebook\Exceptions\FacebookResponseException $e) {
         // When Graph returns an error
         echo 'Graph returned an error: ' . $e->getMessage();
         exit;
-      } catch(Facebook\Exceptions\FacebookSDKException $e) {
+      } catch(\Facebook\Exceptions\FacebookSDKException $e) {
         // When validation fails or other local issues
         echo 'Facebook SDK returned an error: ' . $e->getMessage();
         exit;
@@ -96,16 +79,16 @@ class Controller extends BaseController
       }
 
       // Logged in
-      echo '<h3>Access Token</h3>';
-      var_dump($accessToken->getValue());
+      // echo '<h3>Access Token</h3>';
+      // var_dump($accessToken->getValue());
 
       // The OAuth 2.0 client handler helps us manage access tokens
       $oAuth2Client = $fb->getOAuth2Client();
 
       // Get the access token metadata from /debug_token
       $tokenMetadata = $oAuth2Client->debugToken($accessToken);
-      echo '<h3>Metadata</h3>';
-      var_dump($tokenMetadata);
+      // echo '<h3>Metadata</h3>';
+      // var_dump($tokenMetadata);
 
       // Validation (these will throw FacebookSDKException's when they fail)
       $tokenMetadata->validateAppId('1812749958752149'); // Replace {app-id} with your app id
@@ -128,10 +111,56 @@ class Controller extends BaseController
 
       $_SESSION['fb_access_token'] = (string) $accessToken;
 
+      try {
+      // Returns a `Facebook\FacebookResponse` object
+        $response = $fb->get('/me?fields=id,first_name,last_name,email,locale,education,cover,birthday,picture', $accessToken);
+      } catch(Facebook\Exceptions\FacebookResponseException $e) {
+        echo 'Graph returned an error: ' . $e->getMessage();
+        exit;
+      } catch(Facebook\Exceptions\FacebookSDKException $e) {
+        echo 'Facebook SDK returned an error: ' . $e->getMessage();
+        exit;
+      }
+      $fbuser = $response->getGraphUser()->asArray();
+
+      $user = Users::where('email',$fbuser['email'])->first();
+
+      if(empty($user)){
+        try{
+          $user = Sentinel::registerAndActivate([
+           'email'=>$fbuser['email'],
+           'fb_id'=>$fbuser['id'],
+           'fb_token'=>(string)$accessToken,
+           'password'=>'123',
+           'first_name'=>$fbuser['first_name'],
+           'last_name'=>$fbuser['last_name'],
+
+          ]);
+
+          $auth = Sentinel::authenticateAndRemember([
+             'email'=>$user->email,
+             'password'=>'123'
+           ]);
+           if($auth){
+             return redirect('/');
+           }
+        }
+        catch (\Illuminate\Database\QueryException $e){
+          echo $e->getMessage();
+        }
+      }
+
+
+
     }
 
     public function newChat(Request $request){
-      event(new Event($request->text));
+      if(Sentinel::check()){
+        event(new Event($request->text));
+      }
+      else{
+        return json("login_first");
+      }
     }
 
     public function listChat(){

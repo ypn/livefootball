@@ -20,11 +20,12 @@ class ChatStore extends EventEmitter{
     });
   }
 
-
-  addNewChat(text){
+  addNewChat(text,first_name,last_name,fb_id){  
     this.list.push({
-      id:(new Date()).getTime(),
-      text
+      text,
+      first_name,
+      last_name,
+      fb_id
     });
     this.emit('add-new-chat');
   }
@@ -32,7 +33,7 @@ class ChatStore extends EventEmitter{
   handleAction(action){
     switch (action.type) {
       case 'ADD_NEW_CHAT':
-        this.addNewChat(action.text);
+        this.addNewChat(action.text,action.first_name,action.last_name,action.fb_id);
         break;
       case 'GET_CHAT_HISTORY':
         this.getChatHistory();
