@@ -26,7 +26,7 @@ What are you looking for? Feel free to contact me directly.
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:url"                content="http://bongdatv.online/" />
     <meta property="og:type"               content="website" />
-    <meta property="og:title"              content="Trực tiếp  U23 Việt Nam - U23 Hàn Quốc - VCK U23 châu Á 2017" />
+    <meta property="og:title"              content="Trực tiếp  Manchester United - Barcelona - ICC Cup 2017" />
     <meta property="og:description"        content="Trực tiếp bóng đá HD, K+ online. Thưởng thức các trận cậu đỉnh cao dễ dàng với chất lượng hình ảnh tốt nhất." />
     <meta property="og:image" content="{{URL::to('/images/fb_share.jpg')}}" />
     <meta property ="fb:app_id" content="1812749958752149"/>
