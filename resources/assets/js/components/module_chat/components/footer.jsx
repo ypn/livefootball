@@ -44,12 +44,14 @@ export default class ChatFooter extends React.Component{
   }
 
   clickSend(){
-      var el = this.refs.entry_text;
+    var el = this.refs.entry_text;
+    if(el.value.trim()!=''){
       ActionsChat.createNewItem(el.value);
       el.value ='';
       el.style.cssText = 'height:auto; padding:0';
       el.style.cssText = 'height:' + el.scrollHeight + 'px';
       el.scrollTop = el.scrollHeight;
+    }
   }
 
   forcusType(){
