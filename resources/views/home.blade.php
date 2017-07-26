@@ -33,8 +33,6 @@ What are you looking for? Feel free to contact me directly.
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="js/lib/ainokishi.css">
     <link rel="stylesheet" href="css/master.css">
-    <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
-    <script src="js/app.js"></script>
     <input type="hidden" id="fb_url_redirect" value="<?php echo $fb_url; ?>">
     <img  data-canvas-image src="{{File::get('background.txt')}}">
   </head>
@@ -83,6 +81,17 @@ What are you looking for? Feel free to contact me directly.
       </div>
       <div id="desktopTest" class="hiden-sm hidden-xs"></div>
     </div>
+    <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/lib/ainokishi.min.js"></script>
+    <script src="js/plugins/chat-master.js"></script>
+    <script type="text/javascript">
+      if($('#desktopTest').is(':hidden')){
+        $('#content-right').remove();
+        $('#content-center .box').append($('<div>').attr('id','wechat'));
+      }
+      console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+    </script>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
@@ -98,17 +107,6 @@ What are you looking for? Feel free to contact me directly.
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-102881492-1', 'auto');
     ga('send', 'pageview');
-    </script>
-    <script src="js/lib/ainokishi.min.js"></script>
-    <script src="js/plugins/chat-master.js"></script>
-    <script type="text/javascript">
-      if($('#desktopTest').is(':hidden')){
-        $('#content-right').remove();
-        $('#content-center .box').append($('<div>').attr('id','wechat'));
-      }
-    </script>
-    <script type="text/javascript">
-    console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
     </script>
   </body>
 </html>
