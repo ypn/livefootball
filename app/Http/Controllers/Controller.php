@@ -149,9 +149,10 @@ class Controller extends BaseController
         catch (\Illuminate\Database\QueryException $e){
           echo $e->getMessage();
         }
+      }else{
+        Sentinel::login($user);
+        return redirect('/');
       }
-
-
 
     }
 
