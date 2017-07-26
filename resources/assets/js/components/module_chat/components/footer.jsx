@@ -78,7 +78,7 @@ export default class ChatFooter extends React.Component{
                   </p>
                   <a
                     className="loginBtn loginBtn--facebook"
-                    href="https://www.facebook.com/v2.8/dialog/oauth?client_id=1812749958752149&amp;state=2d69d288a8a09e33ecdd1bdc3a2ff4dc&amp;response_type=code&amp;sdk=php-sdk-5.5.0&amp;redirect_uri=http%3A%2F%2Fbongdahd.tv%2Ffb-callback&amp;scope=email"
+                    href={$('#fb_url_redirect').value()}
                   >
                       Login with facebook
                   </a>
