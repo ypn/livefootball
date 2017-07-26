@@ -21,11 +21,11 @@ $(document).ready(function(){
     errors: {
       2: {
         headline: 'Trận đấu chưa sẵn sàng.',
-        message: 'Có vẻ như bạn tới hơi sớm, vui lòng làm ly trà đá và quay lại với chúng tôi khi trận đấu bắt đầu.'
+        message: 'Có vẻ như bạn tới hơi sớm, vui lòng làm ly trà đá và quay lại với chúng tôi khi trận đấu bắt đầu. Hoặc có thể do lỗi tải trang, hãy nhấn F5 để  tải lại stream. Yêu bạn <3.'
       },
       4:{
         headline: 'Trận đấu chưa sẵn sàng.',
-        message: 'Có vẻ như bạn tới hơi sớm, vui lòng làm ly trà đá và quay lại với chúng tôi khi trận đấu bắt đầu.'
+        message: 'Có vẻ như bạn tới hơi sớm, vui lòng làm ly trà đá và quay lại với chúng tôi khi trận đấu bắt đầu. Hoặc có thể do lỗi tải trang, hãy nhấn F5 để  tải lại stream. Yêu bạn <3.'
       }
     }
   });
