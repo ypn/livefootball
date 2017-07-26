@@ -13,13 +13,14 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
 use Sentinel;
 use Users;
+use App\Entities\ChatMessages;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
-    public function home(){   
+    public function home(){
 
       if (!session_id()) {
           session_start();
@@ -164,12 +165,11 @@ class Controller extends BaseController
     }
 
     public function listChat(){
-      //CO the luu lich su chat
-      return array();
+      $messages = ChatMessages::select('fb_id','first_name','last_name','message')->get()->toArray();
+      return $messages;
     }
 
     public function login(){
-
       if (!session_id()) {
           session_start();
       }

@@ -43,6 +43,15 @@ export default class ChatFooter extends React.Component{
       el.value +=e.target.title;
   }
 
+  clickSend(){
+      var el = this.refs.entry_text;
+      ActionsChat.createNewItem(el.value);
+      el.value ='';
+      el.style.cssText = 'height:auto; padding:0';
+      el.style.cssText = 'height:' + el.scrollHeight + 'px';
+      el.scrollTop = el.scrollHeight;
+  }
+
   forcusType(){
     if(this.state.auth==='false'){
       $('.popup').fadeIn(200);//this pop up is render in footer component of chat div.
@@ -71,7 +80,7 @@ export default class ChatFooter extends React.Component{
     return(
       <div className="live-chat-footer">
         <div className="wrap-entry-text">
-          <textarea ref="entry_text" onFocus = {this.forcusType.bind(this)} onKeyDown={this.autoExpandInput.bind(this)} type="text" className="form-control entry-message" rows="1" placeholder="Gửi chiến thuật"/>
+          <textarea ref="entry_text" onFocus = {this.forcusType.bind(this)} onKeyDown={this.autoExpandInput.bind(this)} type="text" className="form-control entry-message" rows="1" placeholder="Gửi bình luận ..."/>
           <div className="popup" data-popup="popup-1">
             <div className="popup-inner">
               <a className="popup-close" data-popup-close="popup-1" href="javascript:void(0);">x</a>
@@ -94,7 +103,7 @@ export default class ChatFooter extends React.Component{
             <img className="__act" src="https://garena.live/static/images/icon-emotes.png" />
             {emoji}
           </a>
-          <a href="javascript:void(0);"><img className="__act __act20" src="https://garena.live/static/images/icon-send.png"/></a>
+          <a href="javascript:void(0);" onClick={this.clickSend.bind(this)}><img className="__act __act20" src="https://garena.live/static/images/icon-send.png"/></a>
         </div>
       </div>
     )

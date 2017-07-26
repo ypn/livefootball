@@ -60,7 +60,9 @@ What are you looking for? Feel free to contact me directly.
               id="livehd-video-player"
               class="video-js vjs-big-play-centered vjs-16-9 custom-player"
               poster="{{URL::to('/images/poster.jpg')}}"
-              controls preload="auto"></video>
+              controls preload="auto"
+              onerror = "failed(parentNode)"
+              ></video>
               <div style="padding:5px;text-align:right;">
                 <div class="fb-like" data-href="http://bongdatv.online/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
                 <div class="fb-share-button" data-href="http://bongdatv.online/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbongdatv.online%2F&amp;src=sdkpreparse">Chia sẻ</a></div>
@@ -104,6 +106,9 @@ What are you looking for? Feel free to contact me directly.
         $('#content-right').remove();
         $('#content-center .box').append($('<div>').attr('id','wechat'));
       }
+    </script>
+    <script type="text/javascript">
+    console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;"); 
     </script>
   </body>
 </html>

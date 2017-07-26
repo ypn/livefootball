@@ -12,15 +12,17 @@ class ChatStore extends EventEmitter{
     axios.get('/list-chat').then((response)=>{
       response.data.map((note)=>{
         this.list.push({
-          id : note.id,
-          text: note.text
+          text:note.message,
+          first_name:note.first_name,
+          last_name:note.last_name,
+          fb_id:note.fb_id
         });
       });
       this.emit('get-chat-history');
     });
   }
 
-  addNewChat(text,first_name,last_name,fb_id){  
+  addNewChat(text,first_name,last_name,fb_id){
     this.list.push({
       text,
       first_name,

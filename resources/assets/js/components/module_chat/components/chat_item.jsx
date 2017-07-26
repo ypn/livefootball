@@ -9,7 +9,7 @@ export default class ChatItem extends React.Component{
         <div className="live-chat-item">
           <img className="live-chat-user-avatar"  src={url} />
           <div className="live-chat-content">
-            <label>{this.props.firstName + ' ' + this.props.lastName}</label>
+            <label>{this.props.firstName + ' ' + this.props.lastName} <strong>{this.props.fbId === '482066738811050' ? '(admin)' : null}</strong></label>
             <span className="text-content">
               <Emojify style={{height: 27, width: 27}}>
                 {this.props.chatText}

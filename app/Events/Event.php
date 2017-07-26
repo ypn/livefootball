@@ -15,7 +15,7 @@ class Event implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $message,$first_name,$last_name,$fb_id;
+    public $message,$first_name,$last_name,$fb_id,$uid;
 
     /**
      * Create a new event instance.
@@ -24,10 +24,12 @@ class Event implements ShouldBroadcast
      */
     public function __construct($text)
     {
+        $user = Sentinel::getUser();
         $this->message = $text;
-        $this->first_name = Sentinel::getUser()->first_name;
-        $this->last_name  = Sentinel::getUser()->last_name;
-        $this->fb_id      = Sentinel::getUser()->fb_id;
+        $this->uid = $user->id;
+        $this->first_name = $user->first_name;
+        $this->last_name  = $user->last_name;
+        $this->fb_id      = $user->fb_id;
     }
 
     /**

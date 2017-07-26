@@ -6,6 +6,7 @@ use App\Events\Event;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Cache;
+use App\Entities\ChatMessages;
 
 class EventListener
 {
@@ -27,7 +28,16 @@ class EventListener
      */
     public function handle(Event $event)
     {
-      // echo 'phamnhuy';
-      // Cache::put(time(),$event->message,10);
+        try{
+          $message = new ChatMessages();
+          $message->user_id = $event->uid;
+          $message->first_name = $event->first_name;
+          $message->last_name = $event->last_name;
+          $message->fb_id = $event->fb_id;
+          $message->message = $event->message;
+          $message->save();
+        }catch(\Illuminate\Database\QueryException $ex){
+          
+        }
     }
 }

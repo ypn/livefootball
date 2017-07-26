@@ -5,19 +5,7 @@ $(document).ready(function(){
   //   }
   // });
 
-  var player = videojs('livehd-video-player',{
-    hlsjs: {
-        /**
-         * Will be called on Hls.Events.MEDIA_ATTACHED.
-         *
-         * @param {Hls} hls      The hls instance from hls.js
-         * @param {Object} data  The data from this HLS runtime event
-         */
-        onMediaAttached: function(hls, data) {
-            alert('cccc');
-        }
-    }
-  });
+  var player = videojs('livehd-video-player');
 
   player.src({
     //src:"http://45.76.215.91:4000/live/09691a48a044312108120fcb55d0b321/index.m3u8",//thuckhuya.tv
@@ -27,11 +15,21 @@ $(document).ready(function(){
     type:'application/x-mpegURL'
   });
 
-  player.on('error', function(e) {
-    e.stopImmediatePropagation();
-    var error = this.player().error();
-  });
   player.play();
+
+  player.errors({
+    errors: {
+      2: {
+        headline: 'Trận đấu chưa sẵn sàng.',
+        message: 'Có vẻ như bạn tới hơi sớm, vui lòng làm ly trà đá và quay lại với chúng tôi khi trận đấu bắt đầu.'
+      },
+      4:{
+        headline: 'Trận đấu chưa sẵn sàng.',
+        message: 'Có vẻ như bạn tới hơi sớm, vui lòng làm ly trà đá và quay lại với chúng tôi khi trận đấu bắt đầu.'
+      }
+    }
+  });
+
   // player.dvrseekbar();
 
 
