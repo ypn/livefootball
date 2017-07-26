@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as ActionsChat from '../actions/actions-chat';
 import Emojify from 'react-emojione';
+import $ from 'jquery';
 
 export default class ChatFooter extends React.Component{
 
@@ -65,6 +66,8 @@ export default class ChatFooter extends React.Component{
           </Emojify>
         </div>
       ) :null;
+
+      var fb_url_redirect = $('#fb_url_redirect').val();
     return(
       <div className="live-chat-footer">
         <div className="wrap-entry-text">
@@ -78,7 +81,7 @@ export default class ChatFooter extends React.Component{
                   </p>
                   <a
                     className="loginBtn loginBtn--facebook"
-                    href={$('#fb_url_redirect').value()}
+                    href={fb_url_redirect}
                   >
                       Login with facebook
                   </a>
