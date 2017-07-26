@@ -81,10 +81,10 @@ What are you looking for? Feel free to contact me directly.
       </div>
       <div id="desktopTest" class="hiden-sm hidden-xs"></div>
     </div>
-    <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/lib/ainokishi.min.js"></script>
-    <script src="js/plugins/chat-master.js"></script>
+    <script async src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
+    <script async src="js/app.js"></script>
+    <script async src="js/lib/ainokishi.min.js"></script>
+    <script async src="js/plugins/chat-master.js"></script>
     <script type="text/javascript">
       if($('#desktopTest').is(':hidden')){
         $('#content-right').remove();
