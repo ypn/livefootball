@@ -1,6 +1,5 @@
 import React from 'react';
 import Emojify from 'react-emojione';
-import troll  from '../assets/image.jpg';
 
 export default class ChatItem extends React.Component{
   render(){

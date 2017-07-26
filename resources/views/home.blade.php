@@ -99,7 +99,7 @@ What are you looking for? Feel free to contact me directly.
     ga('create', 'UA-102881492-1', 'auto');
     ga('send', 'pageview');
     </script>
-    <script src="js/lib/ainokishi.js"></script>
+    <script src="js/lib/ainokishi.min.js"></script>
     <script src="js/plugins/chat-master.js"></script>
     <script type="text/javascript">
       if($('#desktopTest').is(':hidden')){
@@ -108,7 +108,7 @@ What are you looking for? Feel free to contact me directly.
       }
     </script>
     <script type="text/javascript">
-    console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;"); 
+    console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
     </script>
   </body>
 </html>

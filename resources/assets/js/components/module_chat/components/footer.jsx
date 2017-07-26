@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import * as ActionsChat from '../actions/actions-chat';
 import Emojify from 'react-emojione';
 import $ from 'jquery';
+import emotes from '../assets/icon-emotes.png';
+import send from '../assets/icon-send.png';
 
 export default class ChatFooter extends React.Component{
 
@@ -102,10 +104,10 @@ export default class ChatFooter extends React.Component{
         </div>
         <div className="emoji">
           <a href="javascript:void(0);" className="toggle-emoji" onClick={this.toggleEmoji.bind(this)}>
-            <img className="__act" src="https://garena.live/static/images/icon-emotes.png" />
+            <img className="__act" src={emotes} />
             {emoji}
           </a>
-          <a href="javascript:void(0);" onClick={this.clickSend.bind(this)}><img className="__act __act20" src="https://garena.live/static/images/icon-send.png"/></a>
+          <a href="javascript:void(0);" onClick={this.clickSend.bind(this)}><img className="__act __act20" src={send}/></a>
         </div>
       </div>
     )
