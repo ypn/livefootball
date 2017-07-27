@@ -18,3 +18,4 @@ Route::get('/login','Controller@login');
 Route::get('/fb-redirect','Controllers@fbRedirect');
 Route::get('/fb-callback','Controller@fbCallback');
 Route::post('/check-auth','Controller@checkAuth');
+Route::get('noti-facebook','Controller@postFb');

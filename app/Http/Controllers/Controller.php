@@ -170,19 +170,44 @@ class Controller extends BaseController
       return $messages;
     }
 
-    public function login(){
-      if (!session_id()) {
-          session_start();
-      }
+    // public function login(){
+    //   if (!session_id()) {
+    //       session_start();
+    //   }
+    //   $fb = new \Facebook\Facebook([
+    //     'app_id' => '1812749958752149',
+    //     'app_secret' => '32a370b14d3b6140736ce7eaa13c962c',
+    //     'default_graph_version' => 'v2.8',
+    //   ]);
+    //
+    //   $helper = $fb->getRedirectLoginHelper();
+    //
+    //   $permissions = ['email']; // Optional permissions
+    //   $loginUrl = $helper->getLoginUrl(url('/') . '/fb-login', $permissions);
+    // }
+
+    //Send notification to Facebook
+    public function postFb(){
       $fb = new \Facebook\Facebook([
         'app_id' => '1812749958752149',
         'app_secret' => '32a370b14d3b6140736ce7eaa13c962c',
         'default_graph_version' => 'v2.8',
+        'grant_type' => 'client_credentials'
+        //'default_access_token' => '{access-token}', // optional
       ]);
 
-      $helper = $fb->getRedirectLoginHelper();
+      //print_r($fb->getApp()->getAccessToken());die;
 
-      $permissions = ['email']; // Optional permissions
-      $loginUrl = $helper->getLoginUrl(url('/') . '/fb-login', $permissions);
+       try{
+           $post = $fb->post('/396057174078674/notifications/',  array(
+            'access_token' => '1812749958752149|32a370b14d3b6140736ce7eaa13c962c',
+            'href' => 'https://dualnown.net/',  //this does link to the app's root, don't think this actually works, seems to link to the app's canvas page
+            'template' => 'bongdatv đang phát trực tiếp trận MU - MC',
+            'ref' => 'Notification sent ' //this is for Facebook's insight
+          ));
+       }catch(Facebook\Exceptions\FacebookResponseException $ex){
+          echo'caiu cc';
+       }
+
     }
 }
