@@ -40,54 +40,27 @@
     right: 0;
     overflow-y:auto;
     transform: translate(-10px , -100%);
-    width: 274px;
+    width: 279px;
     height: 350px;
     background: #fff;
     text-align: left;
     padding: 15px 15px 0 15px;
   }
 
-  .live-chat-footer .emoji .__act{
-    width: 15px;
-    height: 15px;
-    margin: 10px;
-    object-fit: cover;
-  }
-
-  .live-chat-footer .emoji .__act.__act20{
-    height:16px;
-    width: 20px;
+  .emoji i.fa{
+    font-size: 18px;
+    margin: 0 10px;
   }
 
 .entry-message,.entry-message:focus{
-  border: rgba(0,0,0,0);
-  color:rgba(255,255,255,.8);
   padding:5px;
   border-radius: 0;
   box-shadow: none;
   overflow:hidden;
   transition: all 0.2s;
   resize: none;
-  background:rgba(173, 182, 190,0);
 }
 
-.entry-message::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:rgba(255,255,255,.6);
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-     color:rgba(255,255,255,.6);
-   opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-     color:rgba(255,255,255,.6);
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-     color:rgba(255,255,255,.6);
-}
-::-ms-input-placeholder { /* Microsoft Edge */
-    color:rgba(255,255,255,.6);
-}
 
 
 /*===============Chat==============*/
@@ -104,7 +77,6 @@
 .live-chat-item{
   margin: 15px;
   display: flex;
-  color: rgba(255,255,255,0.8);
   align-items: flex-start;
 }
 
@@ -117,7 +89,7 @@
 }
 
 .live-chat-item .live-chat-content label{
-  color:#aaa;
+  color: #000;
   margin-right: 5px;
 }
 

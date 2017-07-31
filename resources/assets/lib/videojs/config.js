@@ -5,18 +5,18 @@ $(document).ready(function(){
   //   }
   // });
 
+
   var player = videojs('livehd-video-player');
 
   player.src({
     //src:"http://45.76.215.91:4000/live/09691a48a044312108120fcb55d0b321/index.m3u8",//thuckhuya.tv
     //src:"http://bongdatv.online:8095/hls/stream.m3u8",
     //src:'http://localhost:8092/hls/stream.m3u8',
-    src:" https://vtbd.vn.data.garena.tv/hls/198245/1296813.m3u8",
+    //src:"https://vtbd.vn.data.garena.tv/hls/198245/1296813.m3u8",
+    // src:'http://222.255.27.138/hls/4545780bfa790819/13/5/87f3504530d7b75ea9e3fe746b4a6588ef720243da517adc6ba813f456026f07/dnR2Ng==.m3u8',
+    src:'http://vndatagarenatv-a.akamaihd.net/hls/198167/1413383.m3u8',
     type:'application/x-mpegURL'
   });
-
-  player.play();
-
   player.errors({
     errors: {
       2: {
@@ -29,6 +29,9 @@ $(document).ready(function(){
       }
     }
   });
+
+  player.play();
+
 
   // player.dvrseekbar();
 
@@ -62,30 +65,8 @@ $(document).ready(function(){
         $(this).toggleClass('open');
 
       });
-    })(jQuery);
+  })(jQuery);
 
-    //Blur background
-    $(function() {
-    // Change this value to adjust the amount of blur
-    var BLUR_RADIUS = 100;
-
-    var canvas = document.querySelector('[data-canvas]');
-    var canvasContext = canvas.getContext('2d');
-
-    var image = new Image();
-    image.src = document.querySelector('[data-canvas-image]').src;
-
-    var drawBlur = function() {
-      var w = canvas.width;
-      var h = canvas.height;
-      canvasContext.drawImage(image, 0, 0, w, h);
-      stackBlurCanvasRGBA('heroCanvas', 0, 0, w, h, BLUR_RADIUS);
-    };
-
-    image.onload = function() {
-      drawBlur();
-    }
-  });
 
 
   $(function() {

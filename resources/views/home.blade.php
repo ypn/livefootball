@@ -31,65 +31,92 @@ What are you looking for? Feel free to contact me directly.
     <meta property="og:image" content="{{URL::to('/images/fb_share.jpg')}}" />
     <meta property ="fb:app_id" content="1812749958752149"/>
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="js/lib/ainokishi.css">
     <link rel="stylesheet" href="css/master.css">
     <input type="hidden" id="fb_url_redirect" value="<?php echo $fb_url; ?>">
-    <img  data-canvas-image src="{{File::get('background.txt')}}">
   </head>
   <body>
-    <canvas class="hero__background" data-canvas id="heroCanvas" style="width:100%;height:100vh;"></canvas>
-    <div class="row no-gutters content-wrapper" style="position:relative;z-index:2">
-      <div class="row col-lg-9 col-md-9  col-sm-12 col-xs-12 no-gutters jj">
-          <div id="left-side-bar" class="content-left">
-            <div class="box">
-              <div id="nav-icon4" class="humburger-button">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+    <div class="col-md-12 no-gutters" id="wrapper">
+    	<div class="col-md-2 m-nav-bar">
+    		<div class="col-md-12">
+    			<div class="box red">
+            <div id="nav-icon4" class="humburger-button open">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-          </div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="col-md-10 m-content">
+    		<div class="col-md-12">
+    			<div class="col-md-9">
+            <div class="green">
+      				<div class="g-content">
+                <div>
+                  <video
+                  style="border:1px solid #000;"
+                  id="livehd-video-player"
+                  class="video-js vjs-big-play-centered vjs-16-9 custom-player"
+                  poster="{{URL::to('/images/poster.jpg')}}"
+                  controls preload="auto"
+                  ></video>
+                  <div style="margin-right:15px;">
+                    <div style="padding:5px;text-align:right;">
+                      <div class="fb-like" data-href="http://bongdatv.online/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+                      <div class="fb-share-button" data-href="http://bongdatv.online/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbongdatv.online%2F&amp;src=sdkpreparse">Chia sẻ</a></div>
+                    </div>
+                    <div class="hidden-sm hidden-xs">
+                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
-          <div id="content-center" class="content-center">
-            <div class="box disable-scrollbar" style="overflow-y:auto; color:#fff;">
-              <nav></nav>
-              <video
-              style="border:1px solid #000;"
-              id="livehd-video-player"
-              class="video-js vjs-big-play-centered vjs-16-9 custom-player"
-              poster="{{URL::to('/images/poster.jpg')}}"
-              controls preload="auto"
-              onerror = "failed(parentNode)"
-              ></video>
-              <div style="padding:5px;text-align:right;">
-                <div class="fb-like" data-href="http://bongdatv.online/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
-                <div class="fb-share-button" data-href="http://bongdatv.online/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbongdatv.online%2F&amp;src=sdkpreparse">Chia sẻ</a></div>
-              </div>
-              <div>
-                <h4>✔ Like fanpage để cập nhật lịch tường thuật trực tiếp các trận cầu đỉnh cao tại bongdatv.online</h4>
-                <h6>✔ Cảm ơn các bạn đã theo đã sử dụng dịch vụ phiên bản thử nghiệm của bongdatv.online. Bản chính thức sẽ có trong tuần tới.</h6>
-              </div>
+                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+
+                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                    </div>
+                  </div>
+                </div>
+      				</div>
             </div>
-          </div>
-
-      </div>
-
-      <div class="col-lg 3 col-md-3 hidden-sm hidden-xs" id="content-right">
-        <div class="box red"  style="color:#fff;">
-          <div id="wechat" data-authentication = {{Sentinel::check()?"true":"false"}} ></div>
-        </div>
-      </div>
-      <div id="desktopTest" class="hiden-sm hidden-xs"></div>
+    			</div>
+    			<div class="col-md-3">
+    				<div class="box blue">
+    					<div id="wechat" data-authentication = {{Sentinel::check()?"true":"false"}} ></div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
     </div>
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/lib/ainokishi.min.js"></script>
+    <script src="js/lib/ainokishi.js"></script>
     <script src="js/plugins/chat-master.js"></script>
     <script type="text/javascript">
-      if($('#desktopTest').is(':hidden')){
-        $('#content-right').remove();
-        $('#content-center .box').append($('<div>').attr('id','wechat'));
-      }
+      $('#nav-icon4').click(function(){
+        $('#wrapper').toggleClass('toggle');
+      });
+
+      (function($) {
+          var $window = $(window),
+              $html = $('#wrapper');
+
+          function resize() {
+              if ($window.width() < 992) {
+                $html.removeClass('toggle');
+                $('#nav-icon4').removeClass('open');
+              }else{
+                  $('#nav-icon4').addClass('open');
+              }
+          }
+
+          $window
+              .resize(resize)
+              .trigger('resize');
+      })(jQuery);
+
+
+
       console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
 
     </script>

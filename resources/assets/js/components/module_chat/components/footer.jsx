@@ -104,10 +104,10 @@ export default class ChatFooter extends React.Component{
         </div>
         <div className="emoji">
           <a href="javascript:void(0);" className="toggle-emoji" onClick={this.toggleEmoji.bind(this)}>
-            <img className="__act" src={emotes} />
+            <i className="fa fa-smile-o" aria-hidden="true"></i>
             {emoji}
           </a>
-          <a href="javascript:void(0);" onClick={this.clickSend.bind(this)}><img className="__act __act20" src={send}/></a>
+          <a href="javascript:void(0);" onClick={this.clickSend.bind(this)}><i className="fa fa-paper-plane" aria-hidden="true"></i></a>
         </div>
       </div>
     )

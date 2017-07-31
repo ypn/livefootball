@@ -2,14 +2,20 @@ body{
   font-family: 'Ubuntu', sans-serif;
 }
 .box{
-  width: 100%;
   height: 100vh;
 }
 
+.red{
+  background: #222635;
+}
+
 .green{
-  background: green;
-  border-left: 1px solid #fff;
-  border-right: 1px solid #fff;
+  background: #101117;
+  overflow: hidden;
+  .g-content{
+    height:100%;
+    overflow-y:auto;
+  }
 }
 
 .no-gutters{
@@ -17,11 +23,21 @@ body{
   margin-left: 0;
 }
 
-.row.no-gutters > [class^="col-"],
-.row.no-gutters > [class*=" col-"]{
+ [class^="col-"],
+ [class*=" col-"]{
   padding-right: 0;
   padding-left: 0;
 }
+
+
+.m-nav-bar{
+	transition: .3s ease-in-out;
+}
+
+.m-content{
+	transition: .3s ease-in-out;
+}
+
 
 
 
@@ -33,28 +49,6 @@ body{
   width: 100%;
   height: 100vh;
   z-index: 1;
-}
-
-::-webkit-scrollbar-track
-  {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
-::-webkit-scrollbar{
-  background: #333;
-  width: 10px;
-}
-
-.disable-scrollbar::-webkit-scrollbar{
-  display: none;
-}
-
-::-webkit-scrollbar-thumb{
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: #333;
 }
 
 .left-size-bar{
@@ -116,4 +110,33 @@ body{
 
 #content-right{
   border-left: 1px solid rgba(255,255,255,0.08);
+}
+
+@media(max-width:992px){
+	.red{
+		height: 50px;
+		transition: .3s ease-in-out;
+	}
+	#wrapper.toggle .red{
+		height: 30vh;
+	}
+}
+
+@media(min-width:1200px){
+}
+@media(min-width:768px){}
+@media(min-width:992px){
+	#wrapper.toggle .m-nav-bar{
+		width: 36px;
+	}
+  .green{
+    height: 100vh;
+    .g-content{
+      margin-right: -15px;
+    }
+  }
+
+	#wrapper.toggle  .m-content{
+		 width: calc(100% - 36px);
+	}
 }
