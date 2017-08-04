@@ -14,14 +14,41 @@ use Illuminate\Support\Facades\Session;
 use Sentinel;
 use Users;
 use App\Entities\ChatMessages;
+use App\Entities\Matchs;
+use App\Entities\Leaguages;
+use App\Entities\Clubs;
+use Carbon\Carbon;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
-    public function home(){
+    public function starter(){
 
+      $matchs = Matchs::select('alias','team_1','team_2','leaguage_id','date_start')->orderBy('date_start')->get();
+
+      foreach($matchs as $m){
+        $leaguage = Leaguages::where('id',$m->leaguage_id)->select('image_cover','name')->first();
+        $m->leaguage_name = isset($leaguage->name)?$leaguage->name:null;
+
+        $team_1 = Clubs::where('id',$m->team_1)->select('name','logo_url')->first();
+        $team_2 = Clubs::where('id',$m->team_2)->select('name','logo_url')->first();
+        $m->team_1_name = isset($team_1->name)?$team_1->name:'Chưa xác định clb';
+        $m->team_1_logo = isset($team_1->logo_url)?$team_1->logo_url:null;
+        $m->team_2_name = isset($team_2->name)?$team_2->name:'Chưa xác định clb';
+        $m->team_2_logo = isset($team_2->logo_url)?$team_2->logo_url:null;
+
+        $m->time_start = date('h:i A',strtotime($m->date_start));
+        $m->day_start = date('d/m',strtotime($m->date_start));
+
+
+      }
+
+      return view ('starter',['matchs'=>$matchs]);
+    }
+
+    public function showMatch($alias){
       if (!session_id()) {
           session_start();
       }
@@ -36,7 +63,22 @@ class Controller extends BaseController
       $permissions = ['email']; // Optional permissions
       $loginUrl = $helper->getLoginUrl(url('/') . '/fb-callback', $permissions);
 
-      return view ('home',array('fb_url'=>$loginUrl));
+
+      $match = Matchs::where('alias',$alias)->select('id','team_1','team_2','leaguage_id','date_start','status')->first();
+
+      if(!empty($match)){
+        $leaguage = Leaguages::where('id',$match->leaguage_id)->select('name')->first();
+        $match->leaguage_name = isset($leaguage->name)?$leaguage->name:'Giải đấu chưa xác định';
+        $team_1 = Clubs::where('id',$match->team_1)->select('name','logo_url')->first();
+        $team_2 = Clubs::where('id',$match->team_2)->select('name','logo_url')->first();
+        $match->team_1_name = isset($team_1->name)?$team_1->name:'Đội nhà chưa xác định';
+        $match->team_1_logo = isset($team_1->logo_url)?$team_1->logo_url:null;
+        $match->team_2_name = isset($team_2->name)?$team_2->name:'Đội khách chưa xác định';
+        $match->team_2_logo = isset($team_2->logo_url)?$team_2->logo_url:null;
+        $match->time_count = (new Carbon($match->date_start))->diffInSeconds(Carbon::now());
+      }
+
+      return view ('home',array('fb_url'=>$loginUrl,'match'=>$match));
     }
 
     public function fbCallback(){
@@ -206,7 +248,7 @@ class Controller extends BaseController
             'ref' => 'Notification sent ' //this is for Facebook's insight
           ));
        }catch(Facebook\Exceptions\FacebookResponseException $ex){
-          echo'caiu cc';
+          echo 'Có lỗi: '. $ex.getMessage();
        }
 
     }

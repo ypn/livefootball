@@ -16,7 +16,6 @@ What are you looking for? Feel free to contact me directly.
 ❤ email: nhuyphambkhn@gmail.com
 ❤ faebook:https://www.facebook.com/menh.thien.1
 -->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,10 +29,32 @@ What are you looking for? Feel free to contact me directly.
     <meta property="og:description"        content="Livestream bóng đá HD, K+ online. Thưởng thức các trận cậu đỉnh cao dễ dàng bằng công nghệ livestream hàng đầu Việt Nam với chất lượng hình ảnh tốt nhất, tương tác trực tiếp với bình luận viên và hàng ngàn khán giả khác. Duy nhất tại bongdatv.online" />
     <meta property="og:image" content="{{URL::to('/images/fb_share.jpg')}}" />
     <meta property ="fb:app_id" content="1812749958752149"/>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="js/lib/ainokishi.css">
-    <link rel="stylesheet" href="css/master.css">
+    @if($match->status==1)
+    <link rel="stylesheet" href="/js/lib/ainokishi.css">
+    @else
+    <link rel="stylesheet" href="/js/lib/flipclock/flipclock.css">
+    @endif
+    <link rel="stylesheet" href="/css/master.css">
+    <style media="screen">
+      .show-match{
+        width:100%;
+        min-height:60vh;
+        background:orange;
+        display: inline-block;
+        text-align:center;
+      }
+      .show-match-info .club{
+        width:50%;
+        float:left;
+      }
+
+      .show-match-info .club img{
+        width:8em;
+        height:8em;
+      }
+    </style>
     <input type="hidden" id="fb_url_redirect" value="<?php echo $fb_url; ?>">
   </head>
   <body>
@@ -55,6 +76,7 @@ What are you looking for? Feel free to contact me directly.
             <div class="green">
       				<div class="g-content">
                 <div>
+                  @if($match->status==1)
                   <video
                   style="border:1px solid #000;"
                   id="livehd-video-player"
@@ -62,18 +84,35 @@ What are you looking for? Feel free to contact me directly.
                   poster="{{URL::to('/images/poster.jpg')}}"
                   controls preload="auto"
                   ></video>
+                  @else
+                  <div class="show-match">
+                    <h1>
+                      {{$match->leaguage_name}}
+                    </h1>
+
+                    <div class="show-match-info">
+                      <div class="club home">
+                        <img src="{{$match->team_1_logo}}" alt="">
+                        <h5>{{$match->team_1_name}}</h5>
+                      </div>
+                      <div class="club guest">
+                          <img src="{{$match->team_2_logo}}" alt="">
+                          <h5>{{$match->team_2_name}}</h5>
+                      </div>
+                    </div>
+
+                    <div class="count-down">
+                      <div class="clock" style="margin:2em;"></div>
+                    </div>
+                  </div>
+                  @endif
                   <div style="margin-right:15px;">
                     <div style="padding:5px;text-align:right;">
-                      <div class="fb-like" data-href="http://bongdatv.online/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
-                      <div class="fb-share-button" data-href="http://bongdatv.online/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbongdatv.online%2F&amp;src=sdkpreparse">Chia sẻ</a></div>
+                      <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+                      <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
                     </div>
                     <div class="hidden-sm hidden-xs">
-                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
-                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-
-
-                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
                     </div>
                   </div>
                 </div>
@@ -89,9 +128,36 @@ What are you looking for? Feel free to contact me directly.
     	</div>
     </div>
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/lib/ainokishi.js"></script>
-    <script src="js/plugins/chat-master.js"></script>
+    <script src="/js/app.js"></script>
+    @if($match->status == 1)
+    <script src="/js/lib/ainokishi.js"></script>
+    @else
+    <script src="/js/lib/flipclock/flipclock.js"></script>
+    <script type="text/javascript">
+    var clock;
+
+    $(document).ready(function() {
+      var clock;
+
+      clock = $('.clock').FlipClock({
+            clockFace: 'DailyCounter',
+            autoStart: false,
+            language:'vn',
+            callbacks: {
+              stop: function() {
+                $('.message').html('The clock has stopped!')
+              }
+            }
+        });
+
+        clock.setTime(<?php echo $match->time_count; ?>);
+        clock.setCountdown(true);
+        clock.start();
+
+    });
+    </script>
+    @endif
+    <script src="/js/plugins/chat-master.js"></script>
     <script type="text/javascript">
       $('#nav-icon4').click(function(){
         $('#wrapper').toggleClass('toggle');
@@ -118,6 +184,22 @@ What are you looking for? Feel free to contact me directly.
 
 
       console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+      console.log('If you want to get something from my website, feel free to contact me via:');
+      console.log('Email:ypnwebdev@gmail.com');
+      console.log('Skype:ypn_skype');
+      console.log('Thank for you consideration! Love you <3');
+      console.log('-----------------------------------------');
+
+
+      console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+      console.log("| $$  | $$ /$$__  $$| $$__  $$");
+      console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+      console.log("| $$  | $$| $$  | $$| $$  | $$")
+      console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+      console.log("\____  $$| $$____/ |__/  |__/");
+      console.log("/$$  | $$| $$");
+      console.log("|  $$$$$$/| $$");
+      console.log("\______/ |__/");
 
     </script>
     <script>(function(d, s, id) {

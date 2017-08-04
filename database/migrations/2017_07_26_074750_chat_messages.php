@@ -26,6 +26,46 @@ class ChatMessages extends Migration
           $table->engine = 'InnoDB';
       });
 
+      Schema::create('clubs', function (Blueprint $table) {
+          $table->increments('id');
+          $table->string('name');
+          $table->string('logo_url');
+          $table->timestamp('completed_at')->nullable();
+          $table->timestamps();
+
+          $table->engine = 'InnoDB';
+      });
+
+      Schema::create('leaguages', function (Blueprint $table) {
+          $table->increments('id');
+          $table->string('name');
+          $table->string('logo_url');
+          $table->string('image_cover');
+
+          $table->timestamp('completed_at')->nullable();
+          $table->timestamps();
+
+          $table->engine = 'InnoDB';
+      });
+
+      Schema::create('matchs', function (Blueprint $table) {
+          $table->increments('id');
+          $table->string('name');
+          $table->integer('leaguage_id');
+          $table->integer('team_1');
+          $table->integer('team_2');
+          $table->tinyInteger('status');
+          $table->dateTime('date_start');
+          $table->timestamp('completed_at')->nullable();
+          $table->timestamps();
+
+          $table->engine = 'InnoDB';
+      });
+
+
+
+
+
     }
 
     /**
@@ -36,5 +76,8 @@ class ChatMessages extends Migration
     public function down()
     {
         Schema::drop('chat_messages');
+        Schema::drop('clubs');
+        Schema::drop('leaguages');
+        Schema::drop('matchs');
     }
 }

@@ -1,0 +1,217 @@
+* { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+.vid-info { width: 50%; padding: .5rem; }
+.vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+.vid-info .acronym { display: none; }
+}
+
+.h-title{
+  color:#fff;
+  text-align:center;
+  font-weight:bold;
+  background: rgba(255, 96, 65, 0.9);
+  padding: 15px;
+}
+
+.live-item{
+  background: #fff;
+  text-decoration: none!important;
+  display: block;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/*float menu*/
+.float-nav {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+.float-nav > a.menu-btn {
+  text-decoration: none;
+  display: block;
+  background-color: #cc3333;
+  color: white;
+  padding: 17px 19px 12px 19px;
+  text-align: center;
+  width: 56px;
+  border-radius: 50%;
+}
+.float-nav > a.menu-btn.active {
+  transition: background-color 250ms linear;
+  background-color: transparent;
+  box-shadow: none;
+}
+.float-nav > a.menu-btn.active > ul > li.line:nth-child(1) {
+  border-width: 2px;
+  -moz-transform: rotate(45deg) translate(4px, 6px);
+  -ms-transform: rotate(45deg) translate(4px, 6px);
+  -webkit-transform: rotate(45deg) translate(4px, 6px);
+  transform: rotate(45deg) translate(4px, 6px);
+}
+.float-nav > a.menu-btn.active > ul > li.line:nth-child(2) {
+  visibility: hidden;
+}
+.float-nav > a.menu-btn.active > ul > li.line:nth-child(3) {
+  border-width: 2px;
+  -moz-transform: rotate(-45deg) translate(8px, -10px);
+  -ms-transform: rotate(-45deg) translate(8px, -10px);
+  -webkit-transform: rotate(-45deg) translate(8px, -10px);
+  transform: rotate(-45deg) translate(8px, -10px);
+}
+.float-nav > a.menu-btn > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.float-nav > a.menu-btn > ul > li.line {
+  border: 1px solid white;
+  width: 100%;
+  margin-bottom: 7px;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+}
+.float-nav > a.menu-btn > .menu-txt {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.main-nav {
+  opacity: 0;
+  font-family: sans-serif;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transform: scale(0,0);
+  transition: all 0.3s ease-in-out;
+}
+.main-nav.active {
+  transform: scale(1,1);
+  opacity: 1;
+  z-index: 8;
+}
+.main-nav > ul {
+  width: 100%;
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #cc3333;
+  box-shadow: 2px 2px 8px #777;
+  border-radius: 3px 3px 33.5px 3px;
+}
+.main-nav > ul > li > a {
+  text-decoration: none;
+  display: block;
+  font-weight: 200;
+  padding: 18px 80px 18px 18px;
+  color: white;
+}
+.main-nav > ul > li > a:hover {
+  font-weight: 400;
+}
+
+/**/
+
+.live-item .logo {
+    background-size: 100% 100%;
+    padding-bottom: 57.5%;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.live-item.champion-leaguage .logo{
+  background-image: url('http://i.imgur.com/AgQNYWNl.jpg');
+}
+
+.live-item.premier-leaguage .logo{
+  background-image: url('http://i.imgur.com/gscm5MTl.jpg');
+}
+
+.live-item.laliga .logo{
+  background-image: url('http://i.imgur.com/tlTjtsgl.jpg');
+}
+
+.live-item.uafa-super-cup .logo{
+  background-image: url('http://i.imgur.com/79boad8l.jpg');
+}
+
+
+.live-item .logo img {
+    position: absolute;
+    top: 25%;
+    height: 50%;
+}
+
+.live-item .logo img.first-logo {
+    left: 15%;
+}
+.live-item .logo img.second-logo {
+    right: 15%;
+}
+
+.live-item .info {
+    padding: 12px 8px;
+}
+
+.live-item .time {
+    color: #333;
+    float: left;
+    width: 70px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.live-item .day {
+    display: block;
+    font-size: 20px;
+    line-height: 21px;
+    font-weight: 700;
+    font-family: 'Roboto Condensed',sans-serif;
+    margin-bottom: 3px;
+}
+.live-item .team {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.live-item .leage {
+    color: #999;
+    text-align: center;
+}

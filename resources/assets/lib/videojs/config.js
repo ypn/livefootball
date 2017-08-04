@@ -5,6 +5,15 @@ $(document).ready(function(){
   //   }
   // });
 
+  // videojs.Hls.xhr.beforeRequest = function(options) {
+  //
+  //   options.headers = {
+  //     'Origin':'https://fptplay.net',
+  //     'Referer':'https://fptplay.net/livetv'
+  //   }
+  //       return options;
+  // };
+
 
   var player = videojs('livehd-video-player');
 
@@ -13,9 +22,9 @@ $(document).ready(function(){
     //src:"http://bongdatv.online:8095/hls/stream.m3u8",
     //src:'http://localhost:8092/hls/stream.m3u8',
     //src:"https://vtbd.vn.data.garena.tv/hls/198245/1296813.m3u8",
-    // src:'http://222.255.27.138/hls/4545780bfa790819/13/5/87f3504530d7b75ea9e3fe746b4a6588ef720243da517adc6ba813f456026f07/dnR2Ng==.m3u8',
-    src:'http://vndatagarenatv-a.akamaihd.net/hls/198167/1413383.m3u8',
-    type:'application/x-mpegURL'
+    src:'http://al.flv.huya.com/huyalive/90763538-2593561418-11139261470477385728-118194782-10057-A-1501589130-1.flv?wsSecret=a1e09950726a1932f99bca187d1ce0ea&wsTime=59809e52&ratio=2000',
+    ///src:'http://vndatagarenatv-a.akamaihd.net/hls/198167/1413383.m3u8',
+    type:'video/x-flv'
   });
   player.errors({
     errors: {
