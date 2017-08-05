@@ -31,7 +31,7 @@ What are you looking for? Feel free to contact me directly.
     <meta property ="fb:app_id" content="1812749958752149"/>
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    @if($match->status==0)
+    @if($match->status==1)
     <link rel="stylesheet" href="/js/lib/ainokishi.css">
     @else
     <link rel="stylesheet" href="/js/lib/flipclock/flipclock.css">
@@ -125,6 +125,58 @@ What are you looking for? Feel free to contact me directly.
     	  border-width: .5em .5em 0 0;
   	}
 
+    @media(min-width:1200px){
+    }
+    @media(min-width:768px){}
+    @media(min-width:992px){
+      #wrapper.toggle .m-nav-bar .left-bar-link span{
+        display: none;
+      }
+
+      #wrapper .m-nav-bar .left-bar-link span{
+        transition: all 0.3s ease;
+      }
+
+      #wrapper.toggle .m-nav-bar .left-bar-link li{
+        padding: 10px 7px;
+      }
+
+      #wrapper.toggle .m-nav-bar .left-bar-link .fa{
+        font-size: 24px;
+      }
+
+      #wrapper.toggle .m-nav-bar .left-bar-link a:hover{
+        padding: 10px 0px;
+      }
+    }
+
+    .m-nav-bar .left-bar-link{
+      margin: 0;padding: 0;
+      list-style: none;
+    }
+
+    .m-nav-bar .left-bar-link li {
+      padding: 10px 15px;
+      transition: all 0.3s ease;
+    }
+
+    .m-nav-bar .left-bar-link a{
+      color: #fff;
+    }
+
+    .m-nav-bar .left-bar-link a:hover{
+      transition: all 0.3s ease;
+      text-decoration: none;
+      padding-left: 10px;
+    }
+
+
+    .m-nav-bar .left-bar-link .fa{
+      font-size: 20px;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+
 
     </style>
     <input type="hidden" id="fb_url_redirect" value="<?php echo $fb_url; ?>">
@@ -139,6 +191,11 @@ What are you looking for? Feel free to contact me directly.
               <span></span>
               <span></span>
             </div>
+            <span class="clearfix"></span>
+            <ul class="left-bar-link">
+              <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> <span>Trang chủ</span></a></li>
+              <li><a href="/starter"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>Lịch trực tiếp</span></a></li>
+            </ul>
     			</div>
     		</div>
     	</div>
@@ -149,7 +206,7 @@ What are you looking for? Feel free to contact me directly.
             <div class="green" style="background:#e9ebee;">
       				<div class="g-content">
                 <div>
-                  @if($match->status==0)
+                  @if($match->status==1)
                   <video
                   style="border:1px solid #000;"
                   id="livehd-video-player"
@@ -187,8 +244,8 @@ What are you looking for? Feel free to contact me directly.
                       </div>
                       <div style="margin-top:-30px;">
                         <div style="text-align:right;margin-right:10px;">
-                          <div style="font-size:15px;font-weight:bold;padding-left:22px;padding-right:15px;border-bottom:2px solid green;display:inline-block;">
-                            800 người đang xem
+                          <div style="font-size:15px;padding-left:22px;padding-right:15px;border-bottom:2px solid green;display:inline-block;">
+                            696 người đang xem
                           </div>
                         </div>
                         <div style="padding:5px;text-align:right;">
@@ -224,7 +281,7 @@ What are you looking for? Feel free to contact me directly.
     </div>
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
-    @if($match->status == 0)
+    @if($match->status == 1)
     <script src="/js/lib/ainokishi.js"></script>
     @else
     <script src="/js/lib/flipclock/flipclock.js"></script>
@@ -233,7 +290,6 @@ What are you looking for? Feel free to contact me directly.
 
     $(document).ready(function() {
       var clock;
-
       clock = $('.clock').FlipClock({
             clockFace: 'DailyCounter',
             autoStart: false,

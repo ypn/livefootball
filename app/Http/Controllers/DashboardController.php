@@ -77,17 +77,6 @@ class DashboardController extends BaseController
         $team_2 = Clubs::where('id',$match->team_2)->select('name')->first();
         $match->team_2_name = isset($team_2->name)?$team_2->name:'Tên đội khách chưa xác định';
         $match->date_start = date('d-m-Y h:i A',strtotime($match->date_start));
-        switch($match->status){
-          case 0:
-            $match->status = 'Sắp diễn ra';
-            break;
-          case 1:
-            $match->status = 'Đang trực tiếp';
-            break;
-          case 2:
-            $match->status = 'Đã kết thúc';
-            break;
-        }
       }
       return view ('dashboard.list_match',['matchs'=>$matchs]);
     }
@@ -137,6 +126,7 @@ class DashboardController extends BaseController
         try{
           $match = new Matchs();
           $match->name = $input['name'];
+          $match->alias = str_slug($input['name']);
           $match->team_1 = $input['id_team_a'];
           $match->team_2 = $input['id_team_b'];
           $match->leaguage_id = $input['leaguage_id'];
@@ -148,6 +138,29 @@ class DashboardController extends BaseController
         }
       }
 
+    }
+
+    public function changeMatchStatus(){
+      $input = Input::all();
+        try{
+          Matchs::where('id',$input['match_id'])->update(['status'=>$input['status_val']]);
+          return 1;
+
+        }catch(\Exception $ex){
+          return array(
+            'status'=>'error',
+            'message'=>$ex.getMessage()
+          );
+        }
+    }
+
+    public function deleteMatch($match_id){
+      try{
+        Matchs::where('id',$match_id)->delete();
+        return Redirect::back();
+      }catch(\Exception $ex){
+        echo $ex.getMessage();
+      }
     }
 
 

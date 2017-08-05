@@ -1,4 +1,39 @@
 @extends('dashboard.master')
+@section('script')
+<script type="text/javascript">
+  (function($){
+    $('.change-status').on('change',function(){
+      $.ajax({
+        url:window.location.origin + '/dashboard/match/change-status',
+        method:'POST',
+        data:{
+          _token:'<?php echo csrf_token(); ?>',
+          match_id: $(this).attr('data-match-id'),
+          status_val: $(this).val()
+        },
+        success:function(response){
+          if(!response ==1){
+            alert('Thay đổi trạng thái thất bại. Kiểm tra log để xem chi tiết');
+            console.log(response);
+          }
+        },
+        error: function(xhr, error){
+            alert('Có lỗi xảy ra, check console log để xem chi tiết!');
+            console.log('Lỗi gửi request:');
+            console.log(xhr);
+            console.log(error);
+       },
+     });
+    });
+
+
+    $('.form-delete-match').on('click',function(){
+      $(this).find('form').submit();
+    });
+  })(jQuery)
+</script>
+
+@stop
 @section('content')
 <div class="right_col" rold"main">
   <div>
@@ -71,11 +106,17 @@
                       <td>{{$match->team_1_name}}</td>
                       <td>{{$match->team_2_name}}</td>
                       <td>{{$match->date_start}}</td>
-                      <td>{{$match->status}}</td>
+                      <td>
+                        <select data-match-id = "{{$match->id}}" class="change-status" name="change-status">
+                          <option {{($match->status==0)?'selected':''}} value="0">Sắp diễn ra</option>
+                          <option {{($match->status==1)?'selected':''}} value="1">Đang trực tiếp</option>
+                          <option {{($match->status==2)?'selected':''}} value="2">Đã kết thúc</option>
+                        </select>
+                      </td>
                       <td class=" last">
                         <a href="#">View</a>
-                        <a href="javascript:void(0);" class="link-form-delete">Delete
-                          <form action="#" method="post"><input type="hidden" name="_token" value="{{csrf_token()}}"></form>
+                        <a href="javascript:void(0);" class="form-delete-match">Delete
+                          <form action="/dashboard/match/delete/{{$match->id}}" method="post"><input type="hidden" name="_token" value="{{csrf_token()}}"></form>
                         </a>
                       </td>
                     </tr>

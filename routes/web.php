@@ -31,4 +31,6 @@ Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
   Route::get('/match/create','DashboardController@createMatch');
   Route::get('/match/list','DashboardController@listMatch');
   Route::post('/match/add','DashboardController@addMatch');
+  Route::post('/match/change-status','DashboardController@changeMatchStatus');
+  Route::post('/match/delete/{match_id}','DashboardController@deleteMatch');
 });

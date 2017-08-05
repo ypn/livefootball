@@ -26,6 +26,7 @@ class Controller extends BaseController
 
     public function starter(){
 
+
       $matchs = Matchs::select('alias','team_1','team_2','leaguage_id','date_start')->orderBy('date_start')->get();
 
       foreach($matchs as $m){

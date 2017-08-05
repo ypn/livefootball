@@ -44,7 +44,7 @@
         </div>
         @foreach($matchs as $m)
         <div class="col-md-3 col-sm-6 col-xs-12">
-          <a href="/tructiep/{{$m->alias}}">
+          <a class="link" href="/tructiep/{{$m->alias}}">
             <div class="live-item <?php
               switch($m->leaguage_id){
                 case 1:
@@ -59,6 +59,11 @@
                 case 4:
                   echo 'uafa-super-cup';
                   break;
+                case 5:
+                  echo 'supercup-england';
+                  break;
+                default:
+                  echo 'default';
               }
             ?>">
               <div class="logo">

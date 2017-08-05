@@ -22,9 +22,9 @@ $(document).ready(function(){
     //src:"http://bongdatv.online:8095/hls/stream.m3u8",
     //src:'http://localhost:8092/hls/stream.m3u8',
     //src:"https://vtbd.vn.data.garena.tv/hls/198245/1296813.m3u8",
-    src:'http://al.flv.huya.com/huyalive/90763538-2593561418-11139261470477385728-118194782-10057-A-1501589130-1.flv?wsSecret=a1e09950726a1932f99bca187d1ce0ea&wsTime=59809e52&ratio=2000',
+    src:'http://vndatagarenatv-a.akamaihd.net/hls/198168/1810682.m3u8',
     ///src:'http://vndatagarenatv-a.akamaihd.net/hls/198167/1413383.m3u8',
-    type:'video/x-flv'
+    type:'application/x-mpegURL'
   });
   player.errors({
     errors: {

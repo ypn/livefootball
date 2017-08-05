@@ -170,6 +170,15 @@
   background-image: url('http://i.imgur.com/79boad8l.jpg');
 }
 
+.live-item.supercup-england .logo{
+  background-image: url('http://i.imgur.com/eLqQ1xJl.jpg');
+}
+
+.live-item.default .logo{
+  background-image: url('http://i.imgur.com/eLqQ1xJl.jpg');
+}
+
+
 
 .live-item .logo img {
     position: absolute;
@@ -184,9 +193,15 @@
     right: 15%;
 }
 
+.link:hover{
+  text-decoration: none;
+}
+
 .live-item .info {
     padding: 12px 8px;
+    min-height:93px;
 }
+
 
 .live-item .time {
     color: #333;

@@ -236,10 +236,7 @@
       <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
       <!-- Custom Theme Scripts -->
-      <script src="/build/js/custom.min.js"></script>
-
-      <script type="/build/js/master.js"></script>
-
+      <script src="/build/js/custom.min.js"></script>      
       @yield('script')
 
     </body>
