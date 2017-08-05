@@ -65,7 +65,7 @@ class Controller extends BaseController
       $loginUrl = $helper->getLoginUrl(url('/') . '/fb-callback', $permissions);
 
 
-      $match = Matchs::where('alias',$alias)->select('id','team_1','team_2','leaguage_id','date_start','status')->first();
+      $match = Matchs::where('alias',$alias)->select('name','id','team_1','team_2','leaguage_id','date_start','status')->first();
 
       if(!empty($match)){
         $leaguage = Leaguages::where('id',$match->leaguage_id)->select('name')->first();

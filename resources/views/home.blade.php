@@ -31,7 +31,7 @@ What are you looking for? Feel free to contact me directly.
     <meta property ="fb:app_id" content="1812749958752149"/>
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    @if($match->status==1)
+    @if($match->status==0)
     <link rel="stylesheet" href="/js/lib/ainokishi.css">
     @else
     <link rel="stylesheet" href="/js/lib/flipclock/flipclock.css">
@@ -146,10 +146,10 @@ What are you looking for? Feel free to contact me directly.
     		<div class="col-md-12">
     			<div class="col-md-9">
 
-            <div style="height:100vh;background:#e9ebee;">
+            <div class="green" style="background:#e9ebee;">
       				<div class="g-content">
                 <div>
-                  @if($match->status==1)
+                  @if($match->status==0)
                   <video
                   style="border:1px solid #000;"
                   id="livehd-video-player"
@@ -180,12 +180,34 @@ What are you looking for? Feel free to contact me directly.
                   </div>
                   @endif
                   <div style="margin-right:15px;">
-                    <div style="padding:5px;text-align:right;">
-                      <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
-                      <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
+                    <div style="border-bottom:1px solid #ccc;margin-right:-15px;padding-left:15px;">
+                      <div>
+                        <h4>{{$match->name}}</h4>
+                        <div class="g-ytsubscribe" data-channelid="UCrCo_4D_UJGNDn_miernuaQ" data-layout="full" data-count="default"></div>
+                      </div>
+                      <div style="margin-top:-30px;">
+                        <div style="text-align:right;margin-right:10px;">
+                          <div style="font-size:15px;font-weight:bold;padding-left:22px;padding-right:15px;border-bottom:2px solid green;display:inline-block;">
+                            800 người đang xem
+                          </div>
+                        </div>
+                        <div style="padding:5px;text-align:right;">
+                          <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+                          <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
+                        </div>
+                      </div>
                     </div>
                     <div class="hidden-sm hidden-xs" style="margin-bottom:25px;">
-                      <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online" data-tabs="timeline" data-height="150px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online">Bongdatv Online</a></blockquote></div>
+                      <div>
+                        <div class="col-md-5">
+                          <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online">Bongdatv Online</a></blockquote></div>
+                        </div>
+                        <div class="col-md-7">
+                          <p style="font-size">
+                            Hãy đăng kí kênh youtube và like fanpage để nhận được thông báo nhanh chóng về thời gian phát tất cả các trận bóng đỉnh cao tại http://bongdatv.online
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -202,7 +224,7 @@ What are you looking for? Feel free to contact me directly.
     </div>
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
-    @if($match->status == 1)
+    @if($match->status == 0)
     <script src="/js/lib/ainokishi.js"></script>
     @else
     <script src="/js/lib/flipclock/flipclock.js"></script>
@@ -292,5 +314,6 @@ What are you looking for? Feel free to contact me directly.
     ga('create', 'UA-102881492-1', 'auto');
     ga('send', 'pageview');
     </script>
+    <script src="https://apis.google.com/js/platform.js"></script>
   </body>
 </html>
