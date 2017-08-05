@@ -41,9 +41,14 @@ What are you looking for? Feel free to contact me directly.
       .show-match{
         width:100%;
         min-height:60vh;
-        background:orange;
-        display: inline-block;
+        background:-webkit-radial-gradient(rgba(80,0,0,0.1) 0%,
+    					rgba(80,0,0,0.2) 30%, rgba(21,11,1,0.9) 100% ),
+    		    		url('https://subtlepatterns.com/patterns/wood_pattern.png');
         text-align:center;
+      }
+
+      .show-match-info{
+        margin-top:25px;
       }
       .show-match-info .club{
         width:50%;
@@ -54,6 +59,73 @@ What are you looking for? Feel free to contact me directly.
         width:8em;
         height:8em;
       }
+
+      @import url(https://fonts.googleapis.com/css?family=Patua+One);
+
+    #ribbon {
+    		padding: .34em .5em;
+    		margin: 0;
+    		margin-top: 2%;
+    		position:relative;
+    		color: #ffffff;
+    		font: 32px 'Patua One', sans-serif;
+    		text-align: center;
+    		letter-spacing:0.1em;
+    		text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
+    		box-shadow: inset 0px 1px 0px rgba(255,255,255,.3),
+    		inset   0px 0px 20px rgba(0,0,0,0.1),
+    			      0px 1px 1px rgba(0,0,0,0.4);
+    		background: -webkit-linear-gradient(top,#1eb2df, #17a7d2);
+        display: inline-block;
+    	}
+
+    #ribbon:before, #ribbon:after {
+    		content: "";
+    		width:.2em;
+    		bottom:-.5em;
+    		position:absolute;
+    		display:block;
+    		border: .9em solid #1eb2df;
+    		box-shadow:0px 1px 0px rgba(0,0,0,0.4);
+    		z-index:0;
+    	}
+
+    #ribbon:before {
+    		left:-1.19em;
+    		border-right-width: .75em;
+    		border-left-color:transparent;
+    	}
+
+    #ribbon:after {
+    		right:-1.19em;
+    		border-left-width: .75em;
+    		border-right-color:transparent;
+    	}
+    #content{
+      z-index:3;
+    }
+
+    #content:before, #content:after {
+    		content:"";
+    		bottom:-.5em;
+    		position:absolute;
+    		display:block;
+    		border-style:solid;
+    		border-color: #0675b3 transparent transparent transparent;
+    		z-index:1;
+    	}
+
+    #content:before {
+    	  left: 0;
+    	  border-width: .5em 0 0 .5em;
+    	}
+
+    #content:after {
+    	  right: 0;
+    	  border-width: .5em .5em 0 0;
+  	}
+
+
     </style>
     <input type="hidden" id="fb_url_redirect" value="<?php echo $fb_url; ?>">
   </head>
@@ -73,7 +145,8 @@ What are you looking for? Feel free to contact me directly.
     	<div class="col-md-10 m-content">
     		<div class="col-md-12">
     			<div class="col-md-9">
-            <div class="green">
+
+            <div style="height:100vh;background:#e9ebee;">
       				<div class="g-content">
                 <div>
                   @if($match->status==1)
@@ -86,18 +159,18 @@ What are you looking for? Feel free to contact me directly.
                   ></video>
                   @else
                   <div class="show-match">
-                    <h1>
-                      {{$match->leaguage_name}}
-                    </h1>
+                    <div id="ribbon">
+                  		<span id="content">{{$match->leaguage_name}}</span>
+                  	</div>
 
                     <div class="show-match-info">
                       <div class="club home">
                         <img src="{{$match->team_1_logo}}" alt="">
-                        <h5>{{$match->team_1_name}}</h5>
+                        <h4>{{$match->team_1_name}}</h4>
                       </div>
                       <div class="club guest">
                           <img src="{{$match->team_2_logo}}" alt="">
-                          <h5>{{$match->team_2_name}}</h5>
+                          <h4>{{$match->team_2_name}}</h4>
                       </div>
                     </div>
 
@@ -111,8 +184,8 @@ What are you looking for? Feel free to contact me directly.
                       <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
                       <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
                     </div>
-                    <div class="hidden-sm hidden-xs">
-
+                    <div class="hidden-sm hidden-xs" style="margin-bottom:25px;">
+                      <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online" data-tabs="timeline" data-height="150px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online">Bongdatv Online</a></blockquote></div>
                     </div>
                   </div>
                 </div>
@@ -120,7 +193,7 @@ What are you looking for? Feel free to contact me directly.
             </div>
     			</div>
     			<div class="col-md-3">
-    				<div class="box blue">
+    				<div class="box blue" style="box-shadow: -4px 0 3px -4px rgba(0, 0, 0, 0.5);">
     					<div id="wechat" data-authentication = {{Sentinel::check()?"true":"false"}} ></div>
     				</div>
     			</div>
@@ -161,6 +234,7 @@ What are you looking for? Feel free to contact me directly.
     <script type="text/javascript">
       $('#nav-icon4').click(function(){
         $('#wrapper').toggleClass('toggle');
+        $(this).toggleClass('open');
       });
 
       (function($) {

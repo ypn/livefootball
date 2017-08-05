@@ -53,6 +53,7 @@ class Controller extends BaseController
           session_start();
       }
 
+
       $fb = new \Facebook\Facebook([
         'app_id' => '1812749958752149',
         'app_secret' => '32a370b14d3b6140736ce7eaa13c962c',
@@ -77,7 +78,7 @@ class Controller extends BaseController
         $match->team_2_logo = isset($team_2->logo_url)?$team_2->logo_url:null;
         $match->time_count = (new Carbon($match->date_start))->diffInSeconds(Carbon::now());
       }
-
+      $_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
       return view ('home',array('fb_url'=>$loginUrl,'match'=>$match));
     }
 
@@ -193,7 +194,13 @@ class Controller extends BaseController
         }
       }else{
         Sentinel::login($user);
-        return redirect('/');
+        if(isset($_SESSION['lastpage'])) {
+          $lastpage = $_SESSION['lastpage'];
+          unset($_SESSION['lastpage']);
+          return redirect($lastpage);
+        }else{
+          return redirect('/');
+        }
       }
 
     }

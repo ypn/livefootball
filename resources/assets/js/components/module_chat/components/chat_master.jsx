@@ -11,7 +11,7 @@ export default class ChatMaster extends React.Component{
     var socketId = Echo.socketId();
     console.log(socketId);
     Echo.channel('live-chat-channel')
-      .listen('Event', (e) => {      
+      .listen('Event', (e) => {
         ActionsChat.addNewChat(
           e.message,
           e.first_name,

@@ -4,10 +4,6 @@
   height:100%;
 }
 
-.live-chat-header{
-  height:12%;
-}
-
 .live-chat-body{
   height: 70%;
   overflow-y: auto;
@@ -65,9 +61,21 @@
 
 /*===============Chat==============*/
 .live-chat-header{
-  text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  margin: 0 15px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+  min-height:12%;
+}
+
+.live-chat-header label{
+  margin-left:5px;
+  font-size: 18px;
+}
+
+.live-chat-header img{
+  margin-left: 5px;
+  border-radius: 50%;
+  object-fit: cover;
+  width:50px;
+  height:50px;
 }
 
 .live-chat-header h3{
