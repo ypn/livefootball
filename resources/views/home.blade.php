@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 
 $$$$$$$\                                      $$\        $$$$$$$$\ $$\    $$\        $$$$$$\            $$\ $$\
 $$  __$$\                                     $$ |       \__$$  __|$$ |   $$ |      $$  __$$\           $$ |\__|
@@ -25,7 +25,7 @@ What are you looking for? Feel free to contact me directly.
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta property="og:url"                content="http://bongdatv.online/" />
     <meta property="og:type"               content="website" />
-    <meta property="og:title"              content="[Trực tiếp] Real Madrid - Barcelona - ICC Cup 2017" />
+    <meta property="og:title"              content="[Trực tiếp] {{$match->name}}" />
     <meta property="og:description"        content="Livestream bóng đá HD, K+ online. Thưởng thức các trận cậu đỉnh cao dễ dàng bằng công nghệ livestream hàng đầu Việt Nam với chất lượng hình ảnh tốt nhất, tương tác trực tiếp với bình luận viên và hàng ngàn khán giả khác. Duy nhất tại bongdatv.online" />
     <meta property="og:image" content="{{URL::to('/images/fb_share.jpg')}}" />
     <meta property ="fb:app_id" content="1812749958752149"/>
