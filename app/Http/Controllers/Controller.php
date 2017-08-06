@@ -68,6 +68,8 @@ class Controller extends BaseController
 
       $match = Matchs::where('alias',$alias)->select('name','id','team_1','team_2','leaguage_id','date_start','status')->first();
 
+
+
       if(!empty($match)){
         $leaguage = Leaguages::where('id',$match->leaguage_id)->select('name')->first();
         $match->leaguage_name = isset($leaguage->name)?$leaguage->name:'Giải đấu chưa xác định';
@@ -78,9 +80,12 @@ class Controller extends BaseController
         $match->team_2_name = isset($team_2->name)?$team_2->name:'Đội khách chưa xác định';
         $match->team_2_logo = isset($team_2->logo_url)?$team_2->logo_url:null;
         $match->time_count = (new Carbon($match->date_start))->diffInSeconds(Carbon::now());
+        $_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
+        return view ('home',array('fb_url'=>$loginUrl,'match'=>$match));
       }
-      $_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
-      return view ('home',array('fb_url'=>$loginUrl,'match'=>$match));
+      else{
+        abort(404);
+      }
     }
 
     public function fbCallback(){
