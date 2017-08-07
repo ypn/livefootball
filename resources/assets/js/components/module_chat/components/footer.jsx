@@ -90,7 +90,7 @@ export default class ChatFooter extends React.Component{
               <a className="popup-close" data-popup-close="popup-1" href="javascript:void(0);">x</a>
               <div>
                   <p className="pop-up-content">
-                  Tính năng này chỉ dành cho thành viên, hãy đăng nhập để có trải nghiệm tốt nhất về dịch vụ của chúng tôi.
+                  Đăng nhập ngay để tham gia bình luận!
                   </p>
                   <a
                     className="loginBtn loginBtn--facebook"

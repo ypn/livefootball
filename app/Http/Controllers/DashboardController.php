@@ -163,5 +163,46 @@ class DashboardController extends BaseController
       }
     }
 
+    //Shell - execute
 
+    public function shellExec(){
+      return view ('dashboard.shell_exec');
+    }
+
+    public function exec(){
+      $input = Input::all();
+      $cmd = 'ffmpeg -re -y -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/59.0.3071.109 Chrome/59.0.3071.109 Safari/537.36" -i "'. $input['file_path'] . '" -bsf:a aac_adtstoasc -c copy -flags global_header -f flv rtmp://a.rtmp.youtube.com/live2/42y0-ck21-j1gr-7v19';
+      $this->liveExecuteCommand($cmd);
+
+    }
+
+    public function liveExecuteCommand($cmd)
+    {
+
+        while (@ ob_end_flush()); // end all output buffers if any
+
+        $proc = popen("$cmd 2>&1 ; echo Exit status : $?", 'r');
+
+        $live_output     = "";
+        $complete_output = "";
+
+        while (!feof($proc))
+        {
+            $live_output     = fread($proc, 4096);
+            $complete_output = $complete_output . $live_output;
+            echo "$live_output" . "</br>";
+            @ flush();
+        }
+
+        pclose($proc);
+
+        // get exit status
+        preg_match('/[0-9]+$/', $complete_output, $matches);
+
+        // return exit status and intended output
+        return array (
+            'exit_status'  => intval($matches[0]),
+            'output'       => str_replace("Exit status : " . $matches[0], '', $complete_output)
+         );
+    }
 }
