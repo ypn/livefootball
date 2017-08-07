@@ -12,6 +12,7 @@
 
       <li><a href="/dashboard/leaguage/list"><i class="fa fa-sitemap"></i> Giải đấu</a></li>
 
+      <li><a href="/dashboard/shell-exec"><i class="fa fa-terminal"></i> Shell exec</a></li>
 
       <li><a><i class="fa fa-desktop"></i> Báo cáo </a></li>
     </ul>
