@@ -33,6 +33,12 @@
 
             </form>
             <!-- end form for validations -->
+
+            <div class="">
+              <h5>Giá trị mặc định</h5>
+              <h6>Input: http://vndatagarenatv-a.akamaihd.net/hls/198168/1810682.m3u8</h6>
+              <h6>Output-Phamnhuy11@gmail.com: rtmp://a.rtmp.youtube.com/live2/m3fx-ecab-tu54-1t6d</h6>
+            </div>
           </div>
         </div>
       </div>
