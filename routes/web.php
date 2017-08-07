@@ -22,6 +22,7 @@ Route::get('noti-facebook','Controller@postFb');
 Route::get('/tructiep/{alias}','Controller@showMatch');
 Route::get('starter','Controller@starter');
 Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
+  Route::get('/','DashboardController@listMatch');
   Route::get('/club/create','DashboardController@createClub');
   Route::get('/club/list','DashboardController@listClub');
   Route::post('/club/add','DashboardController@addClub');
