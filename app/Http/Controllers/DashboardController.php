@@ -118,7 +118,8 @@ class DashboardController extends BaseController
           'id_team_a'=>'required',
           'id_team_b'=>'required',
           'leaguage_id'=>'required',
-          'date_start'=>'required'
+          'date_start'=>'required',
+          'fb_image'=>'required'
       ]);
       if($validator->fails()){
         return Redirect::back()->with('error','Định dạng input không hợp lệ');
@@ -131,6 +132,7 @@ class DashboardController extends BaseController
           $match->team_2 = $input['id_team_b'];
           $match->leaguage_id = $input['leaguage_id'];
           $match->date_start =  Carbon::parse($input['date_start']);
+          $match->fb_share_image = $input['fb_image'];
           $match->save();
           return Redirect::back()->with('status','handle_success');
         }catch(\Illuminate\Database\QueryException $ex){
@@ -171,7 +173,8 @@ class DashboardController extends BaseController
 
     public function exec(){
       $input = Input::all();
-      $cmd = 'ffmpeg -re -y -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/59.0.3071.109 Chrome/59.0.3071.109 Safari/537.36" -i "'. $input['file_path'] . '" -bsf:a aac_adtstoasc -c copy -flags global_header -f flv rtmp://a.rtmp.youtube.com/live2/42y0-ck21-j1gr-7v19';
+      $cmd = 'ping google.com';
+      //$cmd = 'ffmpeg -re -y -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/59.0.3071.109 Chrome/59.0.3071.109 Safari/537.36" -i "'. $input['file_path'] . '" -bsf:a aac_adtstoasc -c copy -flags global_header -f flv ' . $input['output_page'];
       $this->liveExecuteCommand($cmd);
 
     }
@@ -185,14 +188,18 @@ class DashboardController extends BaseController
 
         $live_output     = "";
         $complete_output = "";
-
+        echo '<div id="output" style="width:100%;height:500px;background:black;color:green;overflow:auto;">';
+        echo '<pre>';
         while (!feof($proc))
         {
             $live_output     = fread($proc, 4096);
             $complete_output = $complete_output . $live_output;
-            echo "$live_output" . "</br>";
+            echo "$live_output";
+            echo "<script type=\"text/javascript\">var e = document.getElementById('output'); e.scrollTop= e.scrollHeight ;</script>";
             @ flush();
         }
+        echo '</pre>';
+        echo '</div>';
 
         pclose($proc);
 

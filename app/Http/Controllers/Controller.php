@@ -66,7 +66,7 @@ class Controller extends BaseController
       $loginUrl = $helper->getLoginUrl(url('/') . '/fb-callback', $permissions);
 
 
-      $match = Matchs::where('alias',$alias)->select('name','id','team_1','team_2','leaguage_id','date_start','status')->first();
+      $match = Matchs::where('alias',$alias)->select('name','id','team_1','team_2','leaguage_id','date_start','status','fb_share_image')->first();
 
 
 
@@ -264,5 +264,5 @@ class Controller extends BaseController
           echo 'Có lỗi: '. $ex.getMessage();
        }
 
-    }  
+    }
 }

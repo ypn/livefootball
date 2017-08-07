@@ -32,12 +32,12 @@
     <!--xNrw8exNLBA-->
     <div class="video-background">
       <div class="video-foreground">
-        <iframe src="https://www.youtube.com/embed/pRpeEdMmmQ0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=pRpeEdMmmQ0" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/9uKJOUg5GBs?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=9uKJOUg5GBs" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
 
-    <div style="width:100%;min-height:100vh;background:rgba(0,0,0,0.3);">
+    <div style="width:100%;min-height:100vh;background:rgba(0,0,0,0);">
       <div id="main" class="container">
         <div class="col-md-12">
             <h3 class="h-title">Lịch tường thuật trực tiếp</h3>

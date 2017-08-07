@@ -75,26 +75,9 @@
                   </div>
               </div>
               <br/>
-
-              <label >Logo</label>
-              <input type="input" class="form-control" name="logo" />
-              <br/>
-
-              <label >Title</label>
-              <input class="form-control" name="title" />
-              <br/>
-
-              <label>Facebook title</label>
-              <input type="input" class="form-control" name="fb_title" />
-              <br/>
-
+              
               <label>Facebook image</label>
-              <input type="input" class="form-control" name="fb_image" />
-              <br/>
-
-              <label for="logo">Facebook title</label>
-              <textarea class="form-control" name="fb_description" ></textarea>
-
+              <input type="input" class="form-control" name="fb_image" />'
 
               <br/>
               <button class="btn btn-primary">Submit</button>

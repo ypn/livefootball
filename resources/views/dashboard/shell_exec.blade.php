@@ -24,6 +24,10 @@
               <input type="hidden" name="_token" value="{{csrf_token()}}">
               <textarea class="form-control" name="file_path"></textarea>
 
+              </br>
+
+              <input class="form-control" type="text" name="output_page">
+
               <br/>
               <button class="btn btn-primary">Submit</button>
 

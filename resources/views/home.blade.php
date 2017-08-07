@@ -27,7 +27,7 @@ What are you looking for? Feel free to contact me directly.
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="[Trực tiếp] {{$match->name}}" />
     <meta property="og:description"        content="Livestream bóng đá HD, K+ online. Thưởng thức các trận cậu đỉnh cao dễ dàng bằng công nghệ livestream hàng đầu Việt Nam với chất lượng hình ảnh tốt nhất, tương tác trực tiếp với bình luận viên và hàng ngàn khán giả khác. Duy nhất tại bongdatv.online" />
-    <meta property="og:image" content="{{URL::to('/images/fb_share.jpg')}}" />
+    <meta property="og:image" content="{{ $match->fb_share_image!=null ? $match->fb_share_image : (URL::to('/images/fb_share.jpg'))}}" />
     <meta property ="fb:app_id" content="1812749958752149"/>
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -338,28 +338,28 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        // setInterval(function() {
-        //   console.clear();
-        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-        //   console.log('If you want to get something from my website, feel free to contact me via:');
-        //   console.log('Email:ypnwebdev@gmail.com');
-        //   console.log('Skype:ypn_skype');
-        //   console.log('Thank for you consideration! Love you <3');
-        //   console.log('-----------------------------------------');
-        //
-        //
-        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
-        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
-        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-        //   console.log("\____  $$| $$____/ |__/  |__/");
-        //   console.log("/$$  | $$| $$");
-        //   console.log("|  $$$$$$/| $$");
-        //   console.log("\______/ |__/");
-        //
-        //   debugger;
-        // }, 10);
+        setInterval(function() {
+          console.clear();
+          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+          console.log('If you want to get something from my website, feel free to contact me via:');
+          console.log('Email:ypnwebdev@gmail.com');
+          console.log('Skype:ypn_skype');
+          console.log('Thank for you consideration! Love you <3');
+          console.log('-----------------------------------------');
+
+
+          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+          console.log("| $$  | $$ /$$__  $$| $$__  $$");
+          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+          console.log("| $$  | $$| $$  | $$| $$  | $$")
+          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+          console.log("\____  $$| $$____/ |__/  |__/");
+          console.log("/$$  | $$| $$");
+          console.log("|  $$$$$$/| $$");
+          console.log("\______/ |__/");
+
+          debugger;
+        }, 10);
 
     </script>
     <script>(function(d, s, id) {
