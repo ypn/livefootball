@@ -40,6 +40,10 @@ document.getElementById('liveFacebook').onclick = function() {
         file_url: $('input[name="file_path"]').val(),
         stream_url:response.stream_url
       },
+      error:function(xhr, error){
+         console.debug(xhr);
+         console.debug(error);
+      },
       success:function(){
         FB.ui({
           display: 'popup',
