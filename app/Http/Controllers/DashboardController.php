@@ -179,6 +179,12 @@ class DashboardController extends BaseController
 
     }
 
+    public function fbLive(){
+      $input = Input::all();
+      $cmd = 'ffmpeg -re -i "' . $input->file_url . '" -acodec libmp3lame -ar 44100 -b:a 128k -pix_fmt yuv420p -profile:v baseline -bufsize 6000k -vb 400k -maxrate 1500k -deinterlace -vcodec libx264 -preset veryfast -g 30 -r 30 -f flv "' .$input['stream_url']. '"';
+      $this->liveExecuteCommand($cmd);
+    }
+
     public function liveExecuteCommand($cmd)
     {
 

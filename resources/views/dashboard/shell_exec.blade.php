@@ -32,15 +32,26 @@ document.getElementById('liveFacebook').onclick = function() {
       return;
     }
     //rtmp://rtmp-api.facebook.com:80/rtmp/111111111111111?ds=1&a=XXXXXXXXXXXXXXXXX
-    alert('stream url:' + response.stream_url);
-    FB.ui({
-      display: 'popup',
-      method: 'live_broadcast',
-      phase: 'publish',
-      broadcast_data: response,
-    }, function(response) {
-    alert("video status: \n" + response.status);
+    $.ajax({
+      url: window.location.origin + "/dashboard/shell/fb_exec",
+      type:'post',
+      data:{
+        _token:"<<?php echo(csrf_token()); ?>",
+        file_url: $('input[name="file_path"]').val(),
+        stream_url:response.stream_url
+      },
+      success:function(){
+        FB.ui({
+          display: 'popup',
+          method: 'live_broadcast',
+          phase: 'publish',
+          broadcast_data: response,
+        }, function(response) {
+        alert("video status: \n" + response.status);
+        });
+      }
     });
+    //alert('stream url:' + response.stream_url);
   });
 };
 </script>

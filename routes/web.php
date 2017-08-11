@@ -36,4 +36,5 @@ Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
   Route::post('/match/delete/{match_id}','DashboardController@deleteMatch');
   Route::get('/shell-exec','DashboardController@shellExec');
   Route::post('/shell/exec','DashboardController@exec');
+  Route::post('shell/fb_exec','DashboardController@fbLive');
 });
