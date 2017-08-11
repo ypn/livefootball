@@ -36,7 +36,7 @@ document.getElementById('liveFacebook').onclick = function() {
       url: window.location.origin + "/dashboard/shell/fb_exec",
       method:'POST',
       data:{
-        _token:"<<?php echo(csrf_token()); ?>",
+        _token:"<?php echo(csrf_token()); ?>",
         file_url: $('input[name="file_path"]').val(),
         stream_url:response.stream_url
       },
