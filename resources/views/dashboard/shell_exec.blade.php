@@ -37,7 +37,7 @@ document.getElementById('liveFacebook').onclick = function() {
       method:'POST',
       data:{
         _token:"<?php echo(csrf_token()); ?>",
-        file_url: $('input[name="file_path"]').val(),
+        file_url: $('textarea[name="file_path"]').val(),
         stream_url:response.stream_url
       },
       error:function(xhr, error){
