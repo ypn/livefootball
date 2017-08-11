@@ -41,16 +41,16 @@ document.getElementById('liveFacebook').onclick = function() {
         stream_url:response.stream_url
       },     
       success:function(response){
-        if(response==='success'){
-          FB.ui({
-            display: 'popup',
-            method: 'live_broadcast',
-            phase: 'publish',
-            broadcast_data: response,
-          }, function(response) {
-          //alert("video status: \n" + response.status);
-          });
-        }      
+        console.log(response);
+        FB.ui({
+          display: 'popup',
+          method: 'live_broadcast',
+          phase: 'publish',
+          broadcast_data: response,
+        }, function(response) {
+        //alert("video status: \n" + response.status);
+        });
+             
       }
     });
     //alert('stream url:' + response.stream_url);
