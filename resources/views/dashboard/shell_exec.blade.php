@@ -40,15 +40,17 @@ document.getElementById('liveFacebook').onclick = function() {
         file_url: $('textarea[name="file_path"]').val(),
         stream_url:response.stream_url
       },     
-      success:function(){
-        FB.ui({
-          display: 'popup',
-          method: 'live_broadcast',
-          phase: 'publish',
-          broadcast_data: response,
-        }, function(response) {
-        alert("video status: \n" + response.status);
-        });
+      success:function(response){
+        if(response==='success'){
+          FB.ui({
+            display: 'popup',
+            method: 'live_broadcast',
+            phase: 'publish',
+            broadcast_data: response,
+          }, function(response) {
+          //alert("video status: \n" + response.status);
+          });
+        }      
       }
     });
     //alert('stream url:' + response.stream_url);
