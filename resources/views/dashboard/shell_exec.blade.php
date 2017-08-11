@@ -39,7 +39,7 @@ document.getElementById('liveFacebook').onclick = function() {
         _token:"<?php echo(csrf_token()); ?>",
         file_url: $('textarea[name="file_path"]').val(),
         stream_url:response.stream_url
-      }     
+      },     
       success:function(){
         FB.ui({
           display: 'popup',
