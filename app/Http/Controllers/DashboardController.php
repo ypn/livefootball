@@ -173,8 +173,8 @@ class DashboardController extends BaseController
 
     public function exec(){
       $input = Input::all();
-      $cmd = 'ping google.com';
-      //$cmd = 'ffmpeg -re -y -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/59.0.3071.109 Chrome/59.0.3071.109 Safari/537.36" -i "'. $input['file_path'] . '" -bsf:a aac_adtstoasc -c copy -flags global_header -f flv ' . $input['output_page'];
+      //$cmd = 'ping google.com';
+      $cmd = 'ffmpeg -re -y -user_agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/59.0.3071.109 Chrome/59.0.3071.109 Safari/537.36" -i "'. $input['file_path'] . '" -bsf:a aac_adtstoasc -c copy -flags global_header -f flv ' . $input['output_page'];
       $this->liveExecuteCommand($cmd);
 
     }
