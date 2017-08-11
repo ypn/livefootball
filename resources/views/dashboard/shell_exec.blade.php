@@ -34,7 +34,7 @@ document.getElementById('liveFacebook').onclick = function() {
     //rtmp://rtmp-api.facebook.com:80/rtmp/111111111111111?ds=1&a=XXXXXXXXXXXXXXXXX
     $.ajax({
       url: window.location.origin + "/dashboard/shell/fb_exec",
-      type:'post',
+      method:'POST',
       data:{
         _token:"<<?php echo(csrf_token()); ?>",
         file_url: $('input[name="file_path"]').val(),
