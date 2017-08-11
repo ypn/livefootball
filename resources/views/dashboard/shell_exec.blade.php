@@ -1,4 +1,50 @@
 @extends('dashboard.master')
+@section('script')
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1812749958752149',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script>
+document.getElementById('liveFacebook').onclick = function() {
+  FB.ui({
+    display: 'popup',
+    method: 'live_broadcast',
+    phase: 'create',
+}, function(response) {
+    if (!response.id) {
+      alert('dialog canceled');
+      return;
+    }
+    //rtmp://rtmp-api.facebook.com:80/rtmp/111111111111111?ds=1&a=XXXXXXXXXXXXXXXXX
+    alert('stream url:' + response.stream_url);
+    FB.ui({
+      display: 'popup',
+      method: 'live_broadcast',
+      phase: 'publish',
+      broadcast_data: response,
+    }, function(response) {
+    alert("video status: \n" + response.status);
+    });
+  });
+};
+</script>
+@stop
 @section('content')
 <div class="right_col" rold"main">
   <div>
@@ -33,6 +79,8 @@
 
             </form>
             <!-- end form for validations -->
+
+            <button type="button" id="liveFacebook" class="btn btn-primary" name="button">Live facebook</button>
 
             <div class="">
               <h5>Giá trị mặc định</h5>
