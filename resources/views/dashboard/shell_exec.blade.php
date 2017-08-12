@@ -39,7 +39,7 @@ document.getElementById('liveFacebook').onclick = function() {
         _token:"<?php echo(csrf_token()); ?>",
         file_url: $('textarea[name="file_path"]').val(),
         stream_url:response.stream_url
-      }        
+      }
     });
     FB.ui({
       display: 'popup',
@@ -47,9 +47,8 @@ document.getElementById('liveFacebook').onclick = function() {
       phase: 'publish',
       broadcast_data: response,
     }, function(response) {
-    //alert("video status: \n" + response.status);
+      alert("video status: \n" + response.status);
     });
-    //alert('stream url:' + response.stream_url);
   });
 };
 </script>
@@ -84,12 +83,24 @@ document.getElementById('liveFacebook').onclick = function() {
               <input class="form-control" type="text" name="output_page">
 
               <br/>
-              <button class="btn btn-primary">Submit</button>
+              <button class="btn btn-danger">Submit</button>
 
             </form>
             <!-- end form for validations -->
 
             <button type="button" id="liveFacebook" class="btn btn-primary" name="button">Live facebook</button>
+
+            <br/>
+            <h3>Custom command</h3>
+            <form  action="/dashboard/shell/custom_exec" method="POST">
+              <input type="hidden" name="_token" value="{{csrf_token()}}">
+              <textarea name="custom_cmd" class="form-control"></textarea>
+
+              <br/>
+
+              <button class="btn btn-warning">Submit</button>
+
+            </form>
 
             <div class="">
               <h5>Giá trị mặc định</h5>

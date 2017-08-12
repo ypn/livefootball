@@ -37,4 +37,5 @@ Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
   Route::get('/shell-exec','DashboardController@shellExec');
   Route::post('/shell/exec','DashboardController@exec');
   Route::post('/shell/fb_exec','DashboardController@fbLive');
+  Route::post('/shell/custom_exec','DashboardController@customExec');
 });
