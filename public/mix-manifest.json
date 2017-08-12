@@ -1,5 +1,6 @@
 {
   "/js/plugins/chat-master.js": "/js/plugins/chat-master.js",
   "/mix.js": "/mix.js",
-  "/css/master.css": "/css/master.css"
+  "/css/master.css": "/css/master.css",
+  "/js/lib/ainokishi.js": "/js/lib/ainokishi.js"
 }
