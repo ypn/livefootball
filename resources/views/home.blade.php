@@ -312,7 +312,7 @@ What are you looking for? Feel free to contact me directly.
             </div>
     			</div>
     			<div id="chat-frame" class="col-md-3">
-              <a id="tg" href="javascript:void(0);" style="position:absolute;font-size7px; top:0;padding:15px;right:70px;"><i class="	glyphicon glyphicon-chevron-up"></i></a>
+              <a id="tg" href="javascript:void(0);" style="position:absolute;font-size7px; top:0;right:70px;"><i class="glyphicon glyphicon-chevron-up" style="padding:15px 20px;"></i></a>
     				  <iframe src="https://www.youtube.com/live_chat?v=0hwrSEOxF9o&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe>
     			</div>
     		</div>
