@@ -148,6 +148,47 @@ What are you looking for? Feel free to contact me directly.
       #wrapper.toggle .m-nav-bar .left-bar-link a:hover{
         padding: 10px 0px;
       }
+      #chat-frame{
+        height:100vh;
+      }
+      #chat-frame iframe{
+        height:99%;
+      }
+    }
+
+    @media(max-width:992px){
+      #chat-frame{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9;
+        height:55px;
+        transition: all 0.3s ease;
+      }
+
+      #chat-frame iframe{
+        height:100%;
+      }
+
+      #chat-frame.change-height{
+        height: 400px;
+        max-height: 100vh;
+      }
+
+        #chat-frame #tg{
+          transition: all 0.3s ease;
+        }
+
+      #chat-frame.change-height #tg{
+        -ms-transform: rotate(180deg); /* IE 9 */
+        -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+        transform: rotate(180deg);
+      }
+
+      #primary-content{
+        margin-left: 50px;
+      }
     }
 
     .m-nav-bar .left-bar-link{
@@ -177,7 +218,6 @@ What are you looking for? Feel free to contact me directly.
       transition: all 0.3s ease;
     }
 
-
     </style>
     <input type="hidden" id="fb_url_redirect" value="<?php echo $fb_url; ?>">
   </head>
@@ -202,7 +242,6 @@ What are you looking for? Feel free to contact me directly.
     	<div class="col-md-10 m-content">
     		<div class="col-md-12">
     			<div class="col-md-9">
-
             <div class="green" style="background:#e9ebee;">
       				<div class="g-content">
                 <div>
@@ -240,29 +279,29 @@ What are you looking for? Feel free to contact me directly.
                     <div style="border-bottom:1px solid #ccc;margin-right:-15px;padding-left:15px;">
                       <div>
                         <h4>{{$match->name}}</h4>
-                        <div class="g-ytsubscribe" data-channelid="UCrCo_4D_UJGNDn_miernuaQ" data-layout="full" data-count="default"></div>
+                        <script src="https://apis.google.com/js/platform.js"></script>
+                        <div class="g-ytsubscribe" data-channelid="UCHSSQQSRz9dTlV0ZTZ4B6fQ" data-layout="full" data-count="default"></div>
                       </div>
                       <div style="margin-top:-30px;">
                         <div style="text-align:right;margin-right:10px;">
-                          <div style="font-size:15px;padding-left:22px;padding-right:15px;border-bottom:2px solid green;display:inline-block;">
+                          <div style="font-size:12x;padding-left:22px;padding-right:15px;border-bottom:2px solid green;display:inline-block;">
                             696 người đang xem
                           </div>
                         </div>
                         <div style="padding:5px;text-align:right;">
-                          <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
-                          <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
+                          <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                          <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
                         </div>
                       </div>
                     </div>
-                    <div class="hidden-sm hidden-xs" style="margin-bottom:25px;">
+                    <div style="margin-bottom:25px;">
                       <div>
                         <div class="col-md-5">
-                          <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online">Bongdatv Online</a></blockquote></div>
+                        <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-tabs="timeline" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Bongdatv Online</a></blockquote></div>
                         </div>
                         <div class="col-md-7">
                           <p style="font-size">
                             Hãy đăng kí kênh youtube và like fanpage để nhận được thông báo nhanh chóng về thời gian phát tất cả các trận bóng đỉnh cao tại http://bongdatv.online
-                            <a href="javascript:void(0);" id="_alert">Đặt nhắc nhở</a>
                           </p>
                         </div>
                       </div>
@@ -272,15 +311,13 @@ What are you looking for? Feel free to contact me directly.
       				</div>
             </div>
     			</div>
-    			<div class="col-md-3">
-    				<div class="box blue" style="box-shadow: -4px 0 3px -4px rgba(0, 0, 0, 0.5);">
-    					<div id="wechat" data-authentication = {{Sentinel::check()?"true":"false"}} ></div>
-    				</div>
+    			<div id="chat-frame" class="col-md-3">
+              <a id="tg" href="javascript:void(0);" style="position:absolute;font-size7px; top:13px;left:6px;"><i class="	glyphicon glyphicon-chevron-up"></i></a>
+    				  <iframe src="https://www.youtube.com/live_chat?v=0hwrSEOxF9o&embed_domain=bongdahd.tv" width="100%" frameBorder="0"></iframe>
     			</div>
     		</div>
     	</div>
     </div>
-    <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
     @if($match->status == 1)
     <script src="/js/lib/ainokishi.js"></script>
@@ -305,15 +342,9 @@ What are you looking for? Feel free to contact me directly.
         clock.setTime(<?php echo $match->time_count; ?>);
         clock.setCountdown(true);
         clock.start();
-
-        $('#_alert').click(function(){
-          Notification.requestPermission();
-        });
-
     });
     </script>
     @endif
-    <script src="/js/plugins/chat-master.js"></script>
     <script type="text/javascript">
       $('#nav-icon4').click(function(){
         $('#wrapper').toggleClass('toggle');
@@ -328,9 +359,16 @@ What are you looking for? Feel free to contact me directly.
               if ($window.width() < 992) {
                 $html.removeClass('toggle');
                 $('#nav-icon4').removeClass('open');
+
+                $('#tg').on('click',function(){
+                  $('#chat-frame').toggleClass('change-height');
+                });
+
+
               }else{
                   $('#nav-icon4').addClass('open');
               }
+
           }
 
           $window
@@ -338,28 +376,28 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        setInterval(function() {
-          console.clear();
-          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-          console.log('If you want to get something from my website, feel free to contact me via:');
-          console.log('Email:ypnwebdev@gmail.com');
-          console.log('Skype:ypn_skype');
-          console.log('Thank for you consideration! Love you <3');
-          console.log('-----------------------------------------');
-
-
-          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-          console.log("| $$  | $$ /$$__  $$| $$__  $$");
-          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-          console.log("| $$  | $$| $$  | $$| $$  | $$")
-          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-          console.log("\____  $$| $$____/ |__/  |__/");
-          console.log("/$$  | $$| $$");
-          console.log("|  $$$$$$/| $$");
-          console.log("\______/ |__/");
-
-          debugger;
-        }, 10);
+        // setInterval(function() {
+        //   console.clear();
+        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+        //   console.log('If you want to get something from my website, feel free to contact me via:');
+        //   console.log('Email:ypnwebdev@gmail.com');
+        //   console.log('Skype:ypn_skype');
+        //   console.log('Thank for you consideration! Love you <3');
+        //   console.log('-----------------------------------------');
+        //
+        //
+        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
+        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
+        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+        //   console.log("\____  $$| $$____/ |__/  |__/");
+        //   console.log("/$$  | $$| $$");
+        //   console.log("|  $$$$$$/| $$");
+        //   console.log("\______/ |__/");
+        //
+        //   debugger;
+        // }, 10);
 
     </script>
     <script>(function(d, s, id) {
