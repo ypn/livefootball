@@ -67,17 +67,6 @@ $(document).ready(function(){
  //
  // player.getChild('controlBar').addChild('toggleFullScreen', {});
 
-  //Collapse left side bar
-  (function($){
-      $('#nav-icon4').click(function(){
-        $('.content-wrapper').toggleClass('collapse-left-bar');
-        $(this).toggleClass('open');
-
-      });
-  })(jQuery);
-
-
-
   $(function() {
     //----- CLOSE
     $('[data-popup-close]').on('click', function(e)  {

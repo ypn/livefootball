@@ -163,7 +163,7 @@ What are you looking for? Feel free to contact me directly.
         left: 0;
         width: 100%;
         z-index: 9;
-        height:55px;
+        height:60px;
         transition: all 0.3s ease;
       }
 
@@ -280,14 +280,9 @@ What are you looking for? Feel free to contact me directly.
                       <div>
                         <h4>{{$match->name}}</h4>
                         <script src="https://apis.google.com/js/platform.js"></script>
-                        <div class="g-ytsubscribe" data-channelid="UCHSSQQSRz9dTlV0ZTZ4B6fQ" data-layout="full" data-count="default"></div>
+                        <div class="g-ytsubscribe" data-channelid="UCgPI5EQUOhWHd54b7lZTCsg" data-layout="full" data-count="default"></div>
                       </div>
                       <div style="margin-top:-30px;">
-                        <div style="text-align:right;margin-right:10px;">
-                          <div style="font-size:12x;padding-left:22px;padding-right:15px;border-bottom:2px solid green;display:inline-block;">
-                            696 người đang xem
-                          </div>
-                        </div>
                         <div style="padding:5px;text-align:right;">
                           <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
                           <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
@@ -312,8 +307,8 @@ What are you looking for? Feel free to contact me directly.
             </div>
     			</div>
     			<div id="chat-frame" class="col-md-3">
-              <a id="tg" href="javascript:void(0);" style="position:absolute;font-size7px; top:0;right:70px;"><i class="glyphicon glyphicon-chevron-up" style="padding:15px 20px;"></i></a>
-    				  <iframe src="https://www.youtube.com/live_chat?v=0hwrSEOxF9o&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe>
+              <a id="tg" href="javascript:void(0);" class="hidden-md hidden-lg" style="position:absolute;font-size7px; top:-15px;left:15px;"><i class="glyphicon glyphicon-chevron-up" style="padding:10px;border-radius:50%;background:#3097D1;color:#fff;"></i></a>
+    				  <iframe src="https://www.youtube.com/live_chat?v=0hwrSEOxF9o&embed_domain=bongdahd.tv" width="100%" frameBorder="0"></iframe>
     			</div>
     		</div>
     	</div>
@@ -359,11 +354,9 @@ What are you looking for? Feel free to contact me directly.
               if ($window.width() < 992) {
                 $html.removeClass('toggle');
                 $('#nav-icon4').removeClass('open');
-
                 $('#tg').on('click',function(){
                   $('#chat-frame').toggleClass('change-height');
                 });
-
 
               }else{
                   $('#nav-icon4').addClass('open');
