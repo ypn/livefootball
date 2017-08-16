@@ -308,7 +308,7 @@ What are you looking for? Feel free to contact me directly.
     			</div>
     			<div id="chat-frame" class="col-md-3">
               <a id="tg" href="javascript:void(0);" class="hidden-md hidden-lg" style="position:absolute;font-size7px; top:-15px;left:15px;"><i class="glyphicon glyphicon-chevron-up" style="padding:10px;border-radius:50%;background:#3097D1;color:#fff;"></i></a>
-    				  <iframe src="https://www.youtube.com/live_chat?v=0hwrSEOxF9o&embed_domain=bongdahd.tv" width="100%" frameBorder="0"></iframe>
+    				  <iframe src="https://www.youtube.com/live_chat?v=0hwrSEOxF9o&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe>
     			</div>
     		</div>
     	</div>
@@ -369,28 +369,28 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        // setInterval(function() {
-        //   console.clear();
-        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-        //   console.log('If you want to get something from my website, feel free to contact me via:');
-        //   console.log('Email:ypnwebdev@gmail.com');
-        //   console.log('Skype:ypn_skype');
-        //   console.log('Thank for you consideration! Love you <3');
-        //   console.log('-----------------------------------------');
-        //
-        //
-        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
-        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
-        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-        //   console.log("\____  $$| $$____/ |__/  |__/");
-        //   console.log("/$$  | $$| $$");
-        //   console.log("|  $$$$$$/| $$");
-        //   console.log("\______/ |__/");
-        //
-        //   debugger;
-        // }, 10);
+        setInterval(function() {
+          console.clear();
+          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+          console.log('If you want to get something from my website, feel free to contact me via:');
+          console.log('Email:ypnwebdev@gmail.com');
+          console.log('Skype:ypn_skype');
+          console.log('Thank for you consideration! Love you <3');
+          console.log('-----------------------------------------');
+
+
+          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+          console.log("| $$  | $$ /$$__  $$| $$__  $$");
+          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+          console.log("| $$  | $$| $$  | $$| $$  | $$")
+          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+          console.log("\____  $$| $$____/ |__/  |__/");
+          console.log("/$$  | $$| $$");
+          console.log("|  $$$$$$/| $$");
+          console.log("\______/ |__/");
+
+          debugger;
+        }, 10);
 
     </script>
     <script>(function(d, s, id) {
