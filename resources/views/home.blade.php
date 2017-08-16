@@ -165,6 +165,7 @@ What are you looking for? Feel free to contact me directly.
         z-index: 9;
         height:60px;
         transition: all 0.3s ease;
+        border-top: 2px solid red;
       }
 
       #chat-frame iframe{
@@ -289,16 +290,17 @@ What are you looking for? Feel free to contact me directly.
                         </div>
                       </div>
                     </div>
-                    <div style="margin-bottom:25px;">
-                      <div>
-                        <div class="col-md-5">
+                    <div>
+                      <div style="padding:15px;">
+                        <div class="col-md-5 col-sm-6 col-xs-12">
                         <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-tabs="timeline" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Bongdatv Online</a></blockquote></div>
                         </div>
-                        <div class="col-md-7">
-                          <p style="font-size">
-                            Hãy đăng kí kênh youtube và like fanpage để nhận được thông báo nhanh chóng về thời gian phát tất cả các trận bóng đỉnh cao tại http://bongdatv.online
+                        <div class="col-md-7 col-sm-6">
+                          <p style="font-size:0.8em">
+                            Hãy <b><u> đăng kí kênh Youtube</u> </b> và <b> <u>like fanpage</u> </b> để nhận được thông báo nhanh chóng về thời gian phát tất cả các trận bóng đỉnh cao tại <a href="/">http://bongdatv.online</a>
                           </p>
                         </div>
+                        <span class="clearfix"></span>
                       </div>
                     </div>
                   </div>
@@ -307,8 +309,8 @@ What are you looking for? Feel free to contact me directly.
             </div>
     			</div>
     			<div id="chat-frame" class="col-md-3">
-              <a id="tg" href="javascript:void(0);" class="hidden-md hidden-lg" style="position:absolute;font-size7px; top:-15px;left:15px;"><i class="glyphicon glyphicon-chevron-up" style="padding:10px;border-radius:50%;background:#3097D1;color:#fff;"></i></a>
-    				  <iframe src="https://www.youtube.com/live_chat?v=0hwrSEOxF9o&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe>
+              <a id="tg" href="javascript:void(0);" class="hidden-md hidden-lg" style="position:absolute;font-size7px; top:-20px;left:25px;"><i class="glyphicon glyphicon-chevron-up" style="padding:10px;border-radius:50%;background:#3097D1;color:#fff;"></i></a>
+    				  <iframe src="https://www.youtube.com/live_chat?v=0hwrSEOxF9o&embed_domain=bongdahd.tv" width="100%" frameBorder="0"></iframe>
     			</div>
     		</div>
     	</div>
@@ -346,6 +348,10 @@ What are you looking for? Feel free to contact me directly.
         $(this).toggleClass('open');
       });
 
+      $('#tg').on('click',function(){
+        $('#chat-frame').toggleClass('change-height');
+      });
+
       (function($) {
           var $window = $(window),
               $html = $('#wrapper');
@@ -354,10 +360,6 @@ What are you looking for? Feel free to contact me directly.
               if ($window.width() < 992) {
                 $html.removeClass('toggle');
                 $('#nav-icon4').removeClass('open');
-                $('#tg').on('click',function(){
-                  $('#chat-frame').toggleClass('change-height');
-                });
-
               }else{
                   $('#nav-icon4').addClass('open');
               }
@@ -369,28 +371,28 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        setInterval(function() {
-          console.clear();
-          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-          console.log('If you want to get something from my website, feel free to contact me via:');
-          console.log('Email:ypnwebdev@gmail.com');
-          console.log('Skype:ypn_skype');
-          console.log('Thank for you consideration! Love you <3');
-          console.log('-----------------------------------------');
-
-
-          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-          console.log("| $$  | $$ /$$__  $$| $$__  $$");
-          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-          console.log("| $$  | $$| $$  | $$| $$  | $$")
-          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-          console.log("\____  $$| $$____/ |__/  |__/");
-          console.log("/$$  | $$| $$");
-          console.log("|  $$$$$$/| $$");
-          console.log("\______/ |__/");
-
-          debugger;
-        }, 10);
+        // setInterval(function() {
+        //   console.clear();
+        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+        //   console.log('If you want to get something from my website, feel free to contact me via:');
+        //   console.log('Email:ypnwebdev@gmail.com');
+        //   console.log('Skype:ypn_skype');
+        //   console.log('Thank for you consideration! Love you <3');
+        //   console.log('-----------------------------------------');
+        //
+        //
+        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
+        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
+        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+        //   console.log("\____  $$| $$____/ |__/  |__/");
+        //   console.log("/$$  | $$| $$");
+        //   console.log("|  $$$$$$/| $$");
+        //   console.log("\______/ |__/");
+        //
+        //   debugger;
+        // }, 10);
 
     </script>
     <script>(function(d, s, id) {
