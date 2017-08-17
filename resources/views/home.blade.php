@@ -177,7 +177,7 @@ What are you looking for? Feel free to contact me directly.
       }
 
       #chat-frame.change-height{
-        height: 400px;
+        height: 450px;
         max-height: 100vh;
       }
 
