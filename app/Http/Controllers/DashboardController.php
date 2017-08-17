@@ -10,6 +10,7 @@ use App\Entities\Clubs;
 use App\Entities\Leaguages;
 use App\Entities\Matchs;
 use Carbon\Carbon;
+use App\Entities\Settings;
 
 
 class DashboardController extends BaseController
@@ -224,4 +225,33 @@ class DashboardController extends BaseController
             'output'       => str_replace("Exit status : " . $matches[0], '', $complete_output)
          );
     }
+
+
+    public function settings(){
+      $setting_vide0 = Settings::where('id',1)->first();
+
+      $vide0Id = !empty($setting_vide0)?$setting_vide0->ytb_live_video_id:null;
+
+      return view ('dashboard.site_setting')->with('video_id',$vide0Id);
+    }
+
+    public function addIdLiveVideo(){
+      $input = Input::all();
+
+      try{
+        $setting_video_ytb = Settings::where('id',1)->first();
+
+        $id_video_ytb = !empty($setting_video_ytb)?$setting_video_ytb : new Settings();
+
+        $id_video_ytb->ytb_live_video_id = $input['ytb_live_id'];
+
+        $id_video_ytb->save();
+
+        return Redirect::back()->with('status','handle_success');
+      }catch(\Illuminate\Database\QueryException $ex){
+        return Redirect::back()->with('error',$ex->getMessage());
+      }
+
+    }
+
 }

@@ -168,6 +168,10 @@ What are you looking for? Feel free to contact me directly.
         border-top: 2px solid red;
       }
 
+      ._fftx{
+        margin-bottom: 60px;
+      }
+
       #chat-frame iframe{
         height:100%;
       }
@@ -220,7 +224,6 @@ What are you looking for? Feel free to contact me directly.
     }
 
     </style>
-    <input type="hidden" id="fb_url_redirect" value="<?php echo $fb_url; ?>">
   </head>
   <body>
     <div class="col-md-12 no-gutters" id="wrapper">
@@ -291,7 +294,7 @@ What are you looking for? Feel free to contact me directly.
                       </div>
                     </div>
                     <div>
-                      <div style="padding:15px;">
+                      <div class="_fftx" style="padding:15px;">
                         <div class="col-md-5 col-sm-6 col-xs-12" style="padding-right:15px;">
                           <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-tabs="timeline" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Bongdatv Online</a></blockquote></div>
                         </div>
@@ -310,7 +313,7 @@ What are you looking for? Feel free to contact me directly.
     			</div>
     			<div id="chat-frame" class="col-md-3">
               <a id="tg" href="javascript:void(0);" class="hidden-md hidden-lg" style="position:absolute;font-size7px; top:-20px;left:25px;"><i class="glyphicon glyphicon-chevron-up" style="padding:10px;border-radius:50%;background:#3097D1;color:#fff;"></i></a>
-    				  <iframe src="https://www.youtube.com/live_chat?v=0hwrSEOxF9o&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe>
+    				  <iframe src="https://www.youtube.com/live_chat?v={{$video_id}}&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe>
     			</div>
     		</div>
     	</div>

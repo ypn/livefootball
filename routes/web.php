@@ -38,4 +38,6 @@ Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
   Route::post('/shell/exec','DashboardController@exec');
   Route::post('/shell/fb_exec','DashboardController@fbLive');
   Route::post('/shell/custom_exec','DashboardController@customExec');
+  Route::get('/settings','DashboardController@settings');
+  Route::post('/settings/add_id_live_video','DashboardController@addIdLiveVideo');
 });
