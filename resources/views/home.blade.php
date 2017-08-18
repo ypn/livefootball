@@ -295,13 +295,14 @@ What are you looking for? Feel free to contact me directly.
                     </div>
                     <div>
                       <div class="_fftx" style="padding:15px;">
-                        <div class="col-md-5 col-sm-6 col-xs-12" style="padding-right:15px;">
+                        <div class="col-md-6 col-sm-6 col-xs-12" style="padding-right:15px;">
                           <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-tabs="timeline" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Bongdatv Online</a></blockquote></div>
                         </div>
-                        <div class="col-md-7 col-sm-6">
-                          <p style="font-size:0.8em;padding-l">
+                        <div class="col-md-6 col-sm-6  col-xs-12">
+                          <!-- <p style="font-size:0.8em;padding-l">
                             Hãy <b><u> đăng kí kênh Youtube</u> </b> và <b> <u>like fanpage</u> </b> để nhận được thông báo nhanh chóng về thời gian phát tất cả các trận bóng đỉnh cao tại <a href="/">http://bongdatv.online</a>
-                          </p>
+                          </p> -->
+                          <div class="fb-page" data-href="https://www.facebook.com/DongChayTV/" data-tabs="timeline" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/DongChayTV/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DongChayTV/">Dòng Chảy TV</a></blockquote></div>
                         </div>
                         <span class="clearfix"></span>
                       </div>
