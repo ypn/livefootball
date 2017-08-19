@@ -18,12 +18,7 @@ $(document).ready(function(){
   var player = videojs('livehd-video-player');
 
   player.src({
-    //src:"http://45.76.215.91:4000/live/09691a48a044312108120fcb55d0b321/index.m3u8",//thuckhuya.tv
-    //src:"http://bongdatv.online:8095/hls/stream.m3u8",
-    //src:'http://localhost:8092/hls/stream.m3u8',
-    //src:"https://vtbd.vn.data.garena.tv/hls/198245/1296813.m3u8",
-    src:'https://vndatagarenatv-a.akamaihd.net/hls/213136/1296813.m3u8',
-    ///src:'http://vndatagarenatv-a.akamaihd.net/hls/198167/1413383.m3u8',
+    src:'http://35.198.242.165:8080/hls/stream.m3u8',    
     type:'application/x-mpegURL'
   });
   player.errors({

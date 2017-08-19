@@ -314,14 +314,14 @@ What are you looking for? Feel free to contact me directly.
     			</div>
     			<div id="chat-frame" class="col-md-3">
               <a id="tg" href="javascript:void(0);" class="hidden-md hidden-lg" style="position:absolute;font-size7px; top:-20px;left:25px;"><i class="glyphicon glyphicon-chevron-up" style="padding:10px;border-radius:50%;background:#3097D1;color:#fff;"></i></a>
-    				  <iframe src="https://www.youtube.com/live_chat?v={{$video_id}}&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe>
+    				  <!-- <iframe src="https://www.youtube.com/live_chat?v={{$video_id}}&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe> -->
     			</div>
     		</div>
     	</div>
     </div>
     <script src="/js/app.js"></script>
     @if($match->status == 1)
-    <script src="/js/lib/ainokishi.js"></script>
+    <script src="/js/lib/ainokishi.js?v=1"></script>
     @else
     <script src="/js/lib/flipclock/flipclock.js"></script>
     <script type="text/javascript">
