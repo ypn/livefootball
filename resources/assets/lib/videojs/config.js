@@ -22,7 +22,7 @@ $(document).ready(function(){
     //src:"http://bongdatv.online:8095/hls/stream.m3u8",
     //src:'http://localhost:8092/hls/stream.m3u8',
     //src:"https://vtbd.vn.data.garena.tv/hls/198245/1296813.m3u8",
-    src:'https://vndatagarenatv-a.akamaihd.net/hls/213156/1810682.m3u8',
+    src:'https://vndatagarenatv-a.akamaihd.net/hls/213136/1296813.m3u8',
     ///src:'http://vndatagarenatv-a.akamaihd.net/hls/198167/1413383.m3u8',
     type:'application/x-mpegURL'
   });
