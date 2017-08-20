@@ -317,7 +317,7 @@ What are you looking for? Feel free to contact me directly.
     			<div id="chat-frame" class="col-md-3">
               <a id="tg" href="javascript:void(0);" class="hidden-md hidden-lg" style="position:absolute;font-size7px; top:-20px;left:25px;"><i class="glyphicon glyphicon-chevron-up" style="padding:10px;border-radius:50%;background:#3097D1;color:#fff;"></i></a>
     				  <!-- <iframe src="https://www.youtube.com/live_chat?v={{$video_id}}&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe> -->
-              <div id="wechat" data-authentication="{{Sentinel::check()?'true':'false'}}"></div>
+              <div style="background:#fff;" id="wechat" data-authentication="{{Sentinel::check()?'true':'false'}}"></div>
     			</div>
     		</div>
     	</div>
