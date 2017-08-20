@@ -51,20 +51,20 @@ class Controller extends BaseController
     }
 
     public function showMatch($alias){
-      // if (!session_id()) {
-      //     session_start();
-      // }
-      //
-      //
-      // $fb = new \Facebook\Facebook([
-      //   'app_id' => '1812749958752149',
-      //   'app_secret' => '32a370b14d3b6140736ce7eaa13c962c',
-      //   'default_graph_version' => 'v2.8',
-      // ]);
-      // $helper = $fb->getRedirectLoginHelper();
-      //
-      // $permissions = ['email']; // Optional permissions
-      // $loginUrl = $helper->getLoginUrl(url('/') . '/fb-callback', $permissions);
+      if (!session_id()) {
+          session_start();
+      }
+
+
+      $fb = new \Facebook\Facebook([
+        'app_id' => '1812749958752149',
+        'app_secret' => '32a370b14d3b6140736ce7eaa13c962c',
+        'default_graph_version' => 'v2.8',
+      ]);
+      $helper = $fb->getRedirectLoginHelper();
+
+      $permissions = ['email']; // Optional permissions
+      $loginUrl = $helper->getLoginUrl(url('/') . '/fb-callback', $permissions);
 
 
       $match = Matchs::where('alias',$alias)->select('name','id','team_1','team_2','leaguage_id','date_start','status','fb_share_image')->first();
@@ -83,8 +83,8 @@ class Controller extends BaseController
         $match->team_2_name = isset($team_2->name)?$team_2->name:'Đội khách chưa xác định';
         $match->team_2_logo = isset($team_2->logo_url)?$team_2->logo_url:null;
         $match->time_count = (new Carbon($match->date_start))->diffInSeconds(Carbon::now());
-        // $_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
-        return view ('home',array('match'=>$match,'video_id'=>$vide0Id));//'fb_url'=>$loginUrl,
+        $_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
+        return view ('home',array('match'=>$match,'video_id'=>$vide0Id,'fb_url'=>$loginUrl));
       }
       else{
         abort(404);
@@ -219,7 +219,7 @@ class Controller extends BaseController
         event(new Event($request->text));
       }
       else{
-        return json("login_first");
+        return ("login_first");
       }
     }
 
