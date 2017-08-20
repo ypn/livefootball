@@ -286,7 +286,7 @@ What are you looking for? Feel free to contact me directly.
                       <div>
                         <h4>{{$match->name}}</h4>
                         <script src="https://apis.google.com/js/platform.js"></script>
-                        <div class="g-ytsubscribe" data-channelid="UCgPI5EQUOhWHd54b7lZTCsg" data-layout="full" data-count="default"></div>
+                        <div class="g-ytsubscribe" data-channelid="UCNf3EKzPqr7n0BR_-vUZVyA" data-layout="full" data-count="default"></div>
                       </div>
                       <div style="margin-top:-30px;">
                         <div style="padding:5px;text-align:right;margin-right:30px;">
@@ -380,28 +380,28 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        // setInterval(function() {
-        //   console.clear();
-        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-        //   console.log('If you want to get something from my website, feel free to contact me via:');
-        //   console.log('Email:ypnwebdev@gmail.com');
-        //   console.log('Skype:ypn_skype');
-        //   console.log('Thank for you consideration! Love you <3');
-        //   console.log('-----------------------------------------');
-        //
-        //
-        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
-        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
-        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-        //   console.log("\____  $$| $$____/ |__/  |__/");
-        //   console.log("/$$  | $$| $$");
-        //   console.log("|  $$$$$$/| $$");
-        //   console.log("\______/ |__/");
-        //
-        //   debugger;
-        // }, 10);
+        setInterval(function() {
+          console.clear();
+          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+          console.log('If you want to get something from my website, feel free to contact me via:');
+          console.log('Email:ypnwebdev@gmail.com');
+          console.log('Skype:ypn_skype');
+          console.log('Thank for you consideration! Love you <3');
+          console.log('-----------------------------------------');
+
+
+          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+          console.log("| $$  | $$ /$$__  $$| $$__  $$");
+          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+          console.log("| $$  | $$| $$  | $$| $$  | $$")
+          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+          console.log("\____  $$| $$____/ |__/  |__/");
+          console.log("/$$  | $$| $$");
+          console.log("|  $$$$$$/| $$");
+          console.log("\______/ |__/");
+
+          debugger;
+        }, 10);
 
     </script>
     <script>(function(d, s, id) {
