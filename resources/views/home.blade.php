@@ -151,6 +151,7 @@ What are you looking for? Feel free to contact me directly.
       }
       #chat-frame{
         height:100vh;
+        background:#fff;
       }
       #chat-frame iframe{
         height:99%;
@@ -323,7 +324,7 @@ What are you looking for? Feel free to contact me directly.
     </div>
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
-    <script src="/js/plugins/chat-master.js"></script>
+    <script src="/js/plugins/chat-master.js?v=1"></script>
     @if($match->status == 1)
     <script src="/js/lib/ainokishi.js?v=1"></script>
     @else

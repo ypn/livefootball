@@ -11,10 +11,10 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix//.js('resources/assets/js/app.js', 'public/js')
   //.sass('resources/assets/sass/app.scss', 'public/css')
   //.sass('resources/assets/sass/master.scss', 'public/css')
-  //.react('resources/assets/js/components/module_chat/chat-master.js','public/js/plugins')
+  .react('resources/assets/js/components/module_chat/chat-master.js','public/js/plugins')
   //  .browserSync('http://localhost/livefootball/public/')
   //  .disableNotifications();
   // .styles([
