@@ -320,8 +320,8 @@ What are you looking for? Feel free to contact me directly.
     		</div>
     	</div>
     </div>
-    <script src="/js/app.js"></script>
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
+    <script src="/js/app.js"></script>
     <script src="/js/plugins/chat-master.js"></script>
     @if($match->status == 1)
     <script src="/js/lib/ainokishi.js?v=1"></script>
