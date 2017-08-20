@@ -314,12 +314,15 @@ What are you looking for? Feel free to contact me directly.
     			</div>
     			<div id="chat-frame" class="col-md-3">
               <a id="tg" href="javascript:void(0);" class="hidden-md hidden-lg" style="position:absolute;font-size7px; top:-20px;left:25px;"><i class="glyphicon glyphicon-chevron-up" style="padding:10px;border-radius:50%;background:#3097D1;color:#fff;"></i></a>
-    				  <iframe src="https://www.youtube.com/live_chat?v={{$video_id}}&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe>
+    				  <!-- <iframe src="https://www.youtube.com/live_chat?v={{$video_id}}&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe> -->
+              <div id="we-chat"></div>
     			</div>
     		</div>
     	</div>
     </div>
     <script src="/js/app.js"></script>
+    <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
+    <script src="/js/plugins/chat-master.js"></script>
     @if($match->status == 1)
     <script src="/js/lib/ainokishi.js?v=1"></script>
     @else
@@ -375,28 +378,28 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        // setInterval(function() {
-        //   console.clear();
-        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-        //   console.log('If you want to get something from my website, feel free to contact me via:');
-        //   console.log('Email:ypnwebdev@gmail.com');
-        //   console.log('Skype:ypn_skype');
-        //   console.log('Thank for you consideration! Love you <3');
-        //   console.log('-----------------------------------------');
+        setInterval(function() {
+          console.clear();
+          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+          console.log('If you want to get something from my website, feel free to contact me via:');
+          console.log('Email:ypnwebdev@gmail.com');
+          console.log('Skype:ypn_skype');
+          console.log('Thank for you consideration! Love you <3');
+          console.log('-----------------------------------------');
 
 
-        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
-        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
-        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-        //   console.log("\____  $$| $$____/ |__/  |__/");
-        //   console.log("/$$  | $$| $$");
-        //   console.log("|  $$$$$$/| $$");
-        //   console.log("\______/ |__/");
+          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+          console.log("| $$  | $$ /$$__  $$| $$__  $$");
+          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+          console.log("| $$  | $$| $$  | $$| $$  | $$")
+          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+          console.log("\____  $$| $$____/ |__/  |__/");
+          console.log("/$$  | $$| $$");
+          console.log("|  $$$$$$/| $$");
+          console.log("\______/ |__/");
 
-        //   debugger;
-        // }, 10);
+          debugger;
+        }, 10);
 
     </script>
     <script>(function(d, s, id) {
