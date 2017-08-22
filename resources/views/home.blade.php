@@ -288,7 +288,7 @@ What are you looking for? Feel free to contact me directly.
                         <script src="https://apis.google.com/js/platform.js"></script>
                         <div class="g-ytsubscribe" data-channelid="UCNf3EKzPqr7n0BR_-vUZVyA" data-layout="full" data-count="default"></div>
                       </div>
-                      <div style="margin-top:-30px;">
+                      <div class="hidden-xs" style="margin-top:-30px;">
                         <div style="padding:5px;text-align:right;margin-right:30px;">
                           <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
                           <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
@@ -297,14 +297,14 @@ What are you looking for? Feel free to contact me directly.
                     </div>
                     <div>
                       <div class="_fftx" style="padding:15px;">
-                        <div class="col-md-6 col-sm-6 col-xs-12" style="padding-right:15px;">
-                          <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-tabs="timeline" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Bongdatv Online</a></blockquote></div>
+                        <div class="col-md-6 col-sm-6 col-xs-11">
+                          <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Bongdatv Online</a></blockquote></div>
                         </div>
-                        <div class="col-md-6 col-sm-6  col-xs-12">
+                        <div class="col-md-6 col-sm-6  col-xs-11">
                           <!-- <p style="font-size:0.8em;padding-l">
                             Hãy <b><u> đăng kí kênh Youtube</u> </b> và <b> <u>like fanpage</u> </b> để nhận được thông báo nhanh chóng về thời gian phát tất cả các trận bóng đỉnh cao tại <a href="/">http://bongdatv.online</a>
                           </p> -->
-                          <div class="fb-page" data-href="https://www.facebook.com/DongChayTV/" data-tabs="timeline" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/DongChayTV/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DongChayTV/">Dòng Chảy TV</a></blockquote></div>
+                          <div class="fb-page" data-href="https://www.facebook.com/DongChayTV/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/DongChayTV/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DongChayTV/">Dòng Chảy TV</a></blockquote></div>
                         </div>
                         <span class="clearfix"></span>
                       </div>
@@ -380,28 +380,28 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        // setInterval(function() {
-        //   console.clear();
-        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-        //   console.log('If you want to get something from my website, feel free to contact me via:');
-        //   console.log('Email:ypnwebdev@gmail.com');
-        //   console.log('Skype:ypn_skype');
-        //   console.log('Thank for you consideration! Love you <3');
-        //   console.log('-----------------------------------------');
-        //
-        //
-        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
-        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
-        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-        //   console.log("\____  $$| $$____/ |__/  |__/");
-        //   console.log("/$$  | $$| $$");
-        //   console.log("|  $$$$$$/| $$");
-        //   console.log("\______/ |__/");
-        //
-        //   debugger;
-        // }, 10);
+        setInterval(function() {
+          console.clear();
+          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+          console.log('If you want to get something from my website, feel free to contact me via:');
+          console.log('Email:ypnwebdev@gmail.com');
+          console.log('Skype:ypn_skype');
+          console.log('Thank for you consideration! Love you <3');
+          console.log('-----------------------------------------');
+
+
+          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+          console.log("| $$  | $$ /$$__  $$| $$__  $$");
+          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+          console.log("| $$  | $$| $$  | $$| $$  | $$")
+          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+          console.log("\____  $$| $$____/ |__/  |__/");
+          console.log("/$$  | $$| $$");
+          console.log("|  $$$$$$/| $$");
+          console.log("\______/ |__/");
+
+          debugger;
+        }, 10);
 
     </script>
     <script>(function(d, s, id) {
