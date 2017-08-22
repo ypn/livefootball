@@ -327,7 +327,7 @@ What are you looking for? Feel free to contact me directly.
     <script src="/js/app.js"></script>
     <script src="/js/plugins/chat-master.js?v=1"></script>
     @if($match->status == 1)
-    <script src="/js/lib/ainokishi.js?v=1"></script>
+    <script src="/js/lib/ainokishi.js?v=2"></script>
     @else
     <script src="/js/lib/flipclock/flipclock.js"></script>
     <script type="text/javascript">
