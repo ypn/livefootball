@@ -286,7 +286,8 @@ What are you looking for? Feel free to contact me directly.
                       <div>
                         <h4>{{$match->name}}</h4>
                         <script src="https://apis.google.com/js/platform.js"></script>
-                        <div class="g-ytsubscribe" data-channelid="UCNf3EKzPqr7n0BR_-vUZVyA" data-layout="full" data-count="default"></div>
+
+                        <div class="g-ytsubscribe" data-channelid="UCyXNsvzIxJjPzqN_Xl3-BDw" data-layout="full" data-count="default"></div>
                       </div>
                       <div class="hidden-xs" style="margin-top:-30px;">
                         <div style="padding:5px;text-align:right;margin-right:30px;">
