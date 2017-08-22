@@ -18,18 +18,18 @@ $(document).ready(function(){
   var player = videojs('livehd-video-player');
 
   player.src({
-    src:'http://35.198.242.165:8080/hls/stream.m3u8',    
+    src:'http://35.198.242.165:8080/hls/stream.m3u8',
     type:'application/x-mpegURL'
   });
   player.errors({
     errors: {
       2: {
-        headline: 'Trận đấu chưa sẵn sàng.',
-        message: 'Có vẻ như bạn tới hơi sớm, vui lòng làm ly trà đá và quay lại với chúng tôi khi trận đấu bắt đầu. Hoặc có thể do lỗi tải trang, hãy nhấn F5 để  tải lại stream. Yêu bạn <3.'
+        headline: 'Stream offline.',
+        message: 'Super Long đã đi giải cứu thế giới rồi, cảm ơn đã các bạn đã xem trận đấu. Super Long sẽ quay lại với các bạn trong trận đấu tới. Yêu bạn <3.'
       },
       4:{
-        headline: 'Trận đấu chưa sẵn sàng.',
-        message: 'Có vẻ như bạn tới hơi sớm, vui lòng làm ly trà đá và quay lại với chúng tôi khi trận đấu bắt đầu. Hoặc có thể do lỗi tải trang, hãy nhấn F5 để  tải lại stream. Yêu bạn <3.'
+        headline: 'Stream offline.',
+        message: 'Super Long đã đi giải cứu thế giới rồi, cảm ơn đã các bạn đã xem trận đấu. Super Long sẽ quay lại với các bạn trong trận đấu tới. Yêu bạn <3.'
       }
     }
   });

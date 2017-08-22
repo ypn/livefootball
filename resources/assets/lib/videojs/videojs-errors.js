@@ -256,7 +256,7 @@ var initPlugin = function initPlugin(player, options) {
     error = videojs.mergeOptions(error, options.errors[error.code || 0]);
 
     if (error.message) {
-      details = '<div class="vjs-errors-details">' + player.localize('Technical details') + '\n        : <div class="vjs-errors-message">' + player.localize(error.message) + '</div>\n        </div>';
+      details = '<div class="vjs-errors-details">' + player.localize('Chi tiết') + '\n        : <div class="vjs-errors-message">' + player.localize(error.message) + '</div>\n        </div>';
     }
 
     if (error.code === 4 && FlashObj && !FlashObj.isSupported()) {
@@ -269,7 +269,7 @@ var initPlugin = function initPlugin(player, options) {
 
     content.className = 'vjs-errors-dialog';
     content.id = 'vjs-errors-dialog';
-    dialogContent = '<div class="vjs-errors-content-container">\n      <h2 class="vjs-errors-headline">' + this.localize(error.headline) + '</h2>\n        <div><b>' + this.localize('Error Code') + '</b>: ' + (error.type || error.code) + '</div>\n        ' + details + '\n      </div>';
+    dialogContent = '<div class="vjs-errors-content-container">\n      <h2 class="vjs-errors-headline">' + this.localize(error.headline) + '</h2>\n  <div style="width:100%;height:50%;"><img style="width:100%;height:100%;object-fit:contain;" src="http://i.imgur.com/hAOyoKrl.jpg" />  </div>  \n        ' + details + '\n      </div>';
 
     var closeable = display.closeable(!('dismiss' in error) || error.dismiss);
 
