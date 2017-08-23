@@ -20,7 +20,9 @@ Route::get('/fb-callback','Controller@fbCallback');
 Route::post('/check-auth','Controller@checkAuth');
 Route::get('noti-facebook','Controller@postFb');
 Route::get('/tructiep/{alias}','Controller@showMatch');
-Route::get('starter','Controller@starter');
+Route::get('/starter','Controller@starter');
+Route::get('/logout','Controller@logout');
+Route::get('/coin','CoinController@show');
 Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
   Route::get('/','DashboardController@listMatch');
   Route::get('/club/create','DashboardController@createClub');

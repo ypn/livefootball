@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Crypt;
 use App\Events\Event;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
-use Sentinel;
+use Sentinel,Redirect;
 use Users;
 use App\Entities\ChatMessages;
 use App\Entities\Matchs;
@@ -27,6 +27,20 @@ class Controller extends BaseController
 
     public function starter(){
 
+      if (!session_id()) {
+          session_start();
+      }
+
+
+      $fb = new \Facebook\Facebook([
+        'app_id' => '1812749958752149',
+        'app_secret' => '32a370b14d3b6140736ce7eaa13c962c',
+        'default_graph_version' => 'v2.8',
+      ]);
+      $helper = $fb->getRedirectLoginHelper();
+
+      $permissions = ['email']; // Optional permissions
+      $loginUrl = $helper->getLoginUrl(url('/') . '/fb-callback', $permissions);
 
       $matchs = Matchs::select('alias','team_1','team_2','leaguage_id','date_start')->orderBy('date_start')->get();
 
@@ -47,14 +61,13 @@ class Controller extends BaseController
 
       }
 
-      return view ('starter',['matchs'=>$matchs]);
+      return view ('starter',['matchs'=>$matchs,'fb_url'=>$loginUrl]);
     }
 
     public function showMatch($alias){
       if (!session_id()) {
           session_start();
       }
-
 
       $fb = new \Facebook\Facebook([
         'app_id' => '1812749958752149',
@@ -212,6 +225,11 @@ class Controller extends BaseController
         }
       }
 
+    }
+
+    public function logout(){
+      Sentinel::logout();
+      return Redirect::back();
     }
 
     public function newChat(Request $request){
