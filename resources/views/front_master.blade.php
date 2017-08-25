@@ -118,6 +118,11 @@
      </nav>
      @yield('content')
     <script src="js/app.js"></script>
+    <script type="text/javascript">
+      $('#chat-f-b').on('click',function(){
+        $('#f-chat-content').toggleClass('show');
+      });
+    </script>
      @yield('script')
   </body>
 </html>

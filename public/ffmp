@@ -1,0 +1,1 @@
+ffmpeg  -re -y  -loop 1 -i poster.jpg -i "http://35.198.242.165:8080/stream.m3u8" -filter_complex "[1:v]scale=590:-1[fg];[0:v][fg]overlay=(W-w):(H-h):shortest=1,format=yuv420p" -vcodec libx264 -s 1280x720 -preset veryfast -g 30 -r 30  -f flv rtmp://a.rtmp.youtube.com/live2/3z2x-at6j-09yw-3zq1
