@@ -95,7 +95,6 @@
   width: 35px;
   height: 35px;
   object-fit: cover;
-  align-self: center;
 }
 
 .live-chat-item .live-chat-content label{
