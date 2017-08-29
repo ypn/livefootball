@@ -86,7 +86,7 @@
   margin: 15px;
   display: flex;
   align-items: flex-start;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .live-chat-item .live-chat-user-avatar{
