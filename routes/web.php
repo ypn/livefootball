@@ -31,9 +31,9 @@ Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
   Route::get('/leaguage/create','DashboardController@createLeaguage');
   Route::get('/leaguage/list','DashboardController@listLeaguage');
   Route::post('/leaguage/add','DashboardController@addLeaguage');
-  Route::get('/match/create','DashboardController@createMatch');
+  Route::get('/match/create/{match_id?}','DashboardController@createMatch');
   Route::get('/match/list','DashboardController@listMatch');
-  Route::post('/match/add','DashboardController@addMatch');
+  Route::post('/match/add/{match_id?}','DashboardController@addMatch');
   Route::post('/match/change-status','DashboardController@changeMatchStatus');
   Route::post('/match/delete/{match_id}','DashboardController@deleteMatch');
   Route::get('/shell-exec','DashboardController@shellExec');

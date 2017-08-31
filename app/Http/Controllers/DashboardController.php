@@ -23,13 +23,22 @@ class DashboardController extends BaseController
       return view ('dashboard.create_club');
     }
 
-    public function createMatch(){
+    public function createMatch($match_id=null){
+      $data= array();
+      if($match_id!=null){
+        $match = Matchs::where('id',$match_id)->first();
+        if(!empty($match)){
+          $data['match']= $match;
+        }
+      }
 
       $clubs = Clubs::select('id','name')->orderBy('name')->get();
       $leaguages = Leaguages::select('id','name')->orderBy('name')->get();
 
+      $data['clubs'] = $clubs;
+      $data['leaguages'] = $leaguages;
 
-      return view('dashboard.create_match',['clubs'=>$clubs,'leaguages'=>$leaguages]);
+      return view('dashboard.create_match',$data);
     }
 
     public function createLeaguage(){
@@ -112,7 +121,7 @@ class DashboardController extends BaseController
       }
     }
 
-    public function addMatch(){
+    public function addMatch($match_id =null){
       $input = Input::all();
       $validator = Validator::make(Input::all(),[
           'name'=>'required',
@@ -126,7 +135,15 @@ class DashboardController extends BaseController
         return Redirect::back()->with('error','Định dạng input không hợp lệ');
       }else{
         try{
-          $match = new Matchs();
+          if($match_id == null){
+            $match = new Matchs();
+          }
+          else{
+            $match= Matchs::where('id',$match_id)->first();        
+            if(empty($match)){
+                $match = new Matchs();
+            }
+          }
           $match->name = $input['name'];
           $match->alias = str_slug($input['name']);
           $match->team_1 = $input['id_team_a'];

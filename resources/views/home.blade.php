@@ -323,6 +323,19 @@ What are you looking for? Feel free to contact me directly.
     		</div>
     	</div>
     </div>
+    <script type="text/javascript">
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('./service-worker.js', {scope: './about'})
+          .then(function (registration) {
+              console.log(registration);
+          })
+          .catch(function (e) {
+              console.error(e);
+          })
+    } else {
+      console.log('Service Worker is not supported in this browser.');
+    }
+    </script>
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/plugins/chat-master.js?v=1"></script>

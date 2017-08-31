@@ -5,12 +5,7 @@
     @yield('title')
     <link rel="stylesheet" href="/css/app.css">
     <style media="screen">
-    @import url('https://fonts.googleapis.com/css?family=Roboto');
-    body{
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-      background:url('https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-2-full.jpg');
-    }
+    @import url('https://fonts.googleapis.com/css?family=Roboto');    
     .nav-custom{
       border-radius:0;
       border:0;

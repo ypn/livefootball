@@ -3,7 +3,12 @@
 <title>Nạp coin xem gói tháng</title>
 @stop
 @section('style')
-<style media="screen">  
+<style media="screen">
+  body{
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background:url('https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-2-full.jpg');
+  }
   .charge-rate span{
     color: #f00808;
   }

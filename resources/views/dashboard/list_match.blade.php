@@ -114,7 +114,7 @@
                         </select>
                       </td>
                       <td class=" last">
-                        <a href="#">View</a>
+                        <a href="/dashboard/match/create/{{$match->id}}">View</a>
                         <a href="javascript:void(0);" class="form-delete-match">Delete
                           <form action="/dashboard/match/delete/{{$match->id}}" method="post"><input type="hidden" name="_token" value="{{csrf_token()}}"></form>
                         </a>
