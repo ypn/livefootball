@@ -70,6 +70,27 @@
   #f-chat-content.show{
     display: block!important;
   }
+  .ribbon{
+    background-color: red;
+    color: #fff;
+    line-height: 20px;
+    padding: 5px 20px;
+    position: absolute;
+    font-weight: bold;
+    top: 5px;
+    left: 5px;
+    animation: twinkling 0.4s linear 2s infinite alternate;
+    padding-left: 10px;
+    z-index: 20;
+  }
+  @-webkit-keyframes twinkling{ /*Transparency from 0 to 1*/
+    0%{
+      opacity:0.6; /*The opacity to 0*/
+    }
+    100%{
+      opacity:1; /*The opacity to 1*/
+    }
+  }
 </style>
 @stop
 @section('content')
@@ -128,6 +149,11 @@
               echo 'default';
           }
         ?>">
+          @if($m->status ==1)
+          <div class="ribbon">
+            Đang trực tiếp
+          </div>
+          @endif
           <div class="logo">
             <img src="{{$m->team_1_logo}}" class="first-logo"/>
             <img src="{{$m->team_2_logo}}" class="second-logo"/>

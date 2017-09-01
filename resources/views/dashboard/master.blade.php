@@ -28,6 +28,9 @@
       <!-- bootstrap-daterangepicker -->
       <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
+      @yield('style')
+
+
       <!-- Custom Theme Style -->
       <link href="/build/css/custom.min.css" rel="stylesheet">
 
@@ -236,7 +239,7 @@
       <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
       <!-- Custom Theme Scripts -->
-      <script src="/build/js/custom.min.js"></script>      
+      <script src="/build/js/custom.min.js"></script>
       @yield('script')
 
     </body>

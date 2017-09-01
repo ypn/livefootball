@@ -20,7 +20,7 @@ Route::get('/fb-callback','Controller@fbCallback');
 Route::post('/check-auth','Controller@checkAuth');
 Route::get('noti-facebook','Controller@postFb');
 Route::get('/tructiep/{alias}','Controller@showMatch');
-Route::get('/starter','Controller@starter');
+Route::get('/lich-truc-tiep','Controller@starter');
 Route::get('/logout','Controller@logout');
 Route::get('/coin','CoinController@show');
 Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
@@ -32,6 +32,8 @@ Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
   Route::get('/leaguage/list','DashboardController@listLeaguage');
   Route::post('/leaguage/add','DashboardController@addLeaguage');
   Route::get('/match/create/{match_id?}','DashboardController@createMatch');
+  Route::get('/match/review/{match_id}','DashboardController@matchReview');
+  Route::post('/match/review/add','DashboardController@addMatchReview');
   Route::get('/match/list','DashboardController@listMatch');
   Route::post('/match/add/{match_id?}','DashboardController@addMatch');
   Route::post('/match/change-status','DashboardController@changeMatchStatus');

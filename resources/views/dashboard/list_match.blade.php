@@ -3,6 +3,7 @@
 <script type="text/javascript">
   (function($){
     $('.change-status').on('change',function(){
+      let _self = $(this);
       $.ajax({
         url:window.location.origin + '/dashboard/match/change-status',
         method:'POST',
@@ -15,6 +16,9 @@
           if(!response ==1){
             alert('Thay đổi trạng thái thất bại. Kiểm tra log để xem chi tiết');
             console.log(response);
+          }
+          else{
+            location.reload();
           }
         },
         error: function(xhr, error){
@@ -113,8 +117,8 @@
                           <option {{($match->status==2)?'selected':''}} value="2">Đã kết thúc</option>
                         </select>
                       </td>
-                      <td class=" last">
-                        <a href="/dashboard/match/create/{{$match->id}}">View</a>
+                      <td class="last">
+                        <a class="edit-match" href="{{($match->status!==2) ? '/dashboard/match/create/' . $match->id : '/dashboard/match/review/' . $match->id}}">Edit</a>
                         <a href="javascript:void(0);" class="form-delete-match">Delete
                           <form action="/dashboard/match/delete/{{$match->id}}" method="post"><input type="hidden" name="_token" value="{{csrf_token()}}"></form>
                         </a>

@@ -42,7 +42,7 @@ class Controller extends BaseController
       $permissions = ['email']; // Optional permissions
       $loginUrl = $helper->getLoginUrl(url('/') . '/fb-callback', $permissions);
 
-      $matchs = Matchs::select('alias','team_1','team_2','leaguage_id','date_start')->orderBy('date_start')->get();
+      $matchs = Matchs::select('alias','team_1','team_2','leaguage_id','date_start','status')->where('status','<>',2)->orderBy('date_start')->get();
 
       foreach($matchs as $m){
         $leaguage = Leaguages::where('id',$m->leaguage_id)->select('image_cover','name')->first();
@@ -80,24 +80,28 @@ class Controller extends BaseController
       $loginUrl = $helper->getLoginUrl(url('/') . '/fb-callback', $permissions);
 
 
-      $match = Matchs::where('alias',$alias)->select('name','id','team_1','team_2','leaguage_id','date_start','status','fb_share_image')->first();
+      $match = Matchs::where('alias',$alias)->select('name','id','team_1','team_2','leaguage_id','date_start','status','fb_share_image','review_url')->first();
 
       $setting_vide0 = Settings::where('id',1)->first();
 
       $vide0Id = !empty($setting_vide0)?$setting_vide0->ytb_live_video_id:null;
 
       if(!empty($match)){
-        $leaguage = Leaguages::where('id',$match->leaguage_id)->select('name')->first();
-        $match->leaguage_name = isset($leaguage->name)?$leaguage->name:'Giải đấu chưa xác định';
-        $team_1 = Clubs::where('id',$match->team_1)->select('name','logo_url')->first();
-        $team_2 = Clubs::where('id',$match->team_2)->select('name','logo_url')->first();
-        $match->team_1_name = isset($team_1->name)?$team_1->name:'Đội nhà chưa xác định';
-        $match->team_1_logo = isset($team_1->logo_url)?$team_1->logo_url:null;
-        $match->team_2_name = isset($team_2->name)?$team_2->name:'Đội khách chưa xác định';
-        $match->team_2_logo = isset($team_2->logo_url)?$team_2->logo_url:null;
-        $match->time_count = (new Carbon($match->date_start))->diffInSeconds(Carbon::now());
-        $_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
-        return view ('home',array('match'=>$match,'video_id'=>$vide0Id,'fb_url'=>$loginUrl));
+        if($match->status != 2){
+          $leaguage = Leaguages::where('id',$match->leaguage_id)->select('name')->first();
+          $match->leaguage_name = isset($leaguage->name)?$leaguage->name:'Giải đấu chưa xác định';
+          $team_1 = Clubs::where('id',$match->team_1)->select('name','logo_url')->first();
+          $team_2 = Clubs::where('id',$match->team_2)->select('name','logo_url')->first();
+          $match->team_1_name = isset($team_1->name)?$team_1->name:'Đội nhà chưa xác định';
+          $match->team_1_logo = isset($team_1->logo_url)?$team_1->logo_url:null;
+          $match->team_2_name = isset($team_2->name)?$team_2->name:'Đội khách chưa xác định';
+          $match->team_2_logo = isset($team_2->logo_url)?$team_2->logo_url:null;
+          $match->time_count = (new Carbon($match->date_start))->diffInSeconds(Carbon::now());
+          $_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
+          return view ('home',array('match'=>$match,'video_id'=>$vide0Id,'fb_url'=>$loginUrl));
+        } else{
+           return view  ('review',array('match'=>$match));
+        }
       }
       else{
         abort(404);

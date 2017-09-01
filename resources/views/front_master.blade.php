@@ -5,7 +5,7 @@
     @yield('title')
     <link rel="stylesheet" href="/css/app.css">
     <style media="screen">
-    @import url('https://fonts.googleapis.com/css?family=Roboto');    
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
     .nav-custom{
       border-radius:0;
       border:0;
@@ -87,9 +87,9 @@
          </div>
          <div class="collapse navbar-collapse" id="myNavbar">
            <ul class="nav navbar-nav">
-             <li class="active"><a href="#">Trang chủ</a></li>
-             <li><a href="#">Lịch trực tiếp</a></li>
-             <li><a href="#">Lịch thi đấu</a></li>
+             <li class="active"><a href="/">Trang chủ</a></li>
+             <li><a href="/lich-truc-tiep">Lịch trực tiếp</a></li>
+             <li><a href="/">Lịch thi đấu</a></li>
              <li><a href="#">Bản tin</a></li>
              <li><a href="#">Videos</a></li>
            </ul>
@@ -112,7 +112,7 @@
        </div>
      </nav>
      @yield('content')
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
     <script type="text/javascript">
       $('#chat-f-b').on('click',function(){
         $('#f-chat-content').toggleClass('show');

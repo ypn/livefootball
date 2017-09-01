@@ -139,7 +139,7 @@ class DashboardController extends BaseController
             $match = new Matchs();
           }
           else{
-            $match= Matchs::where('id',$match_id)->first();        
+            $match= Matchs::where('id',$match_id)->first();
             if(empty($match)){
                 $match = new Matchs();
             }
@@ -269,6 +269,28 @@ class DashboardController extends BaseController
         return Redirect::back()->with('error',$ex->getMessage());
       }
 
+    }
+
+    public function matchReview($match_id){
+      $match = Matchs::select('id','review_url')->where('id',$match_id)->first();
+
+      return view ('dashboard.review_match',array('match'=>$match));
+    }
+
+
+
+    public function addMatchReview(){
+      $input = Input::all();
+        try{
+            $match = Matchs::where('id',$input['match_id'])->first();
+            if(!empty($match)){
+              $match->review_url = isset($input['youtube_url']) ? $input['youtube_url'] : null;
+              $match->save();
+              return Redirect::back()->with('status','handle_success');
+            }
+        }catch(\Exception $ex){
+          return Redirect::back()->with('error',$ex->getMessage());
+        }
     }
 
 }
