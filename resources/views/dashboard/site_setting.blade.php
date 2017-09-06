@@ -21,7 +21,7 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Cài đặt</h2>
+            <h2>Livestream channel url</h2>
             <ul class="nav navbar-right panel_toolbox">
               <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
               </li>
@@ -38,8 +38,13 @@
             <form method="POST" action="/dashboard/settings/add_id_live_video">
               <input type="hidden" name="_token" value="{{csrf_token()}}">
 
-              <label for="name">Youtube video live ID</label>
-              <input type="text" class="form-control" name="ytb_live_id" required value="{{$video_id}}"/>
+              <label for="name">#Server 1</label>
+              <input type="text" class="form-control" name="server1" required value="{{isset($server1->value) ? $server1->value :''}}"/>
+
+              <br/>
+              <label for="name">#Server 2</label>
+
+              <input type="text" class="form-control" name="server2" required value="{{isset($server2->value) ? $server2->value :''}}"/>
 
               <br/>
               <button class="btn btn-primary">Submit</button>

@@ -22,6 +22,9 @@
    <div class="container">
      <div class="row">
        <div class="col-md-8">
+         <div style="height:100px;margin-bottom:15px;">
+           <img src="http://4.bp.blogspot.com/-bEzR6cBoC7M/VKjBG3D7yjI/AAAAAAAAAQU/U9ZMQTxsmGM/s1600/BANNER-ngang-cam---xanh-duong.jpg" style="width:100%;height:100%;object-fit:cover;" alt="">
+         </div>
          <video
            id="video"
            class="video-js vjs-default-skin video  vjs-big-play-centered vjs-16-9"
@@ -50,6 +53,47 @@
            fjs.parentNode.insertBefore(js, fjs);
          }(document, 'script', 'facebook-jssdk'));</script>
          <div class="fb-comments" data-width="100%"  data-href="{{Request::url()}}" data-numposts="10"></div>
+       </div>
+       <div class="col-md-4">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQABYNnBG0Cm7umUii9FHjXTpTaRNbtZPNj_HUpKvJ9RT3sHf52ww" style="width:100%;">
+         <div class="related-video">
+           <h4 style="color:black;font-weight:bold;">Hot game</h4>
+           <div class="video-item" style="display:flex;margin:15px 0;">
+             <div class="">
+               <img src="https://i.ytimg.com/an_webp/N386J4j4oCU/mqdefault_6s.webp?du=3000&sqp=CLSqtM0F&rs=AOn4CLDyEGnelGRmqZYd1VKof2oyqmrPlg" style="width:200px;height:100px;" alt="">
+             </div>
+
+             <div style="padding:0 15px;color:black;">
+               <label for="">Manchester United 4-0 Swansea</label>
+               <p>10.452 lượt xem</p>
+             </div>
+           </div>
+
+           <div class="video-item" style="display:flex;margin:15px 0;">
+             <img src="https://i.ytimg.com/an_webp/ALDZLJYZgdc/mqdefault_6s.webp?du=3000&sqp=CO3KtM0F&rs=AOn4CLD1ev_ko8VlStKySx7aVk_sgx4X1g" style="width:200px;height:100px;" alt="">
+             <div style="padding:0 15px;color:black;">
+               <label for="">Chelsea 2-1 Tottenham hotspur</label>
+               <p>8.316 lượt xem</p>
+             </div>
+           </div>
+
+           <div class="video-item" style="display:flex;margin:15px 0;">
+             <img src="https://i.ytimg.com/an_webp/fY-7JJPkPXc/mqdefault_6s.webp?du=3000&sqp=CPiptM0F&rs=AOn4CLAl69tVebduQSoOKZZXTUpM5VE9qg" style="width:200px;height:100px;" alt="">
+             <div style="padding:0 15px;color:black;">
+               <label for="">Liverpool 4-0 Arsenal</label>
+               <p>20.986 lượt xem</p>
+             </div>
+           </div>
+
+           <div class="video-item" style="display:flex;margin:15px 0;">
+             <img src="https://i.ytimg.com/an_webp/tTyTKbMmTzg/mqdefault_6s.webp?du=3000&sqp=COiAtM0F&rs=AOn4CLBUqA2FaoMAUlf_pIbszucRrbohlQ" style="width:200px;height:100px;" alt="">
+             <div style="padding:0 15px;color:black;">
+               <label for="">Manchester City 0-2 Manchester United</label>
+               <p>20.986 lượt xem</p>
+             </div>
+           </div>
+
+         </div>
        </div>
      </div>
    </div>

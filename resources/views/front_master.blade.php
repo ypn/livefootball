@@ -66,6 +66,76 @@
       background-image: linear-gradient(#5B7BD5, #4864B1);
     }
 
+    #b-c-facebook{
+      z-index: 99999;
+      width: 350px;
+      max-width: 100%;
+      height: auto;
+      max-height:100%;
+      overflow: hidden;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      padding: 0 10px;
+
+    }
+
+    #chat-f-b{
+      float: left;
+      padding: 0 25px;
+      padding-left: 15px;
+      width: 100%;
+      color: #fff;
+      height: 38px;
+      line-height: 38px;
+      background-color: #3a5897;
+      border: 0;
+      z-index: 9999999;
+      margin-right: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      text-shadow: 0 1px 0 rgba(0,0,0,.1);
+      background-repeat: repeat-x;
+      background-size: auto;
+      background-position: 0 0;
+      text-decoration: none;
+      cursor: pointer;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+    }
+    #t_f_chat{
+      float: left;
+      position: absolute;
+      right: 25px;
+      top: 0;
+    }
+
+    #chat_f_close{
+      color: #fff;
+      font-size: 17px;
+      font-family: verdana;
+      text-decoration: none;
+      opacity: 0.5;
+      outline: 0;
+      transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+    }
+
+    #f-chat-content{
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      display: none;
+      background-color: #fff;
+      position: relative;
+    }
+
+    #f-chat-content.show{
+      display: block!important;
+    }
+
     @media(min-width:992px){
       .dropdown-toggle{
         padding:0!important;
@@ -91,7 +161,7 @@
              <li><a href="/lich-truc-tiep">Lịch trực tiếp</a></li>
              <li><a href="/">Lịch thi đấu</a></li>
              <li><a href="#">Bản tin</a></li>
-             <li><a href="#">Videos</a></li>
+             <li><a href="/list-videos">Videos</a></li>
            </ul>
             <ul class="nav navbar-nav navbar-right">
             @if(Sentinel::check())

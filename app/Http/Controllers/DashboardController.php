@@ -11,6 +11,7 @@ use App\Entities\Leaguages;
 use App\Entities\Matchs;
 use Carbon\Carbon;
 use App\Entities\Settings;
+use App\Entities\Servers;
 
 
 class DashboardController extends BaseController
@@ -245,24 +246,33 @@ class DashboardController extends BaseController
 
 
     public function settings(){
-      $setting_vide0 = Settings::where('id',1)->first();
+      $server1 = Servers::where('id',1)->first();
+      $server2 = Servers::where('id',2)->first();
 
-      $vide0Id = !empty($setting_vide0)?$setting_vide0->ytb_live_video_id:null;
-
-      return view ('dashboard.site_setting')->with('video_id',$vide0Id);
+      return view ('dashboard.site_setting',['server1'=>$server1,'server2'=>$server2]);
     }
 
     public function addIdLiveVideo(){
       $input = Input::all();
 
       try{
-        $setting_video_ytb = Settings::where('id',1)->first();
 
-        $id_video_ytb = !empty($setting_video_ytb)?$setting_video_ytb : new Settings();
+        $server1 = Servers::where('id',1)->first();
+        if(empty($server1)){
+          $server1 = new Servers();
+        }
 
-        $id_video_ytb->ytb_live_video_id = $input['ytb_live_id'];
+        $server1->value =$input['server1'];
 
-        $id_video_ytb->save();
+        $server2 = Servers::where('id',2)->first();
+        if(empty($server2)){
+          $server2 = new Servers();
+        }
+
+        $server2->value =$input['server2'];
+
+        $server2->save();
+        $server1->save();
 
         return Redirect::back()->with('status','handle_success');
       }catch(\Illuminate\Database\QueryException $ex){

@@ -14,13 +14,9 @@ $(document).ready(function(){
   //       return options;
   // };
 
-
   var player = videojs('livehd-video-player');
 
-  player.src({
-    src:'http://35.198.242.165:8080/hls/stream.m3u8',
-    type:'application/x-mpegURL'
-  });
+
   player.errors({
     errors: {
       2: {
@@ -34,7 +30,20 @@ $(document).ready(function(){
     }
   });
 
-  player.play();
+  $.ajax({
+    url: window.location.origin + '/servers/1',
+    method:'GET',
+    success:function(data){
+      data = $.parseJSON(data);
+      player.src({
+        src: data.server_url,
+        type:'application/x-mpegURL'
+      });
+      player.play();
+    }
+  });
+
+
 
 
   // player.dvrseekbar();

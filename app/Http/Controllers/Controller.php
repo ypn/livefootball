@@ -18,6 +18,7 @@ use App\Entities\Matchs;
 use App\Entities\Leaguages;
 use App\Entities\Clubs;
 use App\Entities\Settings;
+use App\Entities\Servers;
 use Carbon\Carbon;
 
 class Controller extends BaseController
@@ -250,6 +251,11 @@ class Controller extends BaseController
       return $messages;
     }
 
+
+    public function listVideos(){
+      return view ('list_videos');
+    }
+
     // public function login(){
     //   if (!session_id()) {
     //       session_start();
@@ -289,5 +295,11 @@ class Controller extends BaseController
           echo 'Có lỗi: '. $ex.getMessage();
        }
 
+    }
+
+
+    public function getServer($server_id){
+      $server = Servers::where('id',$server_id)->first();
+      return json_encode(['server_url'=>$server->value]);
     }
 }

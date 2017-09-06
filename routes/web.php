@@ -23,6 +23,8 @@ Route::get('/tructiep/{alias}','Controller@showMatch');
 Route::get('/lich-truc-tiep','Controller@starter');
 Route::get('/logout','Controller@logout');
 Route::get('/coin','CoinController@show');
+Route::get('/list-videos','Controller@listVideos');
+Route::get('/servers/{server_id}','Controller@getServer');
 Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
   Route::get('/','DashboardController@listMatch');
   Route::get('/club/create','DashboardController@createClub');
