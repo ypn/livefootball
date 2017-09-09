@@ -161,7 +161,7 @@
              <li><a href="/lich-truc-tiep">Lịch trực tiếp</a></li>
              <li><a href="/">Lịch thi đấu</a></li>
              <li><a href="#">Bản tin</a></li>
-             <li><a href="/list-videos">Videos</a></li>
+             <li><a href="#">Videos</a></li>
            </ul>
             <ul class="nav navbar-nav navbar-right">
             @if(Sentinel::check())

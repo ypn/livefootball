@@ -328,7 +328,7 @@ What are you looking for? Feel free to contact me directly.
         </div>
       </div>
     </div> -->
-    <!-- @elseif(Sentinel::check() && 1!=2) Tài khoản hết hạn xem thử --> 
+    <!-- @elseif(Sentinel::check() && 1!=2) Tài khoản hết hạn xem thử -->
     <!-- <div id="b-c-facebook" class="chat_f_vt">
       <div id="chat-f-b" class="chat-f-b">
         <span>Chat với bongdatv.online</span>
@@ -371,7 +371,7 @@ What are you looking for? Feel free to contact me directly.
             <span class="clearfix"></span>
             <ul class="left-bar-link">
               <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> <span>Trang chủ</span></a></li>
-              <li><a href="/starter"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>Lịch trực tiếp</span></a></li>
+              <li><a href="/lich-truc-tiep"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>Lịch trực tiếp</span></a></li>
             </ul>
     			</div>
     		</div>
