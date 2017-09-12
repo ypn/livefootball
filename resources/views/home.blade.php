@@ -442,7 +442,8 @@ What are you looking for? Feel free to contact me directly.
                     </div>
                     <div>
                       <div class="_fftx" style="padding:15px;">
-                        <div class="col-md-12">                         
+                        <div class="col-md-12">          
+                        <h1>Nhận đặt banner quảng cáo. liên hệ fanpage hoặc facebook: <a href="https://www.facebook.com/profile.php?id=100010231840895">https://www.facebook.com/profile.php?id=100010231840895</a></h1>               
                          {{--  <div class="fb-page" data-href="https://www.facebook.com/DongChayTV/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/DongChayTV/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DongChayTV/">Dòng Chảy TV</a></blockquote></div> --}}
                         </div>
                         <span class="clearfix"></span>
