@@ -14,6 +14,8 @@ $(document).ready(function(){
   //       return options;
   // };
 
+  var _sv = $('#_sv').val();
+
   var player = videojs('livehd-video-player');
 
 
@@ -31,7 +33,7 @@ $(document).ready(function(){
   });
 
   $.ajax({
-    url: window.location.origin + '/servers/1',
+    url: window.location.origin + '/servers/' + _sv,
     method:'GET',
     success:function(data){
       data = $.parseJSON(data);
