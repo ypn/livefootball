@@ -36,7 +36,7 @@ Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
   Route::get('/match/create/{match_id?}','DashboardController@createMatch');
   Route::get('/match/review/{match_id}','DashboardController@matchReview');
   Route::post('/match/review/add','DashboardController@addMatchReview');
-  Route::get('/match/list','DashboardController@listMatch');
+  Route::get('/match/list','DashboardController@listMatch');  
   Route::post('/match/add/{match_id?}','DashboardController@addMatch');
   Route::post('/match/change-status','DashboardController@changeMatchStatus');
   Route::post('/match/change-server','DashboardController@changeMatchServer');

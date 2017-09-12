@@ -124,7 +124,7 @@ class DashboardController extends BaseController
       }
     }
 
-    public function addMatch($match_id =null){
+    public function addMatch($match_id =null){   
       $input = Input::all();
       $validator = Validator::make(Input::all(),[
           'name'=>'required',

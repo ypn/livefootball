@@ -35,7 +35,7 @@
 
           <div class="x_content">
             <!-- start form for validation -->
-            <form method="POST" action="/dashboard/match/add/<?php if(isset($match->id)) echo ($match->id);?>" data-parsley-validate>
+            <form method="POST" action="/dashboard/match/add<?php if(isset($match->id)) echo '/' . ($match->id);?>" data-parsley-validate>
               <input type="hidden" name="_token" value="{{csrf_token()}}">
               <label for="name">Tên trận đấu</label>
               <input type="text" id="name" class="form-control" name="name" required value="{{isset($match->name) ? $match->name : null}}"/>
