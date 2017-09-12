@@ -12,6 +12,7 @@ use App\Entities\Matchs;
 use Carbon\Carbon;
 use App\Entities\Settings;
 use App\Entities\Servers;
+use Minishlink\WebPush\WebPush;
 
 
 class DashboardController extends BaseController
@@ -78,7 +79,7 @@ class DashboardController extends BaseController
 
 
     public function listMatch(){
-      $matchs = Matchs::select('id','name','leaguage_id','team_1','team_2','date_start','status')->orderBy('date_start')->get();
+      $matchs = Matchs::select('id','name','leaguage_id','team_1','team_2','date_start','status','server')->orderBy('date_start')->get();
       foreach($matchs as $match){
         $leaguage = Leaguages::where('id',$match->leaguage_id)->select('name','logo_url')->first();
         $match->leaguage_name = isset($leaguage->name)?$leaguage->name:'Chưa xác định được tên giải đấu';
@@ -89,6 +90,7 @@ class DashboardController extends BaseController
         $match->team_2_name = isset($team_2->name)?$team_2->name:'Tên đội khách chưa xác định';
         $match->date_start = date('d-m-Y h:i A',strtotime($match->date_start));
       }
+
       return view ('dashboard.list_match',['matchs'=>$matchs]);
     }
 
@@ -122,7 +124,7 @@ class DashboardController extends BaseController
       }
     }
 
-    public function addMatch($match_id =null){
+    public function addMatch($match_id =null){   
       $input = Input::all();
       $validator = Validator::make(Input::all(),[
           'name'=>'required',
@@ -173,6 +175,63 @@ class DashboardController extends BaseController
             'message'=>$ex.getMessage()
           );
         }
+    }
+
+    public function changeMatchServer(){
+      $input = Input::all();
+      try{
+        Matchs::where('id',$input['match_id'])->update(['server'=>$input['server_id']]);
+        return 1;
+      }
+      catch(\Exception $ex){
+        return array(
+          'status'=>'error',
+          'message'=>$ex->getMessage()
+        );
+      }
+    }
+
+    public function showMatchNotification(){
+      $notifications = array(
+          array(
+              'endpoint' => 'https://github.com/Minishlink/web-push-php-example/', // Firefox 43+
+              'payload' => 'hello !',
+              'userPublicKey' => 'BPcMbnWQL5GOYX/5LKZXT6sLmHiMsJSiEvIFvfcDvX7IZ9qqtq68onpTPEYmyxSQNiH7UD/98AUcQ12kBoxz/0s=', // base 64 encoded, should be 88 chars
+              'userAuthToken' => 'CxVX6QsVToEGEcjfYPqXQw==', // base 64 encoded, should be 24 chars
+          ), array(
+              'endpoint' => 'https://github.com/Minishlink/web-push-php-example/', // Chrome
+              'payload' => null,
+              'userPublicKey' => null,
+              'userAuthToken' => null,
+          ), array(
+              'endpoint' => 'https://github.com/Minishlink/web-push-php-example/',
+              'payload' => '{msg:"test"}',
+              'userPublicKey' => '(stringOf88Chars)', 
+              'userAuthToken' => '(stringOf24Chars)',
+          ),
+      );
+
+      $webPush = new WebPush();
+
+      // send multiple notifications with payload
+      foreach ($notifications as $notification) {
+          $webPush->sendNotification(
+              $notification['endpoint'],
+              $notification['payload'], // optional (defaults null)
+              $notification['userPublicKey'], // optional (defaults null)
+              $notification['userAuthToken'] // optional (defaults null)
+          );
+      }
+      $webPush->flush();
+
+      // send one notification and flush directly
+      $webPush->sendNotification(
+          $notifications[0]['endpoint'],
+          $notifications[0]['payload'], // optional (defaults null)
+          $notifications[0]['userPublicKey'], // optional (defaults null)
+          $notifications[0]['userAuthToken'], // optional (defaults null)
+          true // optional (defaults false)
+      );
     }
 
     public function deleteMatch($match_id){

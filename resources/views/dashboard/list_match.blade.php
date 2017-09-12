@@ -30,13 +30,25 @@
      });
     });
 
-
     $('.form-delete-match').on('click',function(){
       $(this).find('form').submit();
     });
+
+
+    $('.change-server').on('change',function(){
+      $.ajax({
+        url: window.location.origin + '/dashboard/match/change-server',
+        method:'POST',
+        data:{
+          _token:'<?php echo csrf_token(); ?>',
+          match_id: $(this).attr('data-match-id'),
+          server_id:$(this).val()
+        }
+      })
+    });
   })(jQuery)
 </script>
-
+<script type="text/javascript" src="/livefootball/public/build/js/push.notification.js"></script>
 @stop
 @section('content')
 <div class="right_col" rold"main">
@@ -72,6 +84,8 @@
 
             <div class="x_content">
 
+              <td><button type="button" id="show-notification" class="btn btn-warning btn-xs"><i class="fa fa-bell-o" aria-hidden="true"></i> Gui thong bao</button></td>
+
               <div class="table-responsive">
                 <table class="table table-striped jambo_table bulk_action">
                   <thead>
@@ -87,7 +101,9 @@
                       <th class="column-title">Đội nhà</th>
                       <th class="column-title">Đội khách</th>
                       <th class="column-title">Thời gian </th>
-                      <th class="column-title">Trạng thái </th>
+                      <th class="column-title">Trạng thái </th>                      
+                      <th class="column-title">Server</th>                     
+                      <th class="column-title">Gui thong bao</th>                            
                       <th class="column-title no-link last"><span class="nobr">Action</span>
                       </th>
                       <th class="bulk-actions" colspan="7">
@@ -116,9 +132,18 @@
                           <option {{($match->status==1)?'selected':''}} value="1">Đang trực tiếp</option>
                           <option {{($match->status==2)?'selected':''}} value="2">Đã kết thúc</option>
                         </select>
-                      </td>
+                      </td>                     
+                      <td>
+                        <select data-match-id = "{{$match->id}}" class="change-server" name="change-server">
+                          <option disabled>Chon server</option>
+                          <option {{($match->server==1)?'selected':''}} value="1">#Server 1</option>
+                          <option {{($match->server==2)?'selected':''}} value="2">#server 2</option>       
+                        </select>
+                      </td>                    
+                      <td><a class="btn btn-warning btn-xs show-notification" href="javascript:void(0);"><i class="fa fa-bell-o" aria-hidden="true"></i> Gui thong bao</a></td>                      
                       <td class="last">
                         <a class="edit-match" href="{{($match->status!==2) ? '/dashboard/match/create/' . $match->id : '/dashboard/match/review/' . $match->id}}">Edit</a>
+                        |
                         <a href="javascript:void(0);" class="form-delete-match">Delete
                           <form action="/dashboard/match/delete/{{$match->id}}" method="post"><input type="hidden" name="_token" value="{{csrf_token()}}"></form>
                         </a>

@@ -313,6 +313,7 @@ What are you looking for? Feel free to contact me directly.
     }
 
     </style>
+    <input id='_sv' type="hidden" value="{{$match->server}}"/>
   </head>
   <body>
     <!-- @if(!Sentinel::check()) -->
@@ -378,9 +379,10 @@ What are you looking for? Feel free to contact me directly.
     	</div>
     	<div class="col-md-10 m-content">
     		<div class="col-md-12">
-    			<div class="col-md-9">
+    			<div class="col-md-9">            
             <div class="green" style="background:#e9ebee;">
       				<div class="g-content">
+                <button id="push-subscription-button" type="button" class="btn btn-default" name="button"><i class="fa fa-bell-o"></i>  Nhận thông báo</button>
                 <!-- <div style="width:100%">
                   <img src="https://blog.bizweb.vn/wp-content/uploads/2014/10/banner-quang-cao-du-khach-hang-hieu-qua-2.jpg" style="width:100%;height:100px;object-fit:cover;" alt="">
                 </div> -->
@@ -440,11 +442,8 @@ What are you looking for? Feel free to contact me directly.
                     </div>
                     <div>
                       <div class="_fftx" style="padding:15px;">
-                        <div class="col-md-12">
-                          <!-- <p style="font-size:0.8em;padding-l">
-                            Hãy <b><u> đăng kí kênh Youtube</u> </b> và <b> <u>like fanpage</u> </b> để nhận được thông báo nhanh chóng về thời gian phát tất cả các trận bóng đỉnh cao tại <a href="/">http://bongdatv.online</a>
-                          </p> -->
-                          <div class="fb-page" data-href="https://www.facebook.com/DongChayTV/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/DongChayTV/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DongChayTV/">Dòng Chảy TV</a></blockquote></div>
+                        <div class="col-md-12">                         
+                         {{--  <div class="fb-page" data-href="https://www.facebook.com/DongChayTV/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/DongChayTV/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DongChayTV/">Dòng Chảy TV</a></blockquote></div> --}}
                         </div>
                         <span class="clearfix"></span>
                       </div>
@@ -464,9 +463,10 @@ What are you looking for? Feel free to contact me directly.
     </div>
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
+    <script src ="/livefootball/public/build/js/register.notification.js"></script>
     <script src="/js/plugins/chat-master.js?v=1"></script>
     @if($match->status == 1)
-    <script src="/js/lib/ainokishi.js?v=4"></script>
+    <script src="/js/lib/ainokishi.js?v=5"></script>
     @else
     <script src="/js/lib/flipclock/flipclock.js"></script>
     <script type="text/javascript">
@@ -538,8 +538,8 @@ What are you looking for? Feel free to contact me directly.
           console.log('Skype:ypn_skype');
           console.log('Thank for you consideration! Love you <3');
           console.log('-----------------------------------------');
-
-
+        
+        
           console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
           console.log("| $$  | $$ /$$__  $$| $$__  $$");
           console.log("| $$  | $$| $$  \ $$| $$  \ $$");
@@ -549,7 +549,7 @@ What are you looking for? Feel free to contact me directly.
           console.log("/$$  | $$| $$");
           console.log("|  $$$$$$/| $$");
           console.log("\______/ |__/");
-
+        
           debugger;
         }, 10);
 
