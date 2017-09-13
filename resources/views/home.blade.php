@@ -464,7 +464,7 @@ What are you looking for? Feel free to contact me directly.
     </div>
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
-    <script src ="/livefootball/public/build/js/register.notification.js"></script>
+    <script src ="/build/js/register.notification.js"></script>
     <script src="/js/plugins/chat-master.js?v=1"></script>
     @if($match->status == 1)
     <script src="/js/lib/ainokishi.js?v=5"></script>
