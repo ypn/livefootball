@@ -382,7 +382,6 @@ What are you looking for? Feel free to contact me directly.
     			<div class="col-md-9">            
             <div class="green" style="background:#e9ebee;">
       				<div class="g-content">
-                <button id="push-subscription-button" type="button" class="btn btn-default" name="button"><i class="fa fa-bell-o"></i>  Nhận thông báo</button>
                 <!-- <div style="width:100%">
                   <img src="https://blog.bizweb.vn/wp-content/uploads/2014/10/banner-quang-cao-du-khach-hang-hieu-qua-2.jpg" style="width:100%;height:100px;object-fit:cover;" alt="">
                 </div> -->
@@ -431,19 +430,19 @@ What are you looking for? Feel free to contact me directly.
                         <!-- <script src="https://apis.google.com/js/platform.js"></script>
 
                         <div class="g-ytsubscribe" data-channelid="UCyXNsvzIxJjPzqN_Xl3-BDw" data-layout="full" data-count="default"></div> -->
-                        {{--   <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Bongdatv Online</a></blockquote></div> --}}
+                        <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Bongdatv Online</a></blockquote></div>
                       </div>
                       <div class="hidden-xs" style="margin-top:-30px;">
                         <div style="padding:5px;text-align:right;margin-right:30px;">
-                          <!--<div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-                          <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>-->
+                          <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                          <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
                         </div>
                       </div>
                     </div>
                     <div>
                       <div class="_fftx" style="padding:15px;">
                         <div class="col-md-12">          
-                        <h1>Nhận đặt banner quảng cáo. liên hệ fanpage hoặc facebook: <a href="https://www.facebook.com/profile.php?id=100010231840895">https://www.facebook.com/profile.php?id=100010231840895</a></h1>               
+                        <h2>Nhận đặt banner quảng cáo. liên hệ fanpage hoặc facebook: <a href="https://www.facebook.com/profile.php?id=100010231840895">https://www.facebook.com/profile.php?id=100010231840895</a></h2>               
                          {{--  <div class="fb-page" data-href="https://www.facebook.com/DongChayTV/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/DongChayTV/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DongChayTV/">Dòng Chảy TV</a></blockquote></div> --}}
                         </div>
                         <span class="clearfix"></span>
