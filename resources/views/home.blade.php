@@ -462,7 +462,7 @@ What are you looking for? Feel free to contact me directly.
     		</div>
     	</div>
     </div>
-    <script src="bongdatv.online:6001/socket.io/socket.io.js"></script>
+    <script src="http://bongdatv.online:6001/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
     <script src ="/build/js/register.notification.js"></script>
     <script src="/js/plugins/chat-master.js?v=1"></script>
