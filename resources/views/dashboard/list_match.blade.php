@@ -48,7 +48,7 @@
     });
   })(jQuery)
 </script>
-<script type="text/javascript" src="/build/js/push.notification.js"></script>
+<!--<script type="text/javascript" src="/build/js/push.notification.js"></script>-->
 @stop
 @section('content')
 <div class="right_col" rold"main">
