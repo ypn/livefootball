@@ -10,6 +10,7 @@ export default class ChatMaster extends React.Component{
   constructor(props){
     super(props);
     axios.post('/chat/check-role').then((response)=>{
+      alert('cccc');
       if(response.status == 200 && response.data){
         window.H7uGZw6c = response.data;
       }
