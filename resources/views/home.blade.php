@@ -382,6 +382,12 @@ What are you looking for? Feel free to contact me directly.
           <div class="col-md-9">
             <div class="green" style="background:#e9ebee;">
               <div class="g-content">
+                <div class="alert alert-danger" style="margin:0;padding:5px;">
+                  <a href="#" class="close" style="margin-right:15px;font-size:30px;" data-dismiss="alert" aria-label="close">&times;</a>
+                  <strong>Lưu ý!</strong>
+                  <h6>Tất cả mọi người đều được chào đón, còn những đối tượng không phải là người thì không. Hãy thể hiện sự văn minh khi bình luận!</h6>
+                  <h6>Quảng cáo, hợp tác, hay tài trợ vui lòng liên hệ qua fanpage <a target="_blank" href="https://www.facebook.com/bongdatv.online">ở đây</a></h6>
+                </div>
                 <!-- <div style="width:100%">
                   <img src="https://blog.bizweb.vn/wp-content/uploads/2014/10/banner-quang-cao-du-khach-hang-hieu-qua-2.jpg" style="width:100%;height:100px;object-fit:cover;" alt="">
                 </div> -->
@@ -441,11 +447,7 @@ What are you looking for? Feel free to contact me directly.
                     </div>
                     <div>
                       <div class="_fftx" style="padding:15px;">
-                        <div class="col-md-12">
-                        <h2>Nhận đặt banner quảng cáo. liên hệ fanpage hoặc facebook: <a href="https://www.facebook.com/profile.php?id=100010231840895">https://www.facebook.com/profile.php?id=100010231840895</a></h2>
-                         {{--  <div class="fb-page" data-href="https://www.facebook.com/DongChayTV/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/DongChayTV/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DongChayTV/">Dòng Chảy TV</a></blockquote></div> --}}
-                        </div>
-                        <span class="clearfix"></span>
+
                       </div>
                     </div>
                   </div>
