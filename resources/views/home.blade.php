@@ -385,7 +385,7 @@ What are you looking for? Feel free to contact me directly.
                 <div class="alert alert-danger" style="margin:0;padding:5px;">
                   <a href="#" class="close" style="margin-right:15px;font-size:30px;" data-dismiss="alert" aria-label="close">&times;</a>
                   <strong>Lưu ý!</strong>
-                  <h6>Tất cả mọi người đều được chào đón, còn những đối tượng không phải là người thì không. Không gây war, không xúc phạm người khác hay bất ki đội bóng nào. Hãy thể hiện sự văn minh khi bình luận!</h6>
+                  <h6>Tất cả mọi người đều được chào đón, còn những đối tượng chưa phải là người thì không. Không gây war, không xúc phạm người khác hay bất ki đội bóng nào. Hãy thể hiện sự văn minh khi bình luận!</h6>
                   <h6>Quảng cáo, hợp tác, hay tài trợ vui lòng liên hệ qua fanpage <a target="_blank" href="https://www.facebook.com/bongdatv.online">ở đây</a></h6>
                 </div>
                 <!-- <div style="width:100%">
