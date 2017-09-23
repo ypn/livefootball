@@ -47,7 +47,7 @@ Thêm nhóm người dùng mới
     @foreach($ps as $p)
     <div class="checkbox">
       <label>
-        <input type="checkbox" class="flat" name="roles[]" <?php if(isset($p->alias) && $role->hasAccess(["$p->alias"])) echo 'checked'; ?> value="{{isset($p->alias) ? $p->alias : '' }}"> {{isset($p->alias) ? $p->alias : 'not_determine'}}
+        <input type="checkbox" class="flat" name="roles[]" <?php if(isset($p->alias) && (isset($role) && $role->hasAccess(["$p->alias"]))) echo 'checked'; ?> value="{{isset($p->alias) ? $p->alias : '' }}"> {{isset($p->alias) ? $p->alias : 'not_determine'}}
       </label>
     </div>
     @endforeach

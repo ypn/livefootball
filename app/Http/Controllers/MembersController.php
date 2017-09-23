@@ -46,7 +46,7 @@ class MembersController extends Controller
       }
 
       if(!isset($role) || empty($role)){
-        $role = new Roles();
+        $role = Sentinel::getRoleRepository()->createModel();
       }
 
       try{
