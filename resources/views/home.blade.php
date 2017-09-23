@@ -385,7 +385,7 @@ What are you looking for? Feel free to contact me directly.
                 <div class="alert alert-danger" style="margin:0;padding:5px;">
                   <a href="#" class="close" style="margin-right:15px;font-size:30px;" data-dismiss="alert" aria-label="close">&times;</a>
                   <strong>Lưu ý!</strong>
-                  <h6>Tất cả mọi người đều được chào đón, còn những đối tượng không phải là người thì không. Hãy thể hiện sự văn minh khi bình luận!</h6>
+                  <h6>Tất cả mọi người đều được chào đón, còn những đối tượng không phải là người thì không. Không gây war, không xúc phạm người khác hay bất ki đội bóng nào. Hãy thể hiện sự văn minh khi bình luận!</h6>
                   <h6>Quảng cáo, hợp tác, hay tài trợ vui lòng liên hệ qua fanpage <a target="_blank" href="https://www.facebook.com/bongdatv.online">ở đây</a></h6>
                 </div>
                 <!-- <div style="width:100%">
@@ -431,18 +431,17 @@ What are you looking for? Feel free to contact me directly.
                   @endif
                   <div style="margin-right:15px;">
                     <div style="border-bottom:1px solid #ccc;margin-right:-15px;padding-left:15px;">
-                      <div style="display:inline-block">
-                        <h4>{{$match->name}}</h4>
+                      <div style="display:inline-block;width:100%;">
+                        <div style="float:right;">
+                          <div style="padding:5px;text-align:right;margin-right:30px;">
+                            <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                            <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
+                          </div>
+                        </div>
                         <!-- <script src="https://apis.google.com/js/platform.js"></script>
 
                         <div class="g-ytsubscribe" data-channelid="UCyXNsvzIxJjPzqN_Xl3-BDw" data-layout="full" data-count="default"></div> -->
                         <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Bongdatv Online</a></blockquote></div>
-                      </div>
-                      <div class="hidden-xs" style="margin-top:-30px;">
-                        <div style="padding:5px;text-align:right;margin-right:30px;">
-                          <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-                          <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
-                        </div>
                       </div>
                     </div>
                     <div>
