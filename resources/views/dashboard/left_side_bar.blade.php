@@ -4,7 +4,11 @@
     <ul class="nav side-menu">
       <li><a><i class="fa fa-home"></i> Thống kê </a></li>
 
-    <li><a><i class="fa fa-home"></i>Thành viên</a></li>
+      <li><a><i class="fa fa-user"></i> Thành viên </a></li>
+
+      <li><a href="/dashboard/permissions/list"><i class="fa fa-linux"></i> Quyền </a></li>
+
+      <li><a href="/dashboard/group_member/list"><i class="fa fa-users"></i> Nhóm </a></li>
 
       <li><a href="/dashboard/match/list"><i class="fa fa-edit"></i> Trận đấu </a></li>
 

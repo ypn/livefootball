@@ -35,7 +35,7 @@ export default class ChatBody extends React.Component{
         {
           this.state.list.map((note,index)=>{
             return(
-                <ChatItem key={index} chatText={note.text} firstName = {note.first_name} lastName = {note.last_name} fbId = {note.fb_id}/>
+                <ChatItem key={index} chatText={note.text} firstName = {note.first_name} lastName = {note.last_name} fbId = {note.fb_id} userId = {note.user_id}/>
             )
           })
         }

@@ -15,19 +15,21 @@ class ChatStore extends EventEmitter{
           text:note.message,
           first_name:note.first_name,
           last_name:note.last_name,
-          fb_id:note.fb_id
+          fb_id:note.fb_id,
+          user_id:note.user_id
         });
       });
       this.emit('get-chat-history');
     });
   }
 
-  addNewChat(text,first_name,last_name,fb_id){
+  addNewChat(text,first_name,last_name,fb_id,user_id){
     this.list.push({
       text,
       first_name,
       last_name,
-      fb_id
+      fb_id,
+      user_id
     });
     this.emit('add-new-chat');
   }
@@ -35,7 +37,7 @@ class ChatStore extends EventEmitter{
   handleAction(action){
     switch (action.type) {
       case 'ADD_NEW_CHAT':
-        this.addNewChat(action.text,action.first_name,action.last_name,action.fb_id);
+        this.addNewChat(action.text,action.first_name,action.last_name,action.fb_id,action.user_id);
         break;
       case 'GET_CHAT_HISTORY':
         this.getChatHistory();

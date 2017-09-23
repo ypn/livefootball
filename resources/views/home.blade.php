@@ -111,8 +111,8 @@ What are you looking for? Feel free to contact me directly.
         width:100%;
         min-height:60vh;
         background:-webkit-radial-gradient(rgba(80,0,0,0.1) 0%,
-    					rgba(80,0,0,0.2) 30%, rgba(21,11,1,0.9) 100% ),
-    		    		url('https://subtlepatterns.com/patterns/wood_pattern.png');
+              rgba(80,0,0,0.2) 30%, rgba(21,11,1,0.9) 100% ),
+                url('https://subtlepatterns.com/patterns/wood_pattern.png');
         text-align:center;
       }
 
@@ -132,67 +132,67 @@ What are you looking for? Feel free to contact me directly.
       @import url(https://fonts.googleapis.com/css?family=Patua+One);
 
     #ribbon {
-    		padding: .34em .5em;
-    		margin: 0;
-    		margin-top: 2%;
-    		position:relative;
-    		color: #ffffff;
-    		font: 32px 'Patua One', sans-serif;
-    		text-align: center;
-    		letter-spacing:0.1em;
-    		text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
-    		box-shadow: inset 0px 1px 0px rgba(255,255,255,.3),
-    		inset   0px 0px 20px rgba(0,0,0,0.1),
-    			      0px 1px 1px rgba(0,0,0,0.4);
-    		background: -webkit-linear-gradient(top,#1eb2df, #17a7d2);
+        padding: .34em .5em;
+        margin: 0;
+        margin-top: 2%;
+        position:relative;
+        color: #ffffff;
+        font: 32px 'Patua One', sans-serif;
+        text-align: center;
+        letter-spacing:0.1em;
+        text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
+        box-shadow: inset 0px 1px 0px rgba(255,255,255,.3),
+        inset   0px 0px 20px rgba(0,0,0,0.1),
+                0px 1px 1px rgba(0,0,0,0.4);
+        background: -webkit-linear-gradient(top,#1eb2df, #17a7d2);
         display: inline-block;
-    	}
+      }
 
     #ribbon:before, #ribbon:after {
-    		content: "";
-    		width:.2em;
-    		bottom:-.5em;
-    		position:absolute;
-    		display:block;
-    		border: .9em solid #1eb2df;
-    		box-shadow:0px 1px 0px rgba(0,0,0,0.4);
-    		z-index:0;
-    	}
+        content: "";
+        width:.2em;
+        bottom:-.5em;
+        position:absolute;
+        display:block;
+        border: .9em solid #1eb2df;
+        box-shadow:0px 1px 0px rgba(0,0,0,0.4);
+        z-index:0;
+      }
 
     #ribbon:before {
-    		left:-1.19em;
-    		border-right-width: .75em;
-    		border-left-color:transparent;
-    	}
+        left:-1.19em;
+        border-right-width: .75em;
+        border-left-color:transparent;
+      }
 
     #ribbon:after {
-    		right:-1.19em;
-    		border-left-width: .75em;
-    		border-right-color:transparent;
-    	}
+        right:-1.19em;
+        border-left-width: .75em;
+        border-right-color:transparent;
+      }
     #content{
       z-index:3;
     }
 
     #content:before, #content:after {
-    		content:"";
-    		bottom:-.5em;
-    		position:absolute;
-    		display:block;
-    		border-style:solid;
-    		border-color: #0675b3 transparent transparent transparent;
-    		z-index:1;
-    	}
+        content:"";
+        bottom:-.5em;
+        position:absolute;
+        display:block;
+        border-style:solid;
+        border-color: #0675b3 transparent transparent transparent;
+        z-index:1;
+      }
 
     #content:before {
-    	  left: 0;
-    	  border-width: .5em 0 0 .5em;
-    	}
+        left: 0;
+        border-width: .5em 0 0 .5em;
+      }
 
     #content:after {
-    	  right: 0;
-    	  border-width: .5em .5em 0 0;
-  	}
+        right: 0;
+        border-width: .5em .5em 0 0;
+    }
 
     @media(min-width:1200px){
     }
@@ -361,9 +361,9 @@ What are you looking for? Feel free to contact me directly.
     </div> -->
     <!-- @endif -->
     <div class="col-md-12 no-gutters" id="wrapper">
-    	<div class="col-md-2 m-nav-bar">
-    		<div class="col-md-12">
-    			<div class="box red">
+      <div class="col-md-2 m-nav-bar">
+        <div class="col-md-12">
+          <div class="box red">
             <div id="nav-icon4" class="humburger-button open">
               <span></span>
               <span></span>
@@ -374,14 +374,14 @@ What are you looking for? Feel free to contact me directly.
               <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> <span>Trang chủ</span></a></li>
               <li><a href="/lich-truc-tiep"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>Lịch trực tiếp</span></a></li>
             </ul>
-    			</div>
-    		</div>
-    	</div>
-    	<div class="col-md-10 m-content">
-    		<div class="col-md-12">
-    			<div class="col-md-9">            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10 m-content">
+        <div class="col-md-12">
+          <div class="col-md-9">
             <div class="green" style="background:#e9ebee;">
-      				<div class="g-content">
+              <div class="g-content">
                 <!-- <div style="width:100%">
                   <img src="https://blog.bizweb.vn/wp-content/uploads/2014/10/banner-quang-cao-du-khach-hang-hieu-qua-2.jpg" style="width:100%;height:100px;object-fit:cover;" alt="">
                 </div> -->
@@ -404,8 +404,8 @@ What are you looking for? Feel free to contact me directly.
                   @else
                   <div class="show-match">
                     <div id="ribbon">
-                  		<span id="content">{{$match->leaguage_name}}</span>
-                  	</div>
+                      <span id="content">{{$match->leaguage_name}}</span>
+                    </div>
 
                     <div class="show-match-info">
                       <div class="club home">
@@ -441,8 +441,8 @@ What are you looking for? Feel free to contact me directly.
                     </div>
                     <div>
                       <div class="_fftx" style="padding:15px;">
-                        <div class="col-md-12">          
-                        <h2>Nhận đặt banner quảng cáo. liên hệ fanpage hoặc facebook: <a href="https://www.facebook.com/profile.php?id=100010231840895">https://www.facebook.com/profile.php?id=100010231840895</a></h2>               
+                        <div class="col-md-12">
+                        <h2>Nhận đặt banner quảng cáo. liên hệ fanpage hoặc facebook: <a href="https://www.facebook.com/profile.php?id=100010231840895">https://www.facebook.com/profile.php?id=100010231840895</a></h2>
                          {{--  <div class="fb-page" data-href="https://www.facebook.com/DongChayTV/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/DongChayTV/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DongChayTV/">Dòng Chảy TV</a></blockquote></div> --}}
                         </div>
                         <span class="clearfix"></span>
@@ -450,21 +450,21 @@ What are you looking for? Feel free to contact me directly.
                     </div>
                   </div>
                 </div>
-      				</div>
+              </div>
             </div>
-    			</div>
-    			<div id="chat-frame" class="col-md-3">
+          </div>
+          <div id="chat-frame" class="col-md-3">
               <a id="tg" href="javascript:void(0);" class="hidden-md hidden-lg" style="position:absolute;font-size7px; top:-20px;left:25px;"><i class="glyphicon glyphicon-chevron-up" style="padding:10px;border-radius:50%;background:#3097D1;color:#fff;"></i></a>
-    				  <!-- <iframe src="https://www.youtube.com/live_chat?v={{$video_id}}&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe> -->
+              <!-- <iframe src="https://www.youtube.com/live_chat?v={{$video_id}}&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe> -->
               <div style="background:#fff;" id="wechat" data-authentication="{{Sentinel::check()?'true':'false'}}"></div>
-    			</div>
-    		</div>
-    	</div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
     <!--<script src ="/build/js/register.notification.js"></script>-->
-    <script src="/js/plugins/chat-master.js?v=1"></script>
+    <script src="/js/plugins/chat-master.js?v=2"></script>
     @if($match->status == 1)
     <script src="/js/lib/ainokishi.js?v=5"></script>
     @else
@@ -530,28 +530,28 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        setInterval(function() {
-          console.clear();
-          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-          console.log('If you want to get something from my website, feel free to contact me via:');
-          console.log('Email:bongdatv.online@gmail.com');
-          console.log('Skype:ypn_skype');
-          console.log('Thank for you consideration! Love you <3');
-          console.log('-----------------------------------------');
-        
-        
-          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-          console.log("| $$  | $$ /$$__  $$| $$__  $$");
-          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-          console.log("| $$  | $$| $$  | $$| $$  | $$")
-          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-          console.log("\____  $$| $$____/ |__/  |__/");
-          console.log("/$$  | $$| $$");
-          console.log("|  $$$$$$/| $$");
-          console.log("\______/ |__/");
-        
-          debugger;
-        }, 10);
+        // setInterval(function() {
+        //   console.clear();
+        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+        //   console.log('If you want to get something from my website, feel free to contact me via:');
+        //   console.log('Email:bongdatv.online@gmail.com');
+        //   console.log('Skype:ypn_skype');
+        //   console.log('Thank for you consideration! Love you <3');
+        //   console.log('-----------------------------------------');
+        //
+        //
+        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
+        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
+        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+        //   console.log("\____  $$| $$____/ |__/  |__/");
+        //   console.log("/$$  | $$| $$");
+        //   console.log("|  $$$$$$/| $$");
+        //   console.log("\______/ |__/");
+        //
+        //   debugger;
+        // }, 10);
 
     </script>
     <script>(function(d, s, id) {
