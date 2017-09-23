@@ -238,7 +238,7 @@ class Controller extends BaseController
 
 
     public function listChat(){
-      $messages = ChatMessages::select('id','fb_id','first_name','last_name','message','user_id')->orderBy('id','desc')->take(3)->get()->toArray();
+      $messages = ChatMessages::select('id','fb_id','first_name','last_name','message','user_id')->orderBy('id','desc')->take(100)->get()->toArray();
       return array_reverse($messages);
     }
 
