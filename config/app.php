@@ -180,7 +180,7 @@ return [
 
         /*extension
         */
-        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
+        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class      
 
     ],
 

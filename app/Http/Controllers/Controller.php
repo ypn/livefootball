@@ -8,7 +8,6 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
-use App\Events\Event;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
 use Sentinel,Redirect;
@@ -237,17 +236,9 @@ class Controller extends BaseController
       return Redirect::back();
     }
 
-    public function newChat(Request $request){
-      if(Sentinel::check()){
-        event(new Event($request->text));
-      }
-      else{
-        return ("login_first");
-      }
-    }
 
     public function listChat(){
-      $messages = ChatMessages::select('fb_id','first_name','last_name','message')->get()->toArray();
+      $messages = ChatMessages::select('fb_id','first_name','last_name','message','user_id')->get()->toArray();
       return $messages;
     }
 

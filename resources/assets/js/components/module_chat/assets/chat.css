@@ -83,10 +83,53 @@
 }
 
 .live-chat-item{
-  margin: 15px;
   display: flex;
   align-items: flex-start;
   word-break: break-word;
+  float:left;
+  font-size: 13px;
+}
+
+.live-chat-item.no-full-width{
+  max-width:94%;
+}
+._setting{
+  float:right;
+  font-size: 14px;
+  position: relative;
+}
+
+._setting .item-menu{
+  width: 100px;
+  background: #ddd;
+  position: absolute;
+  top: 17px;
+  right: 3px;
+
+}
+
+._setting .item-menu ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0 ;
+  font-size: 12px;
+}
+
+._setting .item-menu > ul {
+  padding: 5px;
+}
+
+._setting .item-menu ul hr{
+  margin: 0;
+}
+
+._setting .item-menu ul a{
+  color: #555;
+  padding: 5px 0;
+}
+
+._setting .item-menu ul a:hover{
+  text-decoration: none;
 }
 
 .live-chat-item .live-chat-user-avatar{
