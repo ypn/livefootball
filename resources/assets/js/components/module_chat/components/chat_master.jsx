@@ -9,8 +9,8 @@ import * as ActionsChat from '../actions/actions-chat.js';
 export default class ChatMaster extends React.Component{
   constructor(props){
     super(props);
-    axios.post('/chat/check-role').then((response)=>{
-      alert('cccc');
+    axios.post('/chat/check-role').then((response)=>{    
+      console.log(response);
       if(response.status == 200 && response.data){
         window.H7uGZw6c = response.data;
       }

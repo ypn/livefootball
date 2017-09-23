@@ -10163,7 +10163,7 @@ var ChatMaster = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (ChatMaster.__proto__ || Object.getPrototypeOf(ChatMaster)).call(this, props));
 
     axios.post('/chat/check-role').then(function (response) {
-      alert('cccc');
+      console.log(response);
       if (response.status == 200 && response.data) {
         window.H7uGZw6c = response.data;
       }
