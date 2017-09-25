@@ -36,7 +36,7 @@ What are you looking for? Feel free to contact me directly.
     @else
     <link rel="stylesheet" href="/js/lib/flipclock/flipclock.css">
     @endif
-    <link rel="stylesheet" href="/css/master.css?v=6">
+    <link rel="stylesheet" href="/css/master.css?v=7">
     <input type="hidden" id="fb_url_redirect" value="{{$fb_url}}">
     <style media="screen">
     #b-c-facebook{
@@ -345,8 +345,7 @@ What are you looking for? Feel free to contact me directly.
                     style="border:1px solid #000;"
                     id="livehd-video-player"
                     class="video-js vjs-big-play-centered vjs-16-9 custom-player"
-                    autoplay muted
-                    poster="{{URL::to('/images/poster.jpg')}}"
+                    autoplay muted                  
                     controls preload="auto"
                     >
                 </video>
@@ -401,7 +400,7 @@ What are you looking for? Feel free to contact me directly.
     <!--<script src ="/build/js/register.notification.js"></script>-->
     <script src="/js/plugins/chat-master.js?v=2"></script>
     @if($match->status == 1)
-    <script src="/js/lib/ainokishi.js?v=6"></script>
+    <script src="/js/lib/ainokishi.js?v=7"></script>
     @else
     <script src="/js/lib/flipclock/flipclock.js"></script>
     <script type="text/javascript">
