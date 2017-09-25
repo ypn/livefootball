@@ -23,8 +23,8 @@ mix//.js('resources/assets/js/app.js', 'public/js')
   //   'resources/assets/lib/videojs/custom.css',
     // 'resources/assets/lib/videojs/videojs-dvrseekbar.css'
   // ],'public/js/lib/ainokishi.css')
-  // .scripts([
-  //   'resources/assets/lib/videojs/stackblur.min.js',
+  //.scripts([
+    //'resources/assets/lib/videojs/stackblur.min.js',
   //   'resources/assets/lib/videojs/video.js',
   //   'resources/assets/lib/videojs/videojs-ie8.min.js',
   //   'resources/assets/lib/videojs/videojs-flash.js',
