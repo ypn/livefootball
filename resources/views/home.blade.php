@@ -32,11 +32,11 @@ What are you looking for? Feel free to contact me directly.
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     @if($match->status==1)
-    <link rel="stylesheet" href="/js/lib/ainokishi.css">
+    <link rel="stylesheet" href="/js/lib/ainokishi?v=6.css">
     @else
     <link rel="stylesheet" href="/js/lib/flipclock/flipclock.css">
     @endif
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/master.css?v=6">
     <input type="hidden" id="fb_url_redirect" value="{{$fb_url}}">
     <style media="screen">
     #b-c-facebook{
@@ -316,50 +316,7 @@ What are you looking for? Feel free to contact me directly.
     <input id='_sv' type="hidden" value="{{$match->server}}"/>
   </head>
   <body>
-    <!-- @if(!Sentinel::check()) -->
-    <!-- <div class="buy-match">
-      <div class="free-trial-account">
-        <h4>Chào mừng đến với bongdatv.online</h4>
-        <p>
-        Kết nối với tài khoản facebook của bạn để có thể xem trận đấu. Tài khoản mới sẽ được <strong class="hight-light"> xem thử  miễn phí 1 </strong> trận.
-        </p>
-        <br/>
-        <div class="">
-          <a class="loginBtn loginBtn--facebook" href="https://www.facebook.com/v2.8/dialog/oauth?client_id=1812749958752149&amp;state=072513169c57bad6b13b01e0bca214b3&amp;response_type=code&amp;sdk=php-sdk-5.5.0&amp;redirect_uri=http%3A%2F%2Fbongdahd.tv%2Ffb-callback&amp;scope=email">Kết nối với facebook</a>
-        </div>
-      </div>
-    </div> -->
-    <!-- @elseif(Sentinel::check() && 1!=2) Tài khoản hết hạn xem thử -->
-    <!-- <div id="b-c-facebook" class="chat_f_vt">
-      <div id="chat-f-b" class="chat-f-b">
-        <span>Chat với bongdatv.online</span>
-        <div id="t_f_chat">
-          <a title="Close Chat" href="#" id="chat_f_close" class="chat-left-5">
-            <img src="http://bongdaf.tv/images/close.png" alt="x" title="Đóng cửa sổ chat">
-          </a>
-        </div>
-      </div>
-      <div id="f-chat-content"  class="f-chat-content">
-        <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-tabs="messages" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Bongdatv Online</a></blockquote></div>
-      </div>
-    </div>
-    <div class="buy-match">
-      <div class="free-trial-account">
-        <h4 style="background:red;padding:15px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Số trận xem thử của bạn đã hết.</h4>
-        <p>
-          Bạn đã sử dụng hết số trận xem thử  của mình. Vui lòng <strong class="hight-light">sử dụng 5000 coin </strong> đê xem trận đấu này.
-        </p>
-        <p>
-          Hoặc <strong class="hight-light">nâng cấp tài khoản tháng với 30.000 coin </strong> để xem tất cả các trận đấu trong 30 ngày <a href="/coin">tại đây</a>.
-        </p>
-        <p>Mọi thắc mắc vui lòng <a href="javascript:void(0)" id="support-me">chat với fanpage</a> của chúng tôi để được hỗ trợ chi tiết.</p>
-        <div class="">
-          <a href="/" class="btn btn-default">Trang chủ</a>
-          <a class="btn  btn-primary" href=/coin>Nạp coin</a>
-        </div>
-      </div>
-    </div> -->
-    <!-- @endif -->
+    <!-- math must pay fee -->
     <div class="col-md-12 no-gutters" id="wrapper">
       <div class="col-md-2 m-nav-bar">
         <div class="col-md-12">
@@ -382,18 +339,6 @@ What are you looking for? Feel free to contact me directly.
           <div class="col-md-9">
             <div class="green" style="background:#e9ebee;">
               <div class="g-content">
-                <div class="alert alert-danger" style="margin:0;padding:5px;">
-                  <a href="#" class="close" style="margin-right:15px;font-size:30px;" data-dismiss="alert" aria-label="close">&times;</a>
-                  <strong>Lưu ý!</strong>
-                  <h6>Tất cả mọi người đều được chào đón, còn những đối tượng chưa phải là người thì không. Không gây war, không xúc phạm người khác hay bất ki đội bóng nào. Hãy thể hiện sự văn minh khi bình luận!</h6>
-                  <h6>Quảng cáo, hợp tác, hay tài trợ vui lòng liên hệ qua fanpage <a target="_blank" href="https://www.facebook.com/bongdatv.online">ở đây</a></h6>
-                </div>
-                <!-- <div style="width:100%">
-                  <img src="https://blog.bizweb.vn/wp-content/uploads/2014/10/banner-quang-cao-du-khach-hang-hieu-qua-2.jpg" style="width:100%;height:100px;object-fit:cover;" alt="">
-                </div> -->
-                <!-- <div style="position:fixed;bottom:0;left:0;z-index:99;">
-                  <img style="width:300px;height:120px;object-fit:cover;"  src="http://chuphinhsanpham.weebly.com/uploads/6/1/9/7/6197270/9993840.jpg?465" >
-                </div> -->
                 <div>
                   @if($match->status==1)
                   <video
@@ -404,9 +349,6 @@ What are you looking for? Feel free to contact me directly.
                     controls preload="auto"
                     >
                 </video>
-
-
-                <!-- <img style="width:100%;height:500px;object-fit:cover;z-index:99" src="https://cdn-e2.streamable.com/image/plbjd.jpg?token=1505533708_5805235bfa2c8b3c061e412e733fffb5d09eede8" alt=""> -->
                   @else
                   <div class="show-match">
                     <div id="ribbon">
@@ -429,24 +371,16 @@ What are you looking for? Feel free to contact me directly.
                     </div>
                   </div>
                   @endif
-                  <div style="margin-right:15px;">
-                    <div style="border-bottom:1px solid #ccc;margin-right:-15px;padding-left:15px;">
+                  <div>
+                    <div style="border-bottom:1px solid #ccc;">
                       <div style="display:inline-block;width:100%;">
                         <div style="float:right;">
-                          <div style="padding:5px;text-align:right;margin-right:30px;">
+                          <div style="padding:5px;text-align:right;">
                             <div class="fb-like" data-href="{{Request::url() }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
                             <div class="fb-share-button" data-href="{{Request::url() }}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="<?php echo ('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(Request::url()) . '&amp;src=sdkpreparse'); ?>">Chia sẻ</a></div>
                           </div>
                         </div>
-                        <!-- <script src="https://apis.google.com/js/platform.js"></script>
-
-                        <div class="g-ytsubscribe" data-channelid="UCyXNsvzIxJjPzqN_Xl3-BDw" data-layout="full" data-count="default"></div> -->
                         <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-tabs="timeline" data-height="70" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Bongdatv Online</a></blockquote></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="_fftx" style="padding:15px;">
-
                       </div>
                     </div>
                   </div>
@@ -456,7 +390,6 @@ What are you looking for? Feel free to contact me directly.
           </div>
           <div id="chat-frame" class="col-md-3">
               <a id="tg" href="javascript:void(0);" class="hidden-md hidden-lg" style="position:absolute;font-size7px; top:-20px;left:25px;"><i class="glyphicon glyphicon-chevron-up" style="padding:10px;border-radius:50%;background:#3097D1;color:#fff;"></i></a>
-              <!-- <iframe src="https://www.youtube.com/live_chat?v={{$video_id}}&embed_domain=bongdatv.online" width="100%" frameBorder="0"></iframe> -->
               <div style="background:#fff;" id="wechat" data-authentication="{{Sentinel::check()?'true':'false'}}"></div>
           </div>
         </div>
@@ -467,7 +400,7 @@ What are you looking for? Feel free to contact me directly.
     <!--<script src ="/build/js/register.notification.js"></script>-->
     <script src="/js/plugins/chat-master.js?v=2"></script>
     @if($match->status == 1)
-    <script src="/js/lib/ainokishi.js?v=5"></script>
+    <script src="/js/lib/ainokishi.js?v=6"></script>
     @else
     <script src="/js/lib/flipclock/flipclock.js"></script>
     <script type="text/javascript">
@@ -531,28 +464,27 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        // setInterval(function() {
-        //   console.clear();
-        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-        //   console.log('If you want to get something from my website, feel free to contact me via:');
-        //   console.log('Email:bongdatv.online@gmail.com');
-        //   console.log('Skype:ypn_skype');
-        //   console.log('Thank for you consideration! Love you <3');
-        //   console.log('-----------------------------------------');
-        //
-        //
-        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
-        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
-        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-        //   console.log("\____  $$| $$____/ |__/  |__/");
-        //   console.log("/$$  | $$| $$");
-        //   console.log("|  $$$$$$/| $$");
-        //   console.log("\______/ |__/");
-        //
-        //   debugger;
-        // }, 10);
+        setInterval(function() {
+          console.clear();
+          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+          console.log('If you want to get something from my website, feel free to contact me via:');
+          console.log('Email:bongdatv.online@gmail.com');
+          console.log('Thank for you consideration! Love you <3');
+          console.log('-----------------------------------------');
+
+
+          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+          console.log("| $$  | $$ /$$__  $$| $$__  $$");
+          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+          console.log("| $$  | $$| $$  | $$| $$  | $$")
+          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+          console.log("\____  $$| $$____/ |__/  |__/");
+          console.log("/$$  | $$| $$");
+          console.log("|  $$$$$$/| $$");
+          console.log("\______/ |__/");
+
+          debugger;
+        }, 10);
 
     </script>
     <script>(function(d, s, id) {
