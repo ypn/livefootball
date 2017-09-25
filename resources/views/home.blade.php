@@ -345,6 +345,7 @@ What are you looking for? Feel free to contact me directly.
                     style="border:1px solid #000;"
                     id="livehd-video-player"
                     class="video-js vjs-big-play-centered vjs-16-9 custom-player"
+                    autoplay
                     poster="{{URL::to('/images/poster.jpg')}}"
                     controls preload="auto"
                     >
