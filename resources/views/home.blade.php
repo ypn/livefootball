@@ -32,7 +32,7 @@ What are you looking for? Feel free to contact me directly.
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     @if($match->status==1)
-    <link rel="stylesheet" href="/js/lib/ainokishi?v=6.css">
+    <link rel="stylesheet" href="/js/lib/ainokishi.css?v=6">
     @else
     <link rel="stylesheet" href="/js/lib/flipclock/flipclock.css">
     @endif
