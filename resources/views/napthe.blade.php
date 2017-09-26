@@ -103,7 +103,7 @@ if($status==200){
 
     // Xu ly thong tin tai day
 	$file = "carddung.log";
-	$fh = fopen($file,'a') or die("cant open file");
+	$fh = fopen($file,'a');
 	fwrite($fh,"Tai khoan: ".$user.", Loai the: ".$ten.", Menh gia: ".$amount.", Thoi gian: ".$time);
 	fwrite($fh,"\r\n");
 	fclose($fh);
@@ -118,7 +118,7 @@ else{
     $error = $result['errorMessage'];
 	echo $error;
     $file = "cardsai.log";
-	$fh = fopen($file,'a') or die("cant open file");
+	$fh = fopen($file,'a');
 	fwrite($fh,"Tai khoan: ".$user.", Ma the: ".$sopin.", Seri: ".$seri.", Noi dung loi: ".$error.", Thoi gian: ".$time);
 	fwrite($fh,"\r\n");
 	fclose($fh);
