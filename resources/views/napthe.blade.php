@@ -102,11 +102,7 @@ if($status==200){
 	//mysql_query("UPDATE hqhpt_users SET tien = tien + $xu WHERE username  ='$user';");
 
     // Xu ly thong tin tai day
-	$file = "carddung.log";
-	$fh = fopen($file,'a');
-	fwrite($fh,"Tai khoan: ".$user.", Loai the: ".$ten.", Menh gia: ".$amount.", Thoi gian: ".$time);
-	fwrite($fh,"\r\n");
-	fclose($fh);
+
 	echo '<script>alert("Bạn đã thanh toán thành công thẻ '.$ten.' mệnh giá '.$amount.' ");
 
 	 window.location = "http://macintosh.vn"
@@ -117,11 +113,6 @@ else{
 	echo 'Status Code:' . $status . '<hr >';
     $error = $result['errorMessage'];
 	echo $error;
-    $file = "cardsai.log";
-	$fh = fopen($file,'a');
-	fwrite($fh,"Tai khoan: ".$user.", Ma the: ".$sopin.", Seri: ".$seri.", Noi dung loi: ".$error.", Thoi gian: ".$time);
-	fwrite($fh,"\r\n");
-	fclose($fh);
 	echo '<script>alert("Thong tin the cao khong hop le!");
 
 
