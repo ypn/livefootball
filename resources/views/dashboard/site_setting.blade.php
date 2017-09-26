@@ -46,6 +46,30 @@
 
               <input type="text" class="form-control" name="server2" required value="{{isset($server2->value) ? $server2->value :''}}"/>
 
+
+              <br/>
+              <label for="name">#Server 3</label>
+
+              <input type="text" class="form-control" name="server3" required value="{{isset($server3->value) ? $server3->value :''}}"/>
+
+
+              <br/>
+              <label for="name">#Server 4</label>
+
+              <input type="text" class="form-control" name="server4" required value="{{isset($server4->value) ? $server4->value :''}}"/>
+
+
+              <br/>
+              <label for="name">#Server 5</label>
+
+              <input type="text" class="form-control" name="server5" required value="{{isset($server5->value) ? $server5->value :''}}"/>
+
+
+              <br/>
+              <label for="name">#Server 6</label>
+
+              <input type="text" class="form-control" name="server6" required value="{{isset($server6->value) ? $server6->value :''}}"/>
+
               <br/>
               <button class="btn btn-primary">Submit</button>
 

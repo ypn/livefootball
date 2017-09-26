@@ -124,7 +124,7 @@ class DashboardController extends BaseController
       }
     }
 
-    public function addMatch($match_id =null){   
+    public function addMatch($match_id =null){
       $input = Input::all();
       $validator = Validator::make(Input::all(),[
           'name'=>'required',
@@ -206,7 +206,7 @@ class DashboardController extends BaseController
           ), array(
               'endpoint' => 'https://github.com/Minishlink/web-push-php-example/',
               'payload' => '{msg:"test"}',
-              'userPublicKey' => '(stringOf88Chars)', 
+              'userPublicKey' => '(stringOf88Chars)',
               'userAuthToken' => '(stringOf24Chars)',
           ),
       );
@@ -307,8 +307,19 @@ class DashboardController extends BaseController
     public function settings(){
       $server1 = Servers::where('id',1)->first();
       $server2 = Servers::where('id',2)->first();
+      $server3 = Servers::where('id',3)->first();
+      $server4 = Servers::where('id',4)->first();
+      $server5 = Servers::where('id',5)->first();
+      $server6 = Servers::where('id',6)->first();
 
-      return view ('dashboard.site_setting',['server1'=>$server1,'server2'=>$server2]);
+      return view ('dashboard.site_setting',[
+        'server1'=>$server1,
+        'server2'=>$server2,
+        'server3'=>$server3,
+        'server4'=>$server4,
+        'server5'=>$server5,
+        'server6'=>$server6,        
+      ]);
     }
 
     public function addIdLiveVideo(){
@@ -330,8 +341,38 @@ class DashboardController extends BaseController
 
         $server2->value =$input['server2'];
 
+        $server3 = Servers::where('id',3)->first();
+        if(empty($server3)){
+          $server3 = new Servers();
+        }
+
+        $server3->value =$input['server3'];
+
+        $server4 = Servers::where('id',4)->first();
+        if(empty($server4)){
+          $server4 = new Servers();
+        }
+        $server4->value =$input['server4'];
+
+        $server5 = Servers::where('id',5)->first();
+        if(empty($server5)){
+          $server5 = new Servers();
+        }
+        $server5->value =$input['server5'];
+
+        $server6 = Servers::where('id',6)->first();
+        if(empty($server6)){
+          $server6 = new Servers();
+        }
+
+        $server6->value =$input['server6'];
+
         $server2->save();
         $server1->save();
+        $server3->save();
+        $server4->save();
+        $server5->save();
+        $server6->save();
 
         return Redirect::back()->with('status','handle_success');
       }catch(\Illuminate\Database\QueryException $ex){
