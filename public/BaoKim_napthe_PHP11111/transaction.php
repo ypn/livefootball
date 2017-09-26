@@ -29,11 +29,11 @@ $user = isset($_POST['txtuser']) ? $_POST['txtuser'] : '';
 
 //Mã MerchantID dang kí trên Bảo Kim
 $merchant_id = '30804';
-//Api username 
+//Api username
 $api_username = 'bongdatv454online';
 //Api Pwd d
 $api_password = 'bongdatv454onlinerty43y367';
-//Mã TransactionId 
+//Mã TransactionId
 $transaction_id = time();
 //mat khau di kem ma website dang kí trên B?o Kim
 $secure_code = '19591a727e973180';
@@ -97,8 +97,8 @@ if($status==200){
 	//$dbname = "xemtruoc_tuonglai";
 	//$db = mysql_connect($dbhost,$dbuser,$dbpass) or die("cant connect db");
 	//mysql_select_db($dbname,$db) or die("cant select db");
-	
-	
+
+
 	//mysql_query("UPDATE hqhpt_users SET tien = tien + $xu WHERE username  ='$user';");
 
     // Xu ly thong tin tai day
@@ -108,13 +108,13 @@ if($status==200){
 	fwrite($fh,"\r\n");
 	fclose($fh);
 	echo '<script>alert("Bạn đã thanh toán thành công thẻ '.$ten.' mệnh giá '.$amount.' ");
-	
+
 	 window.location = "http://macintosh.vn"
 	</script>';
 
 }
-else{ 
-	echo 'Status Code:' . $status . '<hr >';   
+else{
+	echo 'Status Code:' . $status . '<hr >';
     $error = $result['errorMessage'];
 	echo $error;
     $file = "cardsai.log";
@@ -123,9 +123,9 @@ else{
 	fwrite($fh,"\r\n");
 	fclose($fh);
 	echo '<script>alert("Thong tin the cao khong hop le!");
-	
-	
+
+
 	 window.location = ""
 	</script>';
 }
-
+?>
