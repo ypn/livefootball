@@ -22,6 +22,7 @@ Route::get('/tructiep/{alias}','Controller@showMatch');
 Route::get('/lich-truc-tiep','Controller@starter');
 Route::get('/logout','Controller@logout');
 Route::get('/coin','CoinController@show');
+Route::get('/napthe','CoinController@napthe');
 Route::get('/list-videos','Controller@listVideos');
 Route::get('/servers/{server_id}','Controller@getServer');
 
