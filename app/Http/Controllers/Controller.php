@@ -18,7 +18,8 @@ use App\Entities\Leaguages;
 use App\Entities\Clubs;
 use App\Entities\Settings;
 use App\Entities\Servers;
-use Carbon\Carbon;
+use Carbon\Carbon as Carbon;
+use App\Entities\DebtUsers;
 
 class Controller extends BaseController
 {
@@ -80,11 +81,7 @@ class Controller extends BaseController
       $loginUrl = $helper->getLoginUrl(url('/') . '/fb-callback', $permissions);
 
 
-      $match = Matchs::where('alias',$alias)->select('name','id','team_1','team_2','leaguage_id','date_start','status','fb_share_image','server','review_url')->first();
-
-      $setting_vide0 = Settings::where('id',1)->first();
-
-      $vide0Id = !empty($setting_vide0)?$setting_vide0->ytb_live_video_id:null;
+      $match = Matchs::where('alias',$alias)->select('name','id','team_1','team_2','leaguage_id','date_start','status','fb_share_image','server','review_url','is_pay')->first();
 
       if(!empty($match)){
         if($match->status != 2){
@@ -97,8 +94,9 @@ class Controller extends BaseController
           $match->team_2_name = isset($team_2->name)?$team_2->name:'Đội khách chưa xác định';
           $match->team_2_logo = isset($team_2->logo_url)?$team_2->logo_url:null;
           $match->time_count = (new Carbon($match->date_start))->diffInSeconds(Carbon::now());
+          $match->fee = $this->getMatchFee($match);
           $_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
-          return view ('home',array('match'=>$match,'video_id'=>$vide0Id,'fb_url'=>$loginUrl));
+          return view ('home',array('match'=>$match,'fb_url'=>$loginUrl));
         } else{
            return view  ('review',array('match'=>$match));
         }
@@ -106,6 +104,38 @@ class Controller extends BaseController
       else{
         abort(404);
       }
+    }
+
+    //Kiểm tra quyền của người xem đối với trận đấu.
+    public function getMatchFee(Matchs $match){
+
+
+      if(empty($match->is_pay ) || !$match->is_pay){
+        return  'MATCH_AVAILABLE';
+      }
+
+      $user = Sentinel::getUser();
+      if(empty($user)){
+        return 'USER_NOT_EXISTED';
+      }
+
+      if(DebtUsers::isDebted($user->id,$match->id)){
+        return 'MATCH_AVAILABLE';
+      }
+
+      if(empty($user->expired_day)){
+        //Người dùng chưa mua gói tháng.
+        return 'EXPIRED_DAY_NULL';
+      }
+
+      $expired_day = new Carbon($user->expired_day);
+
+      if($expired_day < Carbon::now()){
+        //Hết hạn gói tháng.
+        return 'OUT_OF_DATE';
+      }
+      return 'MATCH_AVAILABLE';
+
     }
 
     public function fbCallback(){

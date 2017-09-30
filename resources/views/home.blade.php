@@ -312,11 +312,50 @@ What are you looking for? Feel free to contact me directly.
       color:#3ee23e;
     }
 
+    .block-normal-user{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left:50%;
+        transform: translate(-50% , -50%);
+        background:rgba(0,0,0,0.2);
+        z-index: 11;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .block-normal-user .fuck-this-user{
+      background: #fff;
+      width: 85%;
+      height: 80%;
+      transform: translate(0 , 100px);
+      overflow-y: auto;
+      margin:auto;
+      padding:15px;
+
+    }
+
+    .fuck-this-user .fuck-title{
+      text-align:center;
+    }
+
+    .material-checkbox {
+      position: relative;
+      top: -0.375rem;
+      margin: 0 1rem 0 0;
+      cursor: pointer;
+      -ms-transform: scale(1.5); /* IE */
+      -moz-transform: scale(1.5); /* FF */
+      -webkit-transform: scale(1.5); /* Safari and Chrome */
+      -o-transform: scale(1.5); /* Opera */
+
+    }
+
+
     </style>
     <input id='_sv' type="hidden" value="{{$match->server}}"/>
   </head>
   <body>
-    <!-- math must pay fee -->
     <div class="col-md-12 no-gutters" id="wrapper">
       <div class="col-md-2 m-nav-bar">
         <div class="col-md-12">
@@ -330,6 +369,7 @@ What are you looking for? Feel free to contact me directly.
             <ul class="left-bar-link">
               <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> <span>Trang chủ</span></a></li>
               <li><a href="/lich-truc-tiep"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>Lịch trực tiếp</span></a></li>
+              <li><a href="/napthe" class="btn btn-danger btn-xs"><i class="fa fa-btc" aria-hidden="true"></i> Mua gói tháng</a></li>
             </ul>
           </div>
         </div>
@@ -338,6 +378,10 @@ What are you looking for? Feel free to contact me directly.
         <div class="col-md-12">
           <div class="col-md-9">
             <div class="green" style="background:#e9ebee;">
+              <div class="alert alert-info alert-dismissable" style="margin:0;padding:5px;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>bongdatv.online!</strong> Thưởng thức các trận cầu đỉnh cao với chất lượng vượt trội chỉ với 30.000vnđ/1 tháng.
+              </div>
               <div class="g-content">
                 <div>
                   @if($match->status==1)
@@ -345,10 +389,58 @@ What are you looking for? Feel free to contact me directly.
                     style="border:1px solid #000;"
                     id="livehd-video-player"
                     class="video-js vjs-big-play-centered vjs-16-9 custom-player"
-                    autoplay muted                  
+                    autoplay muted
                     controls preload="auto"
                     >
-                </video>
+                  </video>
+                  @if(false)<!-- if($match->fee !== 'MATCH_AVAILABLE') -->
+                  <div class="block-normal-user">
+                    @if($match->fee == 'USER_NOT_EXISTED')
+                    <div class="fuck-this-user">
+                      <h1>Trận đấu chỉ dành cho thành viên!</h1>
+                      Hãy liên kết với facebook của bạn để xem trận đấu này
+                      <a href="{{$fb_url}}" class="btn btn-primary">Liên kết với facebook</a>
+                    </div>
+                    @else
+                    <div class="fuck-this-user">
+                      <div class="col-md-9" style="padding-right:15px;">
+                        <div>
+                          <div class="alert alert-danger alert-dismissable" style="padding:0;">
+                             <a style="right:6px;" href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                          <img style="width:30px;height:30px;object-fit:cover;" src="https://d30y9cdsu7xlg0.cloudfront.net/png/10454-200.png" alt=""> Âm thanh trận đấu đã tắt.
+                          </div>
+
+                          <h3 class="fuck-title">Trận đấu mất phí</h3>
+                          <p>
+                            Trận đấu này chỉ dành cho thành viên đăng kí gói tháng. Hãy mua gói tháng chỉ với  <b>30.000 coins</b> để có thể xem tất cả các trận đấu trong <b>30 ngày (kể từ ngày đăng kí)</b>. Click vào <a href="/napthe" class="btn btn-primary btn-xs">mua gói tháng ngay</a> để mua gói tháng.
+                          </p>
+                          <a class="btn btn-primary" href="/napthe">Mua gói tháng ngay</a>
+                          <br><br>
+                          <p><strong>Lưu ý! </strong><span style="color:red">Nếu bạn chưa chuẩn bị thẻ nạp ngay lúc này. bạn vẫn có thể xem trận đấu trong chế độ ghi nợ. Tham khảo bên dưới.</span></p>
+                        </div>
+                        <hr style="border-top: 1px solid #ccc;">
+                        <div>
+                          <h3 class="fuck-title">Ghi nợ trận đấu</h3>
+                          Chế độ ghi nợ cho phép bạn xem trận đấu này nếu bạn là <b>Người dùng mới</b> hoặc <b>có số ghi nợ không quá 5.000 coins</b>(phí của 1 trận đấu) <i style="color:red">. Bạn sẽ bị trừ 5.000 coins phí của trận đấu này trong lần nạp thẻ tới</i>. Điều này sẽ có ích nếu bạn chưa có thẻ nạp ngay lúc này.
+                          <br>
+                          <p>Để tiếp tục xem trận đấu trong chế độ ghi nợ hãy chắc rằng bạn đã hiểu những gì đã đọc và <b>tích vào ô đồng ý phía dưới</b>. Sẽ mất vài giây để  hệ thống kiểm tra thông tin của bạn.</p>
+                          <div class="checkbox">
+                            <input type="hidden" name="_token" id="_token" value="{{csrf_token()}}">
+                            <label><input type="checkbox" id="add-user-to-debt" class="material-checkbox" value="">Tôi đã hiểu và đồng ý ghi nợ cho trận đấu này! </label>
+                          </div>
+                          <div>
+                              <a href="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Quay lại trang chủ</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <h5 style="background:#2a88bd;color:#fff;padding:5px;">Liên hệ hỗ trợ</h5>
+                        <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-height="400" data-tabs="messages" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Nhắn tin để được hỗ trợ</a></blockquote></div>
+                      </div>
+                    </div>
+                    @endif
+                  </div>
+                  @endif
                   @else
                   <div class="show-match">
                     <div id="ribbon">
@@ -401,6 +493,24 @@ What are you looking for? Feel free to contact me directly.
     <script src="/js/plugins/chat-master.js?v=2"></script>
     @if($match->status == 1)
     <script src="/js/lib/ainokishi.js?v=7"></script>
+    <script type="text/javascript">
+      $('#add-user-to-debt').change(function(){
+        if(this.checked){
+          $.ajax({
+            url: window.location.origin + '/transition/add-to-debt',
+            method:'POST',
+            data:{
+              _token:$('#_token').val(),
+              match_id:<?php echo($match->id); ?>,
+              match_title:'<?php echo ($match->name); ?>',
+            },
+            success:function(response){
+              console.log(response);
+            }
+          });
+        }
+      });
+    </script>
     @else
     <script src="/js/lib/flipclock/flipclock.js"></script>
     <script type="text/javascript">
@@ -485,6 +595,10 @@ What are you looking for? Feel free to contact me directly.
 
           debugger;
         }, 10);
+
+        $('body').bind('contextmenu', function(e) {
+            return false;
+        });
 
     </script>
     <script>(function(d, s, id) {
