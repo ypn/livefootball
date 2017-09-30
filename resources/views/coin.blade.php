@@ -1,6 +1,6 @@
 @extends('front_master')
 @section('title')
-<title>Nạp coin xem gói tháng</title>
+Nạp coin mua gói tháng
 @stop
 @section('style')
 <style media="screen">
@@ -31,7 +31,7 @@
             <h1 class="page-title" style="color:#fff;text-align:center;">Nạp Coins</h1>
             <div class="row">
                <div class="col-sm-12 col-xs-12">
-                  <form class="well text-center" action="/coins/member" method="post">
+                  <form class="well text-center" action="#" method="post">
                      <h3>Mua gói tháng</h3>
                      <br>
                      <p>
@@ -65,7 +65,7 @@
                            </div>
                         </div>
                      </div>
-                     <form action="/coins/card" method="post">
+                     <form action="#" method="post">
                         <fieldset>
                            <div class="form-group">
                               <label for>Nhà mạng</label>
@@ -109,67 +109,11 @@
                                  <img src="/images/card.png" style="width: 100%;">
                               </div>
                            </div>
+                           <p style="color:red;">
+                             Tính năng này chưa sẵn sàng. Hệ thống sẽ mở tính năng này trong thời gian tới. Cảm ơn bạn đã ủng hộ!
+                           </p>
                            <div class="form-group text-center">
-                              <button type="submit" class="btn btn-warning">Nạp coins</button>
-                           </div>
-                        </fieldset>
-                     </form>
-                  </div>
-               </div>
-               <div class="col-sm-4 col-xs-12">
-                  <div class="well">
-                     <h3><strong>Cách 2 -</strong> Nhắn tin theo cú pháp</h3>
-                     <hr>
-                     <div class="charge-rate">
-                        <p><span>10.000đ</span> = 5k coins</p>
-                     </div>
-                     <table class="table table-bordered table-striped">
-                        <tbody>
-                           <tr>
-                              <th>Mạng</th>
-                              <th>Cú pháp</th>
-                           </tr>
-                           <tr>
-                              <td>Viettel</td>
-                              <td>MW XTT NAP10 483162</td>
-                           </tr>
-                           <tr>
-                              <td>Mobifone</td>
-                              <td>MW XTT NAP10 483162</td>
-                           </tr>
-                           <tr>
-                              <td>Vinaphone</td>
-                              <td>MW XTT NAP10 483162</td>
-                           </tr>
-                        </tbody>
-                     </table>
-                     <h4>Gửi <strong class="text-red">9029</strong></h4>
-                  </div>
-               </div>
-               <div class="col-sm-4 col-xs-12">
-                  <div class="well">
-                     <h3><strong>Cách 3 -</strong> Nhắn tin nhận mã OTP</h3>
-                     <hr>
-                     <div class="charge-rate">
-                        <p><span>10.000đ</span> = 5k coins</p>
-                     </div>
-                     <form class="form-horizontal" action="/coins/otp" method="post">
-                        <fieldset>
-                           <div class="form-group">
-                              <div class="col-sm-12">
-                                 <div class="help-block">Nhập số điện thoại vào ô dưới đây, Hệ thống sẽ gửi cho bạn một MÃ SỐ qua tin nhắn. Sau đó, bạn nhập MÃ SỐ vào website để hoàn tất thanh toán</div>
-                              </div>
-                           </div>
-                           <div class="form-group">
-                              <label for class="control-label col-sm-4 col-xs-12">Nhập số ĐT</label>
-                              <div class="col-sm-8">
-                                 <input type="text" name="phone" class="form-control" required>
-                              </div>
-                           </div>
-                           <div class="form-group">
-                              <div class="col-sm-8 col-sm-offset-4">
-                                 <button type="submit" class="btn btn-warning">Nhận SMS OTP</button>
-                              </div>
+                              <button type="submit" class="btn btn-warning" disabled>Nạp coins</button>
                            </div>
                         </fieldset>
                      </form>
