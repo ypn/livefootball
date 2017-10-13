@@ -234,8 +234,7 @@ return [
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'Users'   => Cartalyst\Sentinel\Users\EloquentUser::class,
-        'Image' => Intervention\Image\Facades\Image::class
-
+        'Image' => Intervention\Image\Facades\Image::class        
     ],
 
 ];

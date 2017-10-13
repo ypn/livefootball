@@ -300,10 +300,11 @@ class CoinController extends Controller
       return view ('napthe');
     }
     public function napthe(){
-      if(!Sentinel::check()){
-        return 'bạn cần đăng nhập trước.';
-      }
-      return view ('napthe',array('user'=>Sentinel::getUser()));
+      // if(!Sentinel::check()){
+      //   return 'bạn cần đăng nhập trước.';
+      // }
+      // return view ('napthe',array('user'=>Sentinel::getUser()));
+      return view ('coin');
     }
 }
 
