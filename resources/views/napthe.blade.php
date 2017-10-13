@@ -7,7 +7,8 @@ Nạp thẻ mua gói tháng.
   body{
     font-family: 'Roboto', sans-serif;
     color: #333;
-    background:url('https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-2-full.jpg');
+    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+    url('/dot.png'),url('/XWAY0U3.jpg');
   }
   .charge-rate span{
     color: #f00808;
@@ -23,8 +24,6 @@ Nạp thẻ mua gói tháng.
 </style>
 @stop
 @section('script')
-<script src="BaoKim_napthe_PHP11111/js/jsmin.js"></script>
-<script src="BaoKim_napthe_PHP11111/js/bootstrap.js"></script>
 <script>
 	$(document).ready(function(){
     $(".form-control").tooltip({ placement: 'right'});
@@ -54,7 +53,10 @@ Nạp thẻ mua gói tháng.
 		 <p>
 				Chỉ với <strong>30.000 coins/tháng</strong> bạn có thể xem tất cả các trận đấu trong 30 ngày <strong>(kể từ ngày đăng ký)</strong>
 		 </p>
-     @if($user->remain_coin < 30000)
+     @if($user->expired_day != null && new Carbon\Carbon($user->expired_day) >= Carbon\Carbon::now())
+     <br>
+     <h5 style="color:green">Gói tháng hiện tại của bạn có giá trị đến ngày: {{date('d/m/Y',strtotime($user->expired_day))}} (còn {{(new Carbon\Carbon($user->expired_day))->diffInDays(Carbon\Carbon::now())}} ngày)</h5>
+     @elseif($user->remain_coin < 30000)
 		 <p style="color:red">
 				Bạn đang có <b>{{number_format($user->remain_coin,0,'','.')}} coin</b>, không có đủ <b>30.000 coins</b> trong tài khoản hãy nạp thêm coin trước bằng thẻ cào điện thoại hoặc thẻ gate theo form bên phải.
         <img style="width:100;height:40px;object-fit:cover;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCHdngGeM3Dtrrio0yDrOTTbq5gYaF4JedSFTCppl0Bswb5g-D" alt="">

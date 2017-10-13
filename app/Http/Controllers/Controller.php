@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
@@ -43,7 +44,7 @@ class Controller extends BaseController
       $permissions = ['email']; // Optional permissions
       $loginUrl = $helper->getLoginUrl(url('/') . '/fb-callback', $permissions);
 
-      $matchs = Matchs::select('alias','team_1','team_2','leaguage_id','date_start','status')->where('status','<>',2)->orderBy('date_start')->get();
+      $matchs = Matchs::select('alias','team_1','team_2','leaguage_id','date_start','status','is_pay')->where('status','<>',2)->orderBy('date_start')->get();
 
       foreach($matchs as $m){
         $leaguage = Leaguages::where('id',$m->leaguage_id)->select('image_cover','name')->first();
@@ -122,6 +123,12 @@ class Controller extends BaseController
       if(DebtUsers::isDebted($user->id,$match->id)){
         return 'MATCH_AVAILABLE';
       }
+
+      if(DebtUsers::isBuy($user->id,$match->id)){
+        return 'MATCH_AVAILABLE';
+      }
+
+
 
       if(empty($user->expired_day)){
         //Người dùng chưa mua gói tháng.
@@ -322,5 +329,20 @@ class Controller extends BaseController
     public function getServer($server_id){
       $server = Servers::where('id',$server_id)->first();
       return json_encode(['server_url'=>$server->value]);
+    }
+
+    public function userUnJoin(){
+        $match_id = Input::get('match_id');
+        $count = Input::get('count');
+        if( empty($match_id) || empty($count) ){return;}
+        if (!Cache::has('count-'.$match_id)) {
+            Cache::store('file')->put('count-'.$match_id,'0',120);
+            //echo'khong co cache';
+        }
+        $c = Cache::get('count-'.$match_id);
+        $c+= $count;
+        event(new \App\Events\CountViewEvent($match_id,$c));
+        Cache::store('file')->put('count-'.$match_id, $c, 120); 
+
     }
 }

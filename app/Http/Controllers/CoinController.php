@@ -87,6 +87,15 @@ class CoinController extends Controller
       );
     }
 
+    // Mua trận đấu
+    public function buyMatch(){
+      $input = Input::all();
+      if( !isset($input['match_id']) || !isset($input['match_title']) || !Sentinel::check() ){
+        return 'INPUT_IN_VALID';
+      }
+      return DebtUsers::buyMatch($input['match_id'],$input['match_title']);
+    }
+
     //Giao dịch nạp coin
     protected function transition($amount){
       $card = 'vietel';
@@ -99,7 +108,7 @@ class CoinController extends Controller
       //Check xem user có nợ không?
       if(!empty(DebtUsers::isDebted($user->id))){
         $data['is_debted'] = DebtUsers::isDebted($user->id);
-        if(DebtUsers::destroyDebt($user->id)){
+        if(DebtUsers::destroyDebt( ($data['is_debted'])->id )){
           $amount -= 5000;
         }else{
           return;
@@ -160,7 +169,7 @@ class CoinController extends Controller
       $transition = $this->transition($amount);
       //print_r($transition);die;
       if($transition && $transition['status'] === 200){
-        $extend = isset($transition['is_debted']) ? ' (Đã trừ 5.000 coins bạn ghi nợ cho trận đấu ' . $transition['is_debted']->match_title .' vào ngày ' .date('d/m/Y',strtotime($transition['is_debted']->created_at)). ')' :'';
+        $extend = isset($transition['is_debted']) ? ' (Đã trừ 5.000 coins bạn ghi nợ cho trận đấu ' . '<b>'.$transition['is_debted']->match_title .'</b>' .' vào ngày ' .date('d/m/Y',strtotime($transition['is_debted']->created_at)). ')' :'';
         return Redirect::back()->with('success','Bạn vừa nạp thành công thẻ <b>' . $card . ' ' . number_format($amount,0,'','.') . ' VNĐ </b> vào tài khoản.'.' Số coins được cộng thêm: <b>' . number_format($transition['amount'],0,'','.') .' coins</b>.' . ' Số coins hiện tại của bạn là: <b>' . number_format($transition['remain_coin'],0,'','.').' coins </b>' . $extend);
       }else{
         return Redirect::back()->with('error','Nap the that bai');
@@ -291,11 +300,10 @@ class CoinController extends Controller
       return view ('napthe');
     }
     public function napthe(){
-      // if(!Sentinel::check()){
-      //   return 'bạn cần đăng nhập trước.';
-      // }
-      // return view ('napthe',array('user'=>Sentinel::getUser()));
-      return view ('coin');
+      if(!Sentinel::check()){
+        return 'bạn cần đăng nhập trước.';
+      }
+      return view ('napthe',array('user'=>Sentinel::getUser()));
     }
 }
 

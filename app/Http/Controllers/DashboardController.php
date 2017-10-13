@@ -79,7 +79,7 @@ class DashboardController extends BaseController
 
 
     public function listMatch(){
-      $matchs = Matchs::select('id','name','leaguage_id','team_1','team_2','date_start','status','server')->orderBy('date_start')->get();
+      $matchs = Matchs::select('id','name','leaguage_id','team_1','team_2','date_start','status','server','is_pay')->orderBy('date_start')->get();
       foreach($matchs as $match){
         $leaguage = Leaguages::where('id',$match->leaguage_id)->select('name','logo_url')->first();
         $match->leaguage_name = isset($leaguage->name)?$leaguage->name:'Chưa xác định được tên giải đấu';
@@ -318,7 +318,7 @@ class DashboardController extends BaseController
         'server3'=>$server3,
         'server4'=>$server4,
         'server5'=>$server5,
-        'server6'=>$server6,        
+        'server6'=>$server6,
       ]);
     }
 
@@ -401,6 +401,30 @@ class DashboardController extends BaseController
         }catch(\Exception $ex){
           return Redirect::back()->with('error',$ex->getMessage());
         }
+    }
+
+    public function changeTypeMatch(){
+      $input = Input::all();
+      if( !isset($input['match_id']) || !isset($input['is_pay']) ){
+        return;
+      }
+      $match = Matchs::where('id',$input['match_id'])->first();
+
+      if(empty($match)){
+        return;
+      }
+
+      try{
+        if($input['is_pay'] == 'true'){
+          $match->is_pay = 1;
+        }else{
+          $match->is_pay = 0;
+        }
+        $match->save();
+        return 'success';
+      }catch(\Exception $ex){
+        return;
+      }
     }
 
 }

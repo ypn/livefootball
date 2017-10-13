@@ -18,6 +18,8 @@
       <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
       <!-- iCheck -->
       <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+      <!-- Switchery -->
+      <link href="/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
 
       <link href="/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
@@ -262,12 +264,14 @@
       <script src="/vendors/jqvmap/dist/jquery.vmap.js"></script>
       <script src="/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
       <script src="/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+      <!-- Switchery -->
+      <script src="/vendors/switchery/dist/switchery.min.js"></script>
       <!-- bootstrap-daterangepicker -->
       <script src="/vendors/moment/min/moment.min.js"></script>
       <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
       <!-- Custom Theme Scripts -->
-      <script src="/build/js/custom.min.js"></script>    
+      <script src="/build/js/custom.min.js"></script>
       @yield('script')
 
     </body>
