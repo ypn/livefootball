@@ -23,9 +23,12 @@ Route::get('/lich-truc-tiep','Controller@starter');
 Route::get('/logout','Controller@logout');
 Route::get('/coin','CoinController@show');
 Route::get('/napthe','CoinController@napthe');
+Route::post('/join','Controller@userJoin');
+Route::post('/un-join','Controller@userUnJoin');
 Route::group(['middleware'=>'web','prefix'=>'transition'],function(){
   Route::post('/add-to-debt','CoinController@addToDebt');
   Route::post('/expire-month-ticket','CoinController@expireMonthTicket');
+  Route::post('/buy-match','CoinController@buyMatch');
 });
 Route::post('/napthe',[
      'uses' => 'CoinController@napthe1',
@@ -80,6 +83,7 @@ Route::group(['midware'=>'web','prefix'=>'dashboard'],function(){
   Route::post('/match/change-server','DashboardController@changeMatchServer');
   Route::post('/match/show-notification','DashboardController@showMatchNotification');
   Route::post('/match/delete/{match_id}','DashboardController@deleteMatch');
+  Route::post('/match/change-type','DashboardController@changeTypeMatch');
 
   Route::get('/shell-exec','DashboardController@shellExec');
   Route::post('/shell/exec','DashboardController@exec');

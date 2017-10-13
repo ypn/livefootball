@@ -18,16 +18,23 @@ $(document).ready(function(){
 
   var player = videojs('livehd-video-player');
 
+  player.watermark({
+    file: '/logo.png',
+    xpos: 100,
+    ypos: 0,
+    xrepeat: 0,
+    opacity: 0.8
+    });  
 
   player.errors({
     errors: {
       2: {
         headline: 'Stream offline.',
-        message: 'Super Long đã đi giải cứu thế giới rồi, cảm ơn đã các bạn đã xem trận đấu. Super Long sẽ quay lại với các bạn trong trận đấu tới. Yêu bạn <3.'
+        message: 'Cảm ơn đã các bạn đã xem trận đấu. Chúng sẽ quay lại với các bạn trong trận đấu tới. Yêu bạn <3.'
       },
       4:{
         headline: 'Stream offline.',
-        message: 'Super Long đã đi giải cứu thế giới rồi, cảm ơn đã các bạn đã xem trận đấu. Super Long sẽ quay lại với các bạn trong trận đấu tới. Yêu bạn <3.'
+        message: 'Cảm ơn đã các bạn đã xem trận đấu. Chúng sẽ quay lại với các bạn trong trận đấu tới. Yêu bạn <3.'
       }
     }
   });
@@ -42,6 +49,47 @@ $(document).ready(function(){
         type:'application/x-mpegURL'
       });
       player.play();
+
+       var Button = videojs.getComponent('Button');
+       var toggleFullScreen = videojs.extend(Button, {
+          constructor: function() {
+            Button.apply(this, arguments);
+            this.addClass('vjs-mute-control');
+            this.addClass('vjs-vol-0');
+            this.addClass('custom-toggle-sound');
+            this.controlText('Turn on sound');
+          },
+          handleClick:function(){
+            var isVolumeMuted = player.muted();
+            if (isVolumeMuted) {
+                player.muted(false);
+                $(this).css('display','none');
+            }
+          }
+       });
+       videojs.registerComponent('toggleFullScreen', toggleFullScreen);
+
+
+       player.addChild('toggleFullScreen', {});
+
+
+       $('.vjs-mute-control').on('click',function(){
+         var isVolumeMuted = player.muted();
+         if (!isVolumeMuted) {
+            $('.custom-toggle-sound').css('display','none');
+         }else{
+            $('.custom-toggle-sound').css('display','block');
+         }
+       });
+
+       $('._cl').on('click',function(){
+         var isVolumeMuted = player.muted();
+         if (isVolumeMuted) {
+            player.muted(false);
+            $('.custom-toggle-sound').css('display','none');
+            $(this).parents('.alert.alert-danger').remove();
+         }
+       });
     }
   });
 

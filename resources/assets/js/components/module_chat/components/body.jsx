@@ -18,6 +18,7 @@ export default class ChatBody extends React.Component{
       this.setState({
         list:ChatStore.getList()
       });
+      this.refs.chat_body.scrollTop = this.refs.chat_body.scrollHeight;
     });
 
     ChatStore.on('add-new-chat',()=>{

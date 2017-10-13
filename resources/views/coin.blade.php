@@ -7,7 +7,7 @@ Nạp coin mua gói tháng
   body{
     font-family: 'Roboto', sans-serif;
     color: #333;
-    background:url('https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-2-full.jpg');
+    background:url('http://www.alessioatzeni.com/wp-content/tutorials/html-css/CSS3-Reverse-Animation/pattern_40.gif');
   }
   .charge-rate span{
     color: #f00808;

@@ -1,7 +1,11 @@
 @extends('front_master')
 @section('style')
 <link rel="stylesheet" href="/css/starter.css">
-<style>  
+<style>
+  body{
+    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+    url('/dot.png'),url('/XWAY0U3.jpg');
+  }
   .ribbon{
     background-color: red;
     color: #fff;
@@ -27,18 +31,18 @@
 @stop
 @section('content')
 <!--xNrw8exNLBA-->
-<div class="video-background">
+<!-- <div class="video-background">
   <div class="video-foreground">
     <iframe src="https://www.youtube.com/embed/tO01J-M3g0U?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=tO01J-M3g0U" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
-</div>
+</div> -->
 <div id="b-c-facebook" class="chat_f_vt">
   <div id="chat-f-b" class="chat-f-b">
     <span>Chat với bongdatv.online</span>
     <div id="t_f_chat">
       <a title="Close Chat" href="#" id="chat_f_close" class="chat-left-5">
-        <img src="http://bongdaf.tv/images/close.png" alt="x" title="Đóng cửa sổ chat">
+        <img src="http://vatvo.tv/images/close.png" alt="x" title="Đóng cửa sổ chat">
       </a>
     </div>
   </div>

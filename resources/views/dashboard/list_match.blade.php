@@ -46,6 +46,25 @@
         }
       })
     });
+
+    $('.free_type').change(function(){
+      $.ajax({
+        url:window.location.origin + '/dashboard/match/change-type',
+        method:'POST',
+        data:{
+          _token:'<?php echo csrf_token(); ?>',
+          match_id: $(this).attr('data-match-id'),
+          is_pay:$(this).is(':checked')
+        },
+        success:function(response){
+          console.log(response);
+          if(response==null || response !=='success'){
+            alert('Thay đổi chưa được cập nhật. kiểm tra lại lỗi chưa xác định!');
+          }
+        }
+      })
+    });
+
   })(jQuery)
 </script>
 <!--<script type="text/javascript" src="/build/js/push.notification.js"></script>-->
@@ -84,7 +103,7 @@
 
             <div class="x_content">
 
-              <td><button type="button" id="show-notification" class="btn btn-warning btn-xs"><i class="fa fa-bell-o" aria-hidden="true"></i> Gui thong bao</button></td>
+              <!-- <td><button type="button" id="show-notification" class="btn btn-warning btn-xs"><i class="fa fa-bell-o" aria-hidden="true"></i> Gui thong bao</button></td> -->
 
               <div class="table-responsive">
                 <table class="table table-striped jambo_table bulk_action">
@@ -103,7 +122,7 @@
                       <th class="column-title">Thời gian </th>
                       <th class="column-title">Trạng thái </th>
                       <th class="column-title">Server</th>
-                      <th class="column-title">Gui thong bao</th>
+                      <th class="column-title">Is Pay</th>
                       <th class="column-title no-link last"><span class="nobr">Action</span>
                       </th>
                       <th class="bulk-actions" colspan="7">
@@ -141,10 +160,12 @@
                           <option {{($match->server==3)?'selected':''}} value="3">#server 3</option>
                           <option {{($match->server==4)?'selected':''}} value="4">#server 4</option>
                           <option {{($match->server==5)?'selected':''}} value="5">#server 5</option>
-                          <option {{($match->server==6)?'selected':''}} value="6">#server 6</option>       
+                          <option {{($match->server==6)?'selected':''}} value="6">#server 6</option>
                         </select>
                       </td>
-                      <td><a class="btn btn-warning btn-xs show-notification" href="javascript:void(0);"><i class="fa fa-bell-o" aria-hidden="true"></i> Gui thong bao</a></td>
+                      <td>
+                          <input type="checkbox" class="js-switch free_type" data-match-id = "{{$match->id}}" {{$match->is_pay ? 'checked' :''}} />  
+                      </td>
                       <td class="last">
                         <a class="edit-match" href="{{($match->status!==2) ? '/dashboard/match/create/' . $match->id : '/dashboard/match/review/' . $match->id}}">Edit</a>
                         |

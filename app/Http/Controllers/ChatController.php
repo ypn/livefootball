@@ -38,7 +38,7 @@ class ChatController extends Controller
     }
 
     $text = $request->text;
-    if($check==='chat.block_lv1'){    
+    if($check==='chat.block_lv1'){
       $text = 'Xin chaò! Tớ là con súc vật dễ thương. Gâu Gâu!';
     }
 
@@ -73,6 +73,6 @@ class ChatController extends Controller
     }
 
     return BandChatUsers::checkBandedUser($user);
-
+    
   }
 }

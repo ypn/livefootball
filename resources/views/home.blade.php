@@ -33,6 +33,7 @@ What are you looking for? Feel free to contact me directly.
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     @if($match->status==1)
     <link rel="stylesheet" href="/js/lib/ainokishi.css?v=6">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
     @else
     <link rel="stylesheet" href="/js/lib/flipclock/flipclock.css">
     @endif
@@ -196,7 +197,13 @@ What are you looking for? Feel free to contact me directly.
 
     @media(min-width:1200px){
     }
-    @media(min-width:768px){}
+    @media(max-width:768px){
+      .vjs-watermark img {
+        width: 90px;
+        height: auto;
+        object-fit: cover;
+      }
+    }
     @media(min-width:992px){
       #wrapper.toggle .m-nav-bar .left-bar-link span{
         display: none;
@@ -319,16 +326,16 @@ What are you looking for? Feel free to contact me directly.
         top: 50%;
         left:50%;
         transform: translate(-50% , -50%);
-        background:rgba(0,0,0,0.2);
+        background:rgba(0,0,0,0.1);
         z-index: 11;
-        font-family: 'Roboto', sans-serif;
     }
 
     .block-normal-user .fuck-this-user{
-      background: #fff;
+      background: rgba(54,70,93,0.88);
+      color: #fff;
       width: 85%;
       height: 80%;
-      transform: translate(0 , 100px);
+      transform: translate(0 , 120px);
       overflow-y: auto;
       margin:auto;
       padding:15px;
@@ -351,7 +358,61 @@ What are you looking for? Feel free to contact me directly.
 
     }
 
+    .vjs-my-fancy-modal{
+      width: 100px!important;
+      height: 50px!important;
+      left: auto!important;
+      right: 10px;
 
+    }
+
+    .vjs-my-fancy-modal .vjs-close-button{
+      display: none;
+    }
+
+    .custom-toggle-sound{
+      position: absolute!important;
+      top: 0;
+      left: 0;
+      height: auto!important;
+      font-size: 40px!important;
+    }
+
+    .vjs-watermark {
+        position: absolute;
+        display: inline;
+        right: 20px!important;
+        top: 20px!important;
+    }
+
+    .vjs-ccu{
+      background: red;
+      font-size: 18px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-right: 10px;
+      padding-left: 3px;
+      font-weight: 600;
+      animation: twinkling 0.4s linear 2s infinite alternate;
+    }
+
+    @-webkit-keyframes twinkling{ /*Transparency from 0 to 1*/
+      0%{
+        opacity:0.7; /*The opacity to 0*/
+      }
+      100%{
+        opacity:0.8; /*The opacity to 1*/
+      }
+    }
+
+    .vjs-ccu i{
+      color: #e0deea;
+      margin-right: 5px;
+    }
+
+    ._cl:hover{
+      text-decoration: none;
+    }
     </style>
     <input id='_sv' type="hidden" value="{{$match->server}}"/>
   </head>
@@ -378,10 +439,11 @@ What are you looking for? Feel free to contact me directly.
         <div class="col-md-12">
           <div class="col-md-9">
             <div class="green" style="background:#e9ebee;">
+              @if(!$match->is_pay)
               <div class="alert alert-info alert-dismissable" style="margin:0;padding:5px;">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>bongdatv.online!</strong> Thưởng thức các trận cầu đỉnh cao với chất lượng vượt trội chỉ với 30.000vnđ/1 tháng.
               </div>
+              @endif
               <div class="g-content">
                 <div>
                   @if($match->status==1)
@@ -393,21 +455,33 @@ What are you looking for? Feel free to contact me directly.
                     controls preload="auto"
                     >
                   </video>
-                  @if(false)<!-- if($match->fee !== 'MATCH_AVAILABLE') -->
-                  <div class="block-normal-user">
+                  @if($match->fee !== 'MATCH_AVAILABLE')
+                  <div class="block-normal-user" id="block-normal0usser">
                     @if($match->fee == 'USER_NOT_EXISTED')
                     <div class="fuck-this-user">
-                      <h1>Trận đấu chỉ dành cho thành viên!</h1>
-                      Hãy liên kết với facebook của bạn để xem trận đấu này
-                      <a href="{{$fb_url}}" class="btn btn-primary">Liên kết với facebook</a>
+                      <div class="alert alert-danger" style="padding:0;">
+                         <a href="javascript:void(0);" class="_cl"><img style="width:30px;height:30px;object-fit:cover;" src="https://d30y9cdsu7xlg0.cloudfront.net/png/10454-200.png" alt=""> <strong> BẬT ÂM THANH </strong></a>
+                      </div>
+                      <div style="text-align:center">
+                        <h1>Đăng nhập để xem trận đấu</h1>
+                        <img src="https://www.facebook.com/rsrc.php/v3/yc/r/GwFs3_KxNjS.png" alt="">
+                      </div>
+                      <h3>Bạn cần đăng nhập qua facebook để xem trận đấu này.</h3>
+                      <p>
+                        Để tiện lợi cho chính bạn và dễ dàng cho việc quản lý thành viên  của chúng tôi. Chúng tôi sẽ liên kết trực tiếp đến facebook cá nhân của bạn. Bạn cần cung cấp địa chỉ email để quá trình đăng kí được hoàn tất.
+                      </p>
+                      Hãy liên kết với facebook của bạn để xem trận đấu này.
+                      Click vào <a href="{{$fb_url}}" class="loginBtn loginBtn--facebook">Liên kết với facebook</a> để hoàn thành đăng kí.
+                      <div>
+                          <a href="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Quay lại trang chủ</a>
+                      </div>
                     </div>
                     @else
                     <div class="fuck-this-user">
                       <div class="col-md-9" style="padding-right:15px;">
                         <div>
-                          <div class="alert alert-danger alert-dismissable" style="padding:0;">
-                             <a style="right:6px;" href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                          <img style="width:30px;height:30px;object-fit:cover;" src="https://d30y9cdsu7xlg0.cloudfront.net/png/10454-200.png" alt=""> Âm thanh trận đấu đã tắt.
+                          <div class="alert alert-danger" style="padding:0;">
+                             <a href="javascript:void(0);" class="_cl"><img style="width:30px;height:30px;object-fit:cover;" src="https://d30y9cdsu7xlg0.cloudfront.net/png/10454-200.png" alt=""><strong> BẬT ÂM THANH </strong></a>
                           </div>
 
                           <h3 class="fuck-title">Trận đấu mất phí</h3>
@@ -416,12 +490,12 @@ What are you looking for? Feel free to contact me directly.
                           </p>
                           <a class="btn btn-primary" href="/napthe">Mua gói tháng ngay</a>
                           <br><br>
-                          <p><strong>Lưu ý! </strong><span style="color:red">Nếu bạn chưa chuẩn bị thẻ nạp ngay lúc này. bạn vẫn có thể xem trận đấu trong chế độ ghi nợ. Tham khảo bên dưới.</span></p>
+                          <p><strong>Lưu ý! </strong><span style="color:#8dd40d">Nếu bạn chưa chuẩn bị thẻ nạp ngay lúc này. bạn vẫn có thể xem trận đấu trong chế độ ghi nợ. Tham khảo bên dưới.</span></p>
                         </div>
                         <hr style="border-top: 1px solid #ccc;">
                         <div>
                           <h3 class="fuck-title">Ghi nợ trận đấu</h3>
-                          Chế độ ghi nợ cho phép bạn xem trận đấu này nếu bạn là <b>Người dùng mới</b> hoặc <b>có số ghi nợ không quá 5.000 coins</b>(phí của 1 trận đấu) <i style="color:red">. Bạn sẽ bị trừ 5.000 coins phí của trận đấu này trong lần nạp thẻ tới</i>. Điều này sẽ có ích nếu bạn chưa có thẻ nạp ngay lúc này.
+                          Chế độ ghi nợ cho phép bạn xem trận đấu này nếu bạn là <b>Người dùng mới</b> hoặc <b>có số ghi nợ không quá 5.000 coins</b>(phí của 1 trận đấu) <i style="color:#8dd40d">. Bạn sẽ bị trừ 5.000 coins phí của trận đấu này trong lần nạp thẻ tới</i>. Điều này sẽ có ích nếu bạn chưa có thẻ nạp ngay lúc này.
                           <br>
                           <p>Để tiếp tục xem trận đấu trong chế độ ghi nợ hãy chắc rằng bạn đã hiểu những gì đã đọc và <b>tích vào ô đồng ý phía dưới</b>. Sẽ mất vài giây để  hệ thống kiểm tra thông tin của bạn.</p>
                           <div class="checkbox">
@@ -435,7 +509,7 @@ What are you looking for? Feel free to contact me directly.
                       </div>
                       <div class="col-md-3">
                         <h5 style="background:#2a88bd;color:#fff;padding:5px;">Liên hệ hỗ trợ</h5>
-                        <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-height="400" data-tabs="messages" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Nhắn tin để được hỗ trợ</a></blockquote></div>
+                        <div class="fb-page" data-href="https://www.facebook.com/bongdatv.online/" data-height="450" data-tabs="messages" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/bongdatv.online/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/bongdatv.online/">Nhắn tin để được hỗ trợ</a></blockquote></div>
                       </div>
                     </div>
                     @endif
@@ -493,22 +567,174 @@ What are you looking for? Feel free to contact me directly.
     <script src="/js/plugins/chat-master.js?v=2"></script>
     @if($match->status == 1)
     <script src="/js/lib/ainokishi.js?v=7"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <script type="text/javascript">
       $('#add-user-to-debt').change(function(){
+        let _checkMe = $(this);
         if(this.checked){
-          $.ajax({
-            url: window.location.origin + '/transition/add-to-debt',
-            method:'POST',
-            data:{
-              _token:$('#_token').val(),
-              match_id:<?php echo($match->id); ?>,
-              match_title:'<?php echo ($match->name); ?>',
-            },
-            success:function(response){
-              console.log(response);
-            }
+          $.alert({
+              theme: 'supervan',
+              title: 'Ghi nợ trận đấu này',
+              content: 'Lưu ý: Bạn chỉ có thể ghi nợ tối đa 1 trận đấu. Hệ thống sẽ tự động trừ của bạn <span style="color:red;">5.000 coins</span> (phí của trận đấu này) trong lần nạp thẻ tiếp theo.',
+              buttons:{
+                ok:{
+                  text:'Đồng ý và tiếp tục',
+                  isDisabled: false,
+                  btnClass: 'btn-blue',
+                  action:function(){
+                    $.ajax({
+                      url: window.location.origin + '/transition/add-to-debt',
+                      method:'POST',
+                      data:{
+                        _token:$('#_token').val(),
+                        match_id:<?php echo($match->id); ?>,
+                        match_title:'<?php echo ($match->name); ?>',
+                      },
+                      success:function(response){
+                        console.log(response);
+                        switch (response.state) {
+                          case 'IS_DEBTED':
+                            $.alert({
+                              title:'Ghi nợ không thành công!',
+                              content:'- Bạn không thể tiếp tục ghi nợ do chưa thanh toán cho trận đấu: ' + '<b>' + response.message +'</b> bạn đã xem trước đó.'
+                                      + '<p>- Hãy mua gói tháng để có thể xem tất cả các trận đấu trong 30 ngày</p>'
+                                      + '<p> - Nếu bạn nghĩ đây là sự nhầm lẫn hãy gửi tin nhắn cho chúng tôi để được hỗ trợ!</p>',
+                              buttons:{
+                                continue:{
+                                  text:'Mua gói tháng',
+                                  btnClass:'btn-blue',
+                                  action:function(){
+                                    window.location.href = window.location.origin + '/napthe';
+                                  }
+                                },
+                                close:{
+                                  text:'Quay lại',
+                                }
+                              }
+                            });
+                            _checkMe.prop('checked', false);
+                            break;
+                          case 'CAN_EXPIRED':
+                          //Số coin có thể gia hạn gói tháng.
+                            $.alert({
+                              title:'Ghi nợ không thành công!',
+                              content:'Số coin của bạn nhiều hơn 30.000 coins. bạn có thể gia hạn gói tháng để xem tất cả các trận đấu trong 30 ngày. Click <a class="btn btn-primary btn-xs">Gia hạn gói tháng</a> để xem trận đấu',
+                              buttons:{
+                                continue:{
+                                  text:'Gia hạn gói tháng',
+                                  btnClass:'btn-blue',
+                                  action:function(){
+                                    window.location.href = window.location.origin + "/napthe";
+                                  }
+                                },
+                                close:{
+                                  text:'Quay lại',
+                                }
+                              }
+                            });
+                            _checkMe.prop('checked', false);
+                            break;
+                          case 'CAN_BUY_MATCH':
+                            //Số coin có thể mua trận đấu.
+                            $.alert({
+                              title:'Ghi nợ không thành công!',
+                              content:'Số coin của bạn <span style="color:red;">nhiều hơn 5.000 coins</span>. Bạn có thể mua trận đấu này với giá 5.000 coin. Hãy click <a href="javascript:void(0);" class="btn btn-primary btn-xs">MUA NGAY</a> để mua trận đấu! <p>Bạn có thể <a href="javascript:void(0);" class="btn btn-default btn-xs">TỪ CHỐI</a> nếu bạn muốn để dành số coin này để xem trận đấu khác.</p>',
+                              buttons:{
+                                buy:{
+                                  text:'Mua ngay',
+                                  btnClass:'btn-blue',
+                                  action:function(){
+                                    $.ajax({
+                                      url:window.location.origin + '/transition/buy-match',
+                                      method:'POST',
+                                      data:{
+                                        _token:$('#_token').val(),
+                                        match_id:<?php echo($match->id); ?>,
+                                        match_title:'<?php echo ($match->name); ?>',
+                                      },
+                                      success:function(response1){
+                                        switch (response1) {
+                                          case 'BUY_SUCCESS':
+                                            $.alert({
+                                              title:'Mua trận đấu thành công',
+                                              content:'Bạn đã mua trận đấu thành công. Hi vọng bạn hài lòng khi xem trận đấu'
+                                            });
+                                            $('#block-normal0usser').remove();
+                                          default:
+
+                                            break;
+                                        }
+                                      }
+                                    });
+                                  }
+                                },
+                                back:{
+                                  text:'Từ chối'
+                                }
+                              }
+                            });
+                            _checkMe.prop('checked', false);
+                            break;
+                          case 'SUCCESS':
+                            $.alert({
+                              title:'Ghi nợ thành công',
+                              content:'Bạn đã ghi nợ thành công. Xin mời tiếp tục thưởng thức trận đấu.'
+                            });
+                            $('#block-normal0usser').remove();
+                            break;
+                          default:
+                        }
+                      }
+                    });
+                  }
+                },
+                cancel:{
+                  text:'Quay lại',
+                  action:function(){
+                    _checkMe.prop('checked', false);
+                  }
+                }
+              }
           });
         }
+      });
+
+
+      var count = <?php echo (Illuminate\Support\Facades\Cache::has('count-'.$match->id) ? Illuminate\Support\Facades\Cache::get('count-'.$match->id) :0 ); ?>;
+      var player = videojs('livehd-video-player');
+      player.vjsccu({
+        count: count+1
+      });
+      window.addEventListener("beforeunload", function(event) {
+          $.ajax({
+            url: window.location.origin + '/un-join',
+            method:'POST',
+            async:false,
+            data:{
+             match_id:'<?php echo $match->id ?>',
+             _token:'<?php echo(csrf_token()); ?>',
+             count : -1
+            }
+          });
+      });
+
+      $.ajax({
+        url:window.location.origin + '/un-join',
+        method:'POST',
+        async:false,
+        data:{
+          match_id:'<?php echo $match->id ?>',
+          _token:'<?php echo(csrf_token()); ?>',
+          count : 1
+        }
+      });
+
+      Echo.channel('count-view-match-<?php echo $match->id; ?>')
+        .listen('CountViewEvent', (e) => {
+          count = e.count;
+          player.vjsccu({
+            count: e.count
+          });
       });
     </script>
     @else
@@ -524,7 +750,7 @@ What are you looking for? Feel free to contact me directly.
             language:'vn',
             callbacks: {
               stop: function() {
-                $('.message').html('The clock has stopped!')
+                location.reload();
               }
             }
         });
@@ -574,31 +800,31 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        setInterval(function() {
-          console.clear();
-          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-          console.log('If you want to get something from my website, feel free to contact me via:');
-          console.log('Email:bongdatv.online@gmail.com');
-          console.log('Thank for you consideration! Love you <3');
-          console.log('-----------------------------------------');
-
-
-          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-          console.log("| $$  | $$ /$$__  $$| $$__  $$");
-          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-          console.log("| $$  | $$| $$  | $$| $$  | $$")
-          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-          console.log("\____  $$| $$____/ |__/  |__/");
-          console.log("/$$  | $$| $$");
-          console.log("|  $$$$$$/| $$");
-          console.log("\______/ |__/");
-
-          debugger;
-        }, 10);
-
-        $('body').bind('contextmenu', function(e) {
-            return false;
-        });
+        // setInterval(function() {
+        //   console.clear();
+        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+        //   console.log('If you want to get something from my website, feel free to contact me via:');
+        //   console.log('Email:bongdatv.online@gmail.com');
+        //   console.log('Thank for you consideration! Love you <3');
+        //   console.log('-----------------------------------------');
+        //
+        //
+        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
+        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
+        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+        //   console.log("\____  $$| $$____/ |__/  |__/");
+        //   console.log("/$$  | $$| $$");
+        //   console.log("|  $$$$$$/| $$");
+        //   console.log("\______/ |__/");
+        //
+        //   debugger;
+        // }, 10);
+        //
+        // $('body').bind('contextmenu', function(e) {
+        //     return false;
+        // });
 
     </script>
     <script>(function(d, s, id) {
