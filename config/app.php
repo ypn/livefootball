@@ -180,8 +180,7 @@ return [
 
         /*extension
         */
-        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
-        HTMLMin\HTMLMin\HTMLMinServiceProvider::class
+        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class
 
     ],
 
@@ -235,8 +234,8 @@ return [
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'Users'   => Cartalyst\Sentinel\Users\EloquentUser::class,
-        'Image' => Intervention\Image\Facades\Image::class,
-        'HTMLMin' => HTMLMin\HTMLMin\Facades\HTMLMin::class
+        'Image' => Intervention\Image\Facades\Image::class
+
     ],
 
 ];
