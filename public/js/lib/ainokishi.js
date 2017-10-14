@@ -46692,7 +46692,7 @@ $(document).ready(function(){
 
        $('.vjs-mute-control').on('click',function(){
          var isVolumeMuted = player.muted();
-         if (!isVolumeMuted) {
+         if (isVolumeMuted) {
             $('.custom-toggle-sound').css('display','none');
          }else{
             $('.custom-toggle-sound').css('display','block');
