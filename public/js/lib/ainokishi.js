@@ -46641,7 +46641,7 @@ $(document).ready(function(){
     ypos: 0,
     xrepeat: 0,
     opacity: 0.8
-    });  
+    });
 
   player.errors({
     errors: {
@@ -46677,6 +46677,7 @@ $(document).ready(function(){
             this.controlText('Turn on sound');
           },
           handleClick:function(){
+            alert('ccc');
             var isVolumeMuted = player.muted();
             if (isVolumeMuted) {
                 player.muted(false);
