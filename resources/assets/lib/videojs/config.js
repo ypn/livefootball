@@ -67,7 +67,7 @@ $(document).ready(function(){
             // }
 
             player.muted(false);
-            $(this).css('display','none');
+            this.css('display','none');
           }
        });
        videojs.registerComponent('toggleFullScreen', toggleFullScreen);
