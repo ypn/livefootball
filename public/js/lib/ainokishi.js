@@ -46680,8 +46680,8 @@ $(document).ready(function(){
             var isVolumeMuted = player.muted();
             if (isVolumeMuted) {
                 player.muted(false);
-                $('.custom-toggle-sound').css('display','none');
             }
+            $('.custom-toggle-sound').css('display','none');
           }
        });
        videojs.registerComponent('toggleFullScreen', toggleFullScreen);
@@ -46691,8 +46691,9 @@ $(document).ready(function(){
 
 
        $('.vjs-mute-control').on('click',function(){
+         alert('mutee');
          var isVolumeMuted = player.muted();
-         if (isVolumeMuted) {
+         if (!isVolumeMuted) {
             $('.custom-toggle-sound').css('display','none');
          }else{
             $('.custom-toggle-sound').css('display','block');

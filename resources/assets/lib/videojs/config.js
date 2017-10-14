@@ -74,6 +74,7 @@ $(document).ready(function(){
 
 
        $('.vjs-mute-control').on('click',function(){
+         alert('mutee');
          var isVolumeMuted = player.muted();
          if (!isVolumeMuted) {
             $('.custom-toggle-sound').css('display','none');
