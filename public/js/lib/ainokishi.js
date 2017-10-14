@@ -46677,14 +46677,11 @@ $(document).ready(function(){
             this.controlText('Turn on sound');
           },
           handleClick:function(){
-            // var isVolumeMuted = player.muted();
-            // if (isVolumeMuted) {
-            //     player.muted(false);
-            //     $(this).css('display','none');
-            // }
-
-            player.muted(false);
-            this.css('display','none');
+            var isVolumeMuted = player.muted();
+            if (isVolumeMuted) {
+                player.muted(false);
+                $('.custom-toggle-sound').css('display','none');
+            }
           }
        });
        videojs.registerComponent('toggleFullScreen', toggleFullScreen);
