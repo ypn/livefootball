@@ -73,8 +73,7 @@ $(document).ready(function(){
        player.addChild('toggleFullScreen', {});
 
 
-       $('.vjs-mute-control').on('click',function(){
-         alert('mutee');
+       $('.vjs-mute-control').on('click',function(){    
          var isVolumeMuted = player.muted();
          if (!isVolumeMuted) {
             $('.custom-toggle-sound').css('display','none');
