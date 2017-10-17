@@ -98,7 +98,6 @@ class CoinController extends Controller
 
     //Giao dịch nạp coin
     protected function transition($amount){
-      $card = 'vietel';
       $user = Sentinel::getUser();
       $data = array();
       if(empty($user)){
@@ -164,16 +163,6 @@ class CoinController extends Controller
     }
 
     public function napthe1(){
-      $amount = 10000;
-      $card = 'Vietel';
-      $transition = $this->transition($amount);
-      //print_r($transition);die;
-      if($transition && $transition['status'] === 200){
-        $extend = isset($transition['is_debted']) ? ' (Đã trừ 5.000 coins bạn ghi nợ cho trận đấu ' . '<b>'.$transition['is_debted']->match_title .'</b>' .' vào ngày ' .date('d/m/Y',strtotime($transition['is_debted']->created_at)). ')' :'';
-        return Redirect::back()->with('success','Bạn vừa nạp thành công thẻ <b>' . $card . ' ' . number_format($amount,0,'','.') . ' VNĐ </b> vào tài khoản.'.' Số coins được cộng thêm: <b>' . number_format($transition['amount'],0,'','.') .' coins</b>.' . ' Số coins hiện tại của bạn là: <b>' . number_format($transition['remain_coin'],0,'','.').' coins </b>' . $extend);
-      }else{
-        return Redirect::back()->with('error','Nap the that bai');
-      }
 
       header('Content-Type: text/html; charset=utf-8');
       define('CORE_API_HTTP_USR', 'merchant_19002');
@@ -184,9 +173,7 @@ class CoinController extends Controller
       $sopin = isset($_POST['txtpin']) ? $_POST['txtpin'] : '';
       //Loai the cao (VINA, MOBI, VIETEL, VTC, GATE)
       $mang = isset($_POST['chonmang']) ? $_POST['chonmang'] : '';
-      $user = isset($_POST['txtuser']) ? $_POST['txtuser'] : '';
-
-
+      // $user = isset($_POST['txtuser']) ? $_POST['txtuser'] : '';
 
       	if($mang=='MOBI'){
       			$ten = "Mobifone";
@@ -278,33 +265,34 @@ class CoinController extends Controller
 
           // Xu ly thong tin tai day
 
-      	echo '<script>alert("Bạn đã thanh toán thành công thẻ '.$ten.' mệnh giá '.$amount.' ");
+      	// echo '<script>alert("Bạn đã thanh toán thành công thẻ '.$ten.' mệnh giá '.$amount.' ");
+        //
+      	//  window.location = "http://macintosh.vn"
+      	// </script>';
 
-      	 window.location = "http://macintosh.vn"
-      	</script>';
-
-        //CHỗ này hả
+        $transition = $this->transition($xu);
+        //print_r($transition);die;
+        if($transition && $transition['status'] === 200){
+          $extend = isset($transition['is_debted']) ? ' (Đã trừ 5.000 coins bạn ghi nợ cho trận đấu ' . '<b>'.$transition['is_debted']->match_title .'</b>' .' vào ngày ' .date('d/m/Y',strtotime($transition['is_debted']->created_at)). ')' :'';
+          return Redirect::back()->with('success','Bạn vừa nạp thành công thẻ <b>' . $ten . ' ' . number_format($amount,0,'','.') . ' VNĐ </b> vào tài khoản.'.' Số coins được cộng thêm: <b>' . number_format($transition['amount'],0,'','.') .' coins</b>.' . ' Số coins hiện tại của bạn là: <b>' . number_format($transition['remain_coin'],0,'','.').' coins </b>' . $extend);
+        }else{
+          return Redirect::back()->with('error','Nạp thẻ thất bại. Hãy liên hệ với chúng tôi để được hỗ trợ');
+        }
 
 
       }
       else{
       	echo 'Status Code:' . $status . '<hr >';
           $error = $result['errorMessage'];
-      	echo $error;
-      	echo '<script>alert("Thong tin the cao khong hop le!");
-
-
-      	 window.location = ""
-      	</script>';
+      	return Redirect::back()->with('error','Số seri hoặc mã thẻ bạn nhập không đúng. Vui lòng kiểm tra và thử lại.');
       }
-      return view ('napthe');
     }
+
     public function napthe(){
-      // if(!Sentinel::check()){
-      //   return 'bạn cần đăng nhập trước.';
-      // }
-      // return view ('napthe',array('user'=>Sentinel::getUser()));
-      return view ('coin');
+      if(!Sentinel::check()){
+        return view('login');
+      }
+      return view ('napthe',array('user'=>Sentinel::getUser()));
     }
 }
 

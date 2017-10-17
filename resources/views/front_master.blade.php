@@ -175,7 +175,7 @@
                 </ul>
             </li>
             @else
-            <li><a href="{{$loginUrl}}" class="btn btn-primary" style="color:#fff;padding:5px 15px;background:#337ab7;margin:5px 15px;">Liên kết với facebook</a></li>
+            <li><a href="{{$loginUrl}}" class="loginBtn loginBtn--facebook" style="color:#fff;padding:10px 40px;">Liên kết với facebook</a></li>
             @endif
            </ul>
          </div>

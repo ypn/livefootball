@@ -26,8 +26,12 @@ Nạp thẻ mua gói tháng.
 @section('script')
 <script>
 	$(document).ready(function(){
-    $(".form-control").tooltip({ placement: 'right'});
-});
+      $(".form-control").tooltip({ placement: 'right'});
+  });
+
+  $('form').submit(function(){
+      $(this).find(':input[type=submit]').prop('disabled', true);
+  });
 </script>
 @stop
 @section('content')
@@ -62,7 +66,7 @@ Nạp thẻ mua gói tháng.
         <img style="width:100;height:40px;object-fit:cover;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCHdngGeM3Dtrrio0yDrOTTbq5gYaF4JedSFTCppl0Bswb5g-D" alt="">
 		 </p>
      @else
-     <form class="" action="/transition/expire-month-ticket" method="post">
+     <form action="/transition/expire-month-ticket" method="post">
        {{csrf_field()}}
        <p>Bạn đang có <b>{{number_format($user->remain_coin,0,'','.')}} coins</b>. Click vào nút bên dưới để hoàn thành mua gói tháng</p>
        <button type="submit" class="btn btn-primary" name="button">Mua gói tháng ngay</button>
@@ -97,13 +101,6 @@ Nạp thẻ mua gói tháng.
 						  <option value="VNM">Vietnam mobile</option>
 						</select>
 			    </div>
-		  </div>
-
-		  <div class="form-group">
-		    <label for="txtpin" class="col-md-2 control-label">Tài khoản</label>
-		    <div class="col-md-10">
-		      <input type="text" class="form-control" id="txtuser" name="txtuser" />
-		    </div>
 		  </div>
 
 		  <div class="form-group">
