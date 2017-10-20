@@ -23,8 +23,6 @@ Route::get('/lich-truc-tiep','Controller@starter');
 Route::get('/logout','Controller@logout');
 Route::get('/coin','CoinController@show');
 Route::get('/napthe','CoinController@napthe');
-Route::post('/join','Controller@userJoin');
-Route::post('/un-join','Controller@userUnJoin');
 Route::group(['middleware'=>'web','prefix'=>'transition'],function(){
   Route::post('/add-to-debt','CoinController@addToDebt');
   Route::post('/expire-month-ticket','CoinController@expireMonthTicket');

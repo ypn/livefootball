@@ -1,5 +1,5 @@
 {
-	"authHost": "http://localhost",
+	"authHost": "http://bongdahd.tv",
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [
 		{

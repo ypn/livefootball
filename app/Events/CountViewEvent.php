@@ -32,6 +32,7 @@ class CountViewEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('count-view-match-'.$this->match_id);
+        //return new Channel('count-view-match-'.$this->match_id);
+        return new PresenceChannel('room.1');
     }
 }

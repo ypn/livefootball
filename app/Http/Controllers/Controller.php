@@ -33,7 +33,6 @@ class Controller extends BaseController
           session_start();
       }
 
-
       $fb = new \Facebook\Facebook([
         'app_id' => '1812749958752149',
         'app_secret' => '32a370b14d3b6140736ce7eaa13c962c',
@@ -256,7 +255,10 @@ class Controller extends BaseController
           echo $e->getMessage();
         }
       }else{
-        Sentinel::login($user);
+        Sentinel::authenticateAndRemember([
+          'email'=>$user->email,
+          'password'=>'123'
+        ]);
         if(isset($_SESSION['lastpage'])) {
           $lastpage = $_SESSION['lastpage'];
           unset($_SESSION['lastpage']);
@@ -329,20 +331,5 @@ class Controller extends BaseController
     public function getServer($server_id){
       $server = Servers::where('id',$server_id)->first();
       return json_encode(['server_url'=>$server->value]);
-    }
-
-    public function userUnJoin(){
-        $match_id = Input::get('match_id');
-        $count = Input::get('count');
-        if( empty($match_id) || empty($count) ){return;}
-        if (!Cache::has('count-'.$match_id)) {
-            Cache::store('file')->put('count-'.$match_id,'0',120);
-            //echo'khong co cache';
-        }
-        $c = Cache::get('count-'.$match_id);
-        $c+= $count;
-        event(new \App\Events\CountViewEvent($match_id,$c));
-        Cache::store('file')->put('count-'.$match_id, $c, 120); 
-
-    }
+    }   
 }

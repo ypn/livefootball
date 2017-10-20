@@ -699,43 +699,28 @@ What are you looking for? Feel free to contact me directly.
         }
       });
 
+    var player = videojs('livehd-video-player');
+    var count =0;
+    Echo.join('App.User.1')
+    .here((users) => {
+        count = users.length;
+        player.vjsccu({
+          count: count
+        });
+    })
+    .joining((user) => {
+        count +=1;
+        player.vjsccu({
+          count: count
+        });
+    })
+    .leaving((user) => {
+        count-=1;
+        player.vjsccu({
+          count: count
+        });
+    });
 
-      var count = <?php echo (Illuminate\Support\Facades\Cache::has('count-'.$match->id) ? Illuminate\Support\Facades\Cache::get('count-'.$match->id) :0 ); ?>;
-      var player = videojs('livehd-video-player');
-      player.vjsccu({
-        count: count+1
-      });
-      window.addEventListener("beforeunload", function(event) {
-          $.ajax({
-            url: window.location.origin + '/un-join',
-            method:'POST',
-            async:false,
-            data:{
-             match_id:'<?php echo $match->id ?>',
-             _token:'<?php echo(csrf_token()); ?>',
-             count : -1
-            }
-          });
-      });
-
-      $.ajax({
-        url:window.location.origin + '/un-join',
-        method:'POST',
-        async:false,
-        data:{
-          match_id:'<?php echo $match->id ?>',
-          _token:'<?php echo(csrf_token()); ?>',
-          count : 1
-        }
-      });
-
-      Echo.channel('count-view-match-<?php echo $match->id; ?>')
-        .listen('CountViewEvent', (e) => {
-          count = e.count;
-          player.vjsccu({
-            count: e.count
-          });
-      });
     </script>
     @else
     <script src="/js/lib/flipclock/flipclock.js"></script>
@@ -800,31 +785,31 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        setInterval(function() {
-          console.clear();
-          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-          console.log('If you want to get something from my website, feel free to contact me via:');
-          console.log('Email:bongdatv.online@gmail.com');
-          console.log('Thank for you consideration! Love you <3');
-          console.log('-----------------------------------------');
-
-
-          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-          console.log("| $$  | $$ /$$__  $$| $$__  $$");
-          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-          console.log("| $$  | $$| $$  | $$| $$  | $$")
-          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-          console.log("\____  $$| $$____/ |__/  |__/");
-          console.log("/$$  | $$| $$");
-          console.log("|  $$$$$$/| $$");
-          console.log("\______/ |__/");
-
-          debugger;
-        }, 10);
-
-        $('body').bind('contextmenu', function(e) {
-            return false;
-        });
+        // setInterval(function() {
+        //   console.clear();
+        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+        //   console.log('If you want to get something from my website, feel free to contact me via:');
+        //   console.log('Email:bongdatv.online@gmail.com');
+        //   console.log('Thank for you consideration! Love you <3');
+        //   console.log('-----------------------------------------');
+        //
+        //
+        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
+        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
+        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+        //   console.log("\____  $$| $$____/ |__/  |__/");
+        //   console.log("/$$  | $$| $$");
+        //   console.log("|  $$$$$$/| $$");
+        //   console.log("\______/ |__/");
+        //
+        //   debugger;
+        // }, 10);
+        //
+        // $('body').bind('contextmenu', function(e) {
+        //     return false;
+        // });
 
     </script>
     <script>(function(d, s, id) {
