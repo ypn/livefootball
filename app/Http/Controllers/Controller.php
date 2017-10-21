@@ -265,6 +265,7 @@ class Controller extends BaseController
           'password'=>'123'
         ]);
         if(isset($_SESSION['lastpage'])) {
+          echo $_SESSION['lastpage'];die;
           $lastpage = $_SESSION['lastpage'];
           unset($_SESSION['lastpage']);
           return redirect($lastpage);
