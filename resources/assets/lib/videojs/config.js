@@ -41,7 +41,10 @@ $(document).ready(function(){
 
   $.ajax({
     url: window.location.origin + '/servers/' + _sv,
-    method:'GET',
+    method:'POST',
+    data:{
+      _token:$('#_token').val(),
+    },
     success:function(data){
       data = $.parseJSON(data);
       player.src({
@@ -73,7 +76,7 @@ $(document).ready(function(){
        player.addChild('toggleFullScreen', {});
 
 
-       $('.vjs-mute-control').on('click',function(){    
+       $('.vjs-mute-control').on('click',function(){
          var isVolumeMuted = player.muted();
          if (!isVolumeMuted) {
             $('.custom-toggle-sound').css('display','none');

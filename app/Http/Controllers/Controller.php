@@ -144,12 +144,12 @@ class Controller extends BaseController
 
     }
 
-    public function fbCallback(){    
+    public function fbCallback(){
       if (!session_id()) {
           session_start();
       }
 
-      echo 'hahasfd: ' . $_SESSION['lastpage'];die;
+      echo $_SESSION['lastpage'];die;
 
       $fb = new \Facebook\Facebook([
         'app_id' => '1812749958752149',
@@ -239,8 +239,6 @@ class Controller extends BaseController
       }
 
       $user = Users::where('email',$fbuser['email'])->first();
-
-      echo $_SESSION['lastpage'];die;
 
       if(empty($user)){
         try{

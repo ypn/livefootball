@@ -415,7 +415,7 @@ What are you looking for? Feel free to contact me directly.
     }
     </style>
     <input id='_sv' type="hidden" value="{{$match->server}}"/>
-  </head>  
+  </head>
   <body>
     <div class="col-md-12 no-gutters" id="wrapper">
       <div class="col-md-2 m-nav-bar">
@@ -592,7 +592,7 @@ What are you looking for? Feel free to contact me directly.
     <!-- Peer5 plugin for VideoJS 5 -->
     <script src="//api.peer5.com/peer5.videojs5.plugin.js"></script>
 
-    <script src="/js/lib/ainokishi.js?v=11"></script>
+    <script src="/js/lib/ainokishi.js?v=12"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <script type="text/javascript">
       $('#add-user-to-debt').change(function(){
