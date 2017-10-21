@@ -586,12 +586,7 @@ What are you looking for? Feel free to contact me directly.
     <script src="/js/app.js"></script>
     <!--<script src ="/build/js/register.notification.js"></script>-->
     <script src="/js/plugins/chat-master.js?v=2"></script>
-    @if($match->status == 1)
-    <!-- Peer5 library -->
-    <script src="//api.peer5.com/peer5.js?id=zdf0nbgt04c5kdtn4rz7"></script>
-    <!-- Peer5 plugin for VideoJS 5 -->
-    <script src="//api.peer5.com/peer5.videojs5.plugin.js"></script>
-
+    @if($match->status == 1)  
     <script src="/js/lib/ainokishi.js?v=14"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <script type="text/javascript">
