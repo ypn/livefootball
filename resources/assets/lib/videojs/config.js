@@ -41,10 +41,7 @@ $(document).ready(function(){
 
   $.ajax({
     url: window.location.origin + '/servers/' + _sv,
-    method:'POST',
-    data:{
-      _token:$('#_token').val(),
-    },
+    method:'GET',
     success:function(data){
       data = $.parseJSON(data);
       player.src({

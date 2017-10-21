@@ -33,7 +33,7 @@ Route::post('/napthe',[
      'as'   => 'napthe'
   ]);
 Route::get('/list-videos','Controller@listVideos');
-Route::post('/servers/{server_id}','Controller@getServer');
+Route::get('/servers/{server_id}','Controller@getServer');
 
 Route::group(['midware'=>'web','prefix'=>'chat'],function(){
   Route::post('check-role','ChatController@checkRole');

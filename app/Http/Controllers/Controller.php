@@ -147,9 +147,7 @@ class Controller extends BaseController
     public function fbCallback(){
       if (!session_id()) {
           session_start();
-      }
-
-      echo $_SESSION['lastpage'];die;
+      } 
 
       $fb = new \Facebook\Facebook([
         'app_id' => '1812749958752149',
