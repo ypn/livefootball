@@ -144,7 +144,8 @@ class Controller extends BaseController
 
     }
 
-    public function fbCallback      
+    public function fbCallback(){
+        echo 'hahasfdsdfsd: ' . $_SESSION['lastpage'];
       if (!session_id()) {
           session_start();
       }
