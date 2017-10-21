@@ -263,8 +263,8 @@ class Controller extends BaseController
         Sentinel::authenticateAndRemember([
           'email'=>$user->email,
           'password'=>'123'
-        ]);      
-        if(isset($_SESSION['lastpage']) && $_SESSION['lastpage']!=='servers') {
+        ]);
+        if(isset($_SESSION['lastpage'])) {
           $lastpage = $_SESSION['lastpage'];
           unset($_SESSION['lastpage']);
           return redirect($lastpage);
