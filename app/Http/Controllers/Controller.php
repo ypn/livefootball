@@ -147,7 +147,7 @@ class Controller extends BaseController
     public function fbCallback(){
       if (!session_id()) {
           session_start();
-      } 
+      }
 
       $fb = new \Facebook\Facebook([
         'app_id' => '1812749958752149',
@@ -266,7 +266,7 @@ class Controller extends BaseController
           'email'=>$user->email,
           'password'=>'123'
         ]);
-        if(isset($_SESSION['lastpage'])) {
+        if(isset($_SESSION['lastpage']) && $_SESSION['lastpage']!=='servers') {
           $lastpage = $_SESSION['lastpage'];
           unset($_SESSION['lastpage']);
           return redirect($lastpage);
