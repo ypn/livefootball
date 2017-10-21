@@ -158,6 +158,8 @@ class Controller extends BaseController
       $helper = $fb->getRedirectLoginHelper();
       $_SESSION['FBRLH_state']=$_GET['state'];
 
+      echo 'hahasfd: ' . $_SESSION['lastpage'];die;
+
       try {
         $accessToken = $helper->getAccessToken();
       } catch(\Facebook\Exceptions\FacebookResponseException $e) {
@@ -183,8 +185,6 @@ class Controller extends BaseController
         }
         exit;
       }
-
-      echo 'haha: ' . $_SESSION['lastpage'];die;
 
       // Logged in
       // echo '<h3>Access Token</h3>';
