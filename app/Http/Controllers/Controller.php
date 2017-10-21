@@ -149,8 +149,6 @@ class Controller extends BaseController
           session_start();
       }
 
-      echo $_SESSION['lastpage'];die;
-
       $fb = new \Facebook\Facebook([
         'app_id' => '1812749958752149',
         'app_secret' => '32a370b14d3b6140736ce7eaa13c962c',
@@ -237,6 +235,8 @@ class Controller extends BaseController
       }
 
       $user = Users::where('email',$fbuser['email'])->first();
+
+      echo $_SESSION['lastpage'];die;
 
       if(empty($user)){
         try{
