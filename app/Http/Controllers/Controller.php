@@ -229,6 +229,11 @@ class Controller extends BaseController
       }
       $fbuser = $response->getGraphUser()->asArray();
 
+      if(!isset($fbuser['email'])){
+        echo "<script>alert('Đăng nhập không thành công! Dường như facebook của bạn không cho phép chúng tôi sử dụng email, hãy kiểm tra lại email của facebook của bạn.')</script>";
+        die;
+      }
+
       $user = Users::where('email',$fbuser['email'])->first();
 
       if(empty($user)){
@@ -331,5 +336,5 @@ class Controller extends BaseController
     public function getServer($server_id){
       $server = Servers::where('id',$server_id)->first();
       return json_encode(['server_url'=>$server->value]);
-    }   
+    }
 }

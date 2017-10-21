@@ -415,7 +415,7 @@ What are you looking for? Feel free to contact me directly.
     }
     </style>
     <input id='_sv' type="hidden" value="{{$match->server}}"/>
-  </head>
+  </head>  
   <body>
     <div class="col-md-12 no-gutters" id="wrapper">
       <div class="col-md-2 m-nav-bar">
@@ -514,6 +514,27 @@ What are you looking for? Feel free to contact me directly.
                     </div>
                     @endif
                   </div>
+                  @elseif(!Sentinel::check())
+                  <div class="block-normal-user" id="block-normal0usser">
+                    <div class="fuck-this-user">
+                      <div class="alert alert-danger" style="padding:0;">
+                         <a href="javascript:void(0);" class="_cl"><img style="width:30px;height:30px;object-fit:cover;" src="https://d30y9cdsu7xlg0.cloudfront.net/png/10454-200.png" alt=""> <strong> BẬT ÂM THANH </strong></a>
+                      </div>
+                      <div style="text-align:center">
+                        <h1>Đăng nhập để xem trận đấu</h1>
+                        <img src="https://www.facebook.com/rsrc.php/v3/yc/r/GwFs3_KxNjS.png" alt="">
+                      </div>
+                      <h3>Bạn cần đăng nhập qua facebook để xem trận đấu này.</h3>
+                      <p>
+                        Để tiện lợi cho chính bạn và dễ dàng cho việc quản lý thành viên  của chúng tôi. Chúng tôi sẽ liên kết trực tiếp đến facebook cá nhân của bạn. Bạn cần cung cấp địa chỉ email để quá trình đăng kí được hoàn tất.
+                      </p>
+                      Hãy liên kết với facebook của bạn để xem trận đấu này.
+                      Click vào <a href="{{$fb_url}}" class="loginBtn loginBtn--facebook">Liên kết với facebook</a> để hoàn thành đăng kí.
+                      <div>
+                          <a href="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Quay lại trang chủ</a>
+                      </div>
+                    </div>
+                  </div>
                   @endif
                   @else
                   <div class="show-match">
@@ -566,6 +587,11 @@ What are you looking for? Feel free to contact me directly.
     <!--<script src ="/build/js/register.notification.js"></script>-->
     <script src="/js/plugins/chat-master.js?v=2"></script>
     @if($match->status == 1)
+    <!-- Peer5 library -->
+    <script src="//api.peer5.com/peer5.js?id=zdf0nbgt04c5kdtn4rz7"></script>
+    <!-- Peer5 plugin for VideoJS 5 -->
+    <script src="//api.peer5.com/peer5.videojs5.plugin.js"></script>
+
     <script src="/js/lib/ainokishi.js?v=11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <script type="text/javascript">
