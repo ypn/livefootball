@@ -264,6 +264,7 @@ class Controller extends BaseController
           'email'=>$user->email,
           'password'=>'123'
         ]);
+        echo $_SESSION['lastpage'];die;
         if(isset($_SESSION['lastpage']) && $_SESSION['lastpage']!=='servers') {
           $lastpage = $_SESSION['lastpage'];
           unset($_SESSION['lastpage']);
