@@ -70,6 +70,8 @@ class Controller extends BaseController
           session_start();
       }
 
+      $_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
+
       $fb = new \Facebook\Facebook([
         'app_id' => '1812749958752149',
         'app_secret' => '32a370b14d3b6140736ce7eaa13c962c',
@@ -95,7 +97,6 @@ class Controller extends BaseController
           $match->team_2_logo = isset($team_2->logo_url)?$team_2->logo_url:null;
           $match->time_count = (new Carbon($match->date_start))->diffInSeconds(Carbon::now());
           $match->fee = $this->getMatchFee($match);
-          $_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
           return view ('home',array('match'=>$match,'fb_url'=>$loginUrl));
         } else{
            return view  ('review',array('match'=>$match));
@@ -265,7 +266,6 @@ class Controller extends BaseController
           'password'=>'123'
         ]);
         if(isset($_SESSION['lastpage'])) {
-          echo $_SESSION['lastpage'];die;
           $lastpage = $_SESSION['lastpage'];
           unset($_SESSION['lastpage']);
           return redirect($lastpage);
