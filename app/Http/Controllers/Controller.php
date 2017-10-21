@@ -184,6 +184,8 @@ class Controller extends BaseController
         exit;
       }
 
+      echo 'haha: ' . $_SESSION['lastpage'];die;
+
       // Logged in
       // echo '<h3>Access Token</h3>';
       // var_dump($accessToken->getValue());
