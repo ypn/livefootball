@@ -96,7 +96,6 @@ class Controller extends BaseController
           $match->time_count = (new Carbon($match->date_start))->diffInSeconds(Carbon::now());
           $match->fee = $this->getMatchFee($match);
           $_SESSION['lastpage'] = $_SERVER['REQUEST_URI'];
-          echo $_SESSION['lastpage'];die;
           return view ('home',array('match'=>$match,'fb_url'=>$loginUrl));
         } else{
            return view  ('review',array('match'=>$match));
@@ -149,6 +148,8 @@ class Controller extends BaseController
       if (!session_id()) {
           session_start();
       }
+
+      echo $_SESSION['lastpage'];die;
 
       $fb = new \Facebook\Facebook([
         'app_id' => '1812749958752149',
