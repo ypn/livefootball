@@ -67,6 +67,10 @@
       background-image: linear-gradient(#5B7BD5, #4864B1);
     }
 
+    .btn-coin:hover,.btn-coin:focus{
+      background:#9b8a30!important;
+    }
+
     #b-c-facebook{
       z-index: 99999;
       width: 350px;
@@ -165,6 +169,9 @@
              <li><a href="#">Videos</a></li>
            </ul>
             <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/napthe" class="btn btn-danger btn-coin" style="color:#fff;padding:10px 40px;margin:2px;">Mua gói tháng</a>
+            </li>
             @if(Sentinel::check())
              <li class="dropdown">
                 <a  class="dropdown-toggle" data-toggle="dropdown" href="#">
