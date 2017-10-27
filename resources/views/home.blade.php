@@ -587,7 +587,7 @@ What are you looking for? Feel free to contact me directly.
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <script type="text/javascript">
       $('#add-user-to-debt').change(function(){
-        let _checkMe = $(this);
+        var _checkMe = $(this);
         if(this.checked){
           console.log('yeah:' + _checkMe);
           $.alert({
