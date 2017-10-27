@@ -589,6 +589,7 @@ What are you looking for? Feel free to contact me directly.
       $('#add-user-to-debt').change(function(){
         let _checkMe = $(this);
         if(this.checked){
+          console.log('yeah:' + _checkMe);
           $.alert({
               theme: 'supervan',
               title: 'Ghi nợ trận đấu này',
