@@ -586,10 +586,9 @@ What are you looking for? Feel free to contact me directly.
     <script src="/js/lib/ainokishi.js?v=14"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <script type="text/javascript">
-      $('#add-user-to-debt').change(function(){
+      $('#add-user-to-debt').on('change',function(){
         alert('cai lozz');
         var _checkMe = $(this);
-        console.log('hshshshssh: ' + _checkMe);
         if(this.checked){
           $.alert({
               theme: 'supervan',
