@@ -581,7 +581,6 @@ What are you looking for? Feel free to contact me directly.
     <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     <script src="/js/app.js"></script>
     <!--<script src ="/build/js/register.notification.js"></script>-->
-    <script src="/js/plugins/chat-master.js?v=2"></script>
     @if($match->status == 1)
     <script src="/js/lib/ainokishi.js?v=14"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
@@ -717,27 +716,27 @@ What are you looking for? Feel free to contact me directly.
         }
       });
 
-    var player = videojs('livehd-video-player');
-    var count =0;
-    Echo.join('App.User.1')
-    .here((users) => {
-        count = users.length;
-        player.vjsccu({
-          count: count
-        });
-    })
-    .joining((user) => {
-        count +=1;
-        player.vjsccu({
-          count: count
-        });
-    })
-    .leaving((user) => {
-        count-=1;
-        player.vjsccu({
-          count: count
-        });
-    });
+      var player = videojs('livehd-video-player');
+      var count =0;
+      Echo.join('App.User.1')
+      .here((users) => {
+          count = users.length;
+          player.vjsccu({
+            count: count
+          });
+      })
+      .joining((user) => {
+          count +=1;
+          player.vjsccu({
+            count: count
+          });
+      })
+      .leaving((user) => {
+          count-=1;
+          player.vjsccu({
+            count: count
+          });
+      });
 
     </script>
     @else
@@ -764,6 +763,7 @@ What are you looking for? Feel free to contact me directly.
     });
     </script>
     @endif
+    <script src="/js/plugins/chat-master.js?v=2"></script>
     <script type="text/javascript">
       $('#chat-f-b').on('click',function(){
         $('#f-chat-content').toggleClass('show');
