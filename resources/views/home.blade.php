@@ -588,9 +588,8 @@ What are you looking for? Feel free to contact me directly.
     <script type="text/javascript">
       $('#add-user-to-debt').change(function(){
         var _checkMe = $(this);
-        console.log('wtf:' + _checkMe);
+        console.log('hshshshssh: ' + _checkMe);
         if(this.checked){
-          console.log('yeah:' + _checkMe);
           $.alert({
               theme: 'supervan',
               title: 'Ghi nợ trận đấu này',
