@@ -347,10 +347,6 @@ What are you looking for? Feel free to contact me directly.
     }
 
     .material-checkbox {
-      position: relative;
-      top: -0.375rem;
-      margin: 0 1rem 0 0;
-      cursor: pointer;
       -ms-transform: scale(1.5); /* IE */
       -moz-transform: scale(1.5); /* FF */
       -webkit-transform: scale(1.5); /* Safari and Chrome */
@@ -586,7 +582,7 @@ What are you looking for? Feel free to contact me directly.
     <script src="/js/app.js"></script>
     <!--<script src ="/build/js/register.notification.js"></script>-->
     <script src="/js/plugins/chat-master.js?v=2"></script>
-    @if($match->status == 1)  
+    @if($match->status == 1)
     <script src="/js/lib/ainokishi.js?v=14"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <script type="text/javascript">
@@ -806,31 +802,31 @@ What are you looking for? Feel free to contact me directly.
               .trigger('resize');
       })(jQuery);
 
-        setInterval(function() {
-          console.clear();
-          console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
-          console.log('If you want to get something from my website, feel free to contact me via:');
-          console.log('Email:bongdatv.online@gmail.com');
-          console.log('Thank for you consideration! Love you <3');
-          console.log('-----------------------------------------');
-
-
-          console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
-          console.log("| $$  | $$ /$$__  $$| $$__  $$");
-          console.log("| $$  | $$| $$  \ $$| $$  \ $$");
-          console.log("| $$  | $$| $$  | $$| $$  | $$")
-          console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
-          console.log("\____  $$| $$____/ |__/  |__/");
-          console.log("/$$  | $$| $$");
-          console.log("|  $$$$$$/| $$");
-          console.log("\______/ |__/");
-
-          debugger;
-        }, 10);
-
-        $('body').bind('contextmenu', function(e) {
-            return false;
-        });
+        // setInterval(function() {
+        //   console.clear();
+        //   console.log("%cPlease leave me alone!", "font: 5em roboto; color: yellow; background-color: red;");
+        //   console.log('If you want to get something from my website, feel free to contact me via:');
+        //   console.log('Email:bongdatv.online@gmail.com');
+        //   console.log('Thank for you consideration! Love you <3');
+        //   console.log('-----------------------------------------');
+        //
+        //
+        //   console.log("/$$   /$$  /$$$$$$  /$$$$$$$ ");
+        //   console.log("| $$  | $$ /$$__  $$| $$__  $$");
+        //   console.log("| $$  | $$| $$  \ $$| $$  \ $$");
+        //   console.log("| $$  | $$| $$  | $$| $$  | $$")
+        //   console.log("|  $$$$$$$| $$$$$$$/| $$  | $$");
+        //   console.log("\____  $$| $$____/ |__/  |__/");
+        //   console.log("/$$  | $$| $$");
+        //   console.log("|  $$$$$$/| $$");
+        //   console.log("\______/ |__/");
+        //
+        //   debugger;
+        // }, 10);
+        //
+        // $('body').bind('contextmenu', function(e) {
+        //     return false;
+        // });
 
     </script>
     <script>(function(d, s, id) {
