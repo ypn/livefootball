@@ -587,6 +587,7 @@ What are you looking for? Feel free to contact me directly.
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <script type="text/javascript">
       $('#add-user-to-debt').change(function(){
+        alert('cai lozz');
         var _checkMe = $(this);
         console.log('hshshshssh: ' + _checkMe);
         if(this.checked){
