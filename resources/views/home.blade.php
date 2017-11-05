@@ -37,7 +37,7 @@ What are you looking for? Feel free to contact me directly.
     @else
     <link rel="stylesheet" href="/js/lib/flipclock/flipclock.css">
     @endif
-    <link rel="stylesheet" href="/css/master.css?v=7">
+    <link rel="stylesheet" href="/css/master.css?v=8">
     <input type="hidden" id="fb_url_redirect" value="{{$fb_url}}">
     <style media="screen">
     #b-c-facebook{
