@@ -179,6 +179,7 @@
                   <img style="border-radius: 50%; width: 35px; height: 35px; margin-top: 5px" src="http://graph.facebook.com/{{Sentinel::getUser()->fb_id}}/picture?type=square" alt="">
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
+                  <li><a href="/profile">Thông tin tài khoản</a></li>
                   <li><a href="/logout">Đăng xuất</a></li>
                 </ul>
             </li>

@@ -337,4 +337,11 @@ class Controller extends BaseController
       $server = Servers::where('id',$server_id)->first();
       return json_encode(['server_url'=>$server->value]);
     }
+
+    public function viewProfile(){
+      if(!Sentinel::check()){
+        return view ('login');
+      }
+      return view ('profile');
+    }
 }

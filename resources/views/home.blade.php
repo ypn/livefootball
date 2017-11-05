@@ -426,6 +426,9 @@ What are you looking for? Feel free to contact me directly.
             <ul class="left-bar-link">
               <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> <span>Trang chủ</span></a></li>
               <li><a href="/lich-truc-tiep"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>Lịch trực tiếp</span></a></li>
+              @if(Sentinel::check())
+              <li><a href="/profile"><i class="fa fa-user" aria-hidden="true"></i><span>Thông tin tài khoản</span></a></li>
+              @endif
               <li><a href="/napthe" class="btn btn-danger btn-xs"><i class="fa fa-btc" aria-hidden="true"></i> Mua gói tháng</a></li>
             </ul>
           </div>

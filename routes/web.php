@@ -28,6 +28,7 @@ Route::group(['middleware'=>'web','prefix'=>'transition'],function(){
   Route::post('/expire-month-ticket','CoinController@expireMonthTicket');
   Route::post('/buy-match','CoinController@buyMatch');
 });
+Route::get('/profile','Controller@viewProfile');
 Route::post('/napthe',[
      'uses' => 'CoinController@napthe1',
      'as'   => 'napthe'
