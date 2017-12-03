@@ -19,7 +19,7 @@ What are you looking for? Feel free to contact me directly.
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Trực tiếp bóng đá HD ICC Cup 2017</title>
+    <title>Trực tiếp bóng đá</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -512,28 +512,7 @@ What are you looking for? Feel free to contact me directly.
                       </div>
                     </div>
                     @endif
-                  </div>
-                  @elseif(!Sentinel::check())
-                  <div class="block-normal-user" id="block-normal0usser">
-                    <div class="fuck-this-user">
-                      <div class="alert alert-danger" style="padding:0;">
-                         <a href="javascript:void(0);" class="_cl"><img style="width:30px;height:30px;object-fit:cover;" src="https://d30y9cdsu7xlg0.cloudfront.net/png/10454-200.png" alt=""> <strong> BẬT ÂM THANH </strong></a>
-                      </div>
-                      <div style="text-align:center">
-                        <h1>Đăng nhập để xem trận đấu</h1>
-                        <img src="https://www.facebook.com/rsrc.php/v3/yc/r/GwFs3_KxNjS.png" alt="">
-                      </div>
-                      <h3>Bạn cần đăng nhập qua facebook để xem trận đấu này.</h3>
-                      <p>
-                        Để tiện lợi cho chính bạn và dễ dàng cho việc quản lý thành viên  của chúng tôi. Chúng tôi sẽ liên kết trực tiếp đến facebook cá nhân của bạn. Bạn cần cung cấp địa chỉ email để quá trình đăng kí được hoàn tất.
-                      </p>
-                      Hãy liên kết với facebook của bạn để xem trận đấu này.
-                      Click vào <a href="{{$fb_url}}" class="loginBtn loginBtn--facebook">Liên kết với facebook</a> để hoàn thành đăng kí.
-                      <div>
-                          <a href="/"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Quay lại trang chủ</a>
-                      </div>
-                    </div>
-                  </div>
+                  </div>                
                   @endif
                   @else
                   <div class="show-match">
